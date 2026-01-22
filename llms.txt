@@ -1,0 +1,16 @@
+# Kavusik Rosan — Portfolio
+
+Canonical: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
+
+## Summary
+Kavusik Rosan is a Computer Science student, HCL GUVI Campus Ambassador, and privacy engineer focusing on adversarial ML, AI-resistant systems, encrypted P2P platforms, and biometric security.
+
+## Key Sections
+- About: background, education, and focus areas
+- Projects: Obscura Arcanum, Virtual Navigator, Autoform Assist, DeepLynk, Link Shift, Obscura Dravion
+- Skills: privacy engineering, adversarial ML, security
+- Contact: kavusikbalu2006@gmail.com
+
+## Identity
+- GitHub: https://github.com/dimitreerosan
+- LinkedIn: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
