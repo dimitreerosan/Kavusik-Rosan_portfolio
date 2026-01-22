@@ -2,26 +2,117 @@ import React from 'react'
 
 export default function SoftSkills() {
   const skills = [
-    'Problem Solving',
-    'Team Leadership',
-    'Public Speaking',
-    'Critical Thinking & Decision Making',
-    'Creative Design',
-    'Rapid Prototyping',
+    {
+      id: '01',
+      title: 'Problem Solving',
+      desc: 'Analytical mindset focused on finding efficient solutions to complex technical challenges.',
+      span: 'col-span-1 md:col-span-2'
+    },
+    {
+      id: '02',
+      title: 'Team Leadership',
+      desc: 'Experienced in coordinating diverse teams and mentoring students to achieve collective goals.',
+      span: 'col-span-1'
+    },
+    {
+      id: '03',
+      title: 'Public Speaking',
+      desc: 'Confident in presenting complex AI and privacy concepts to technical and non-technical audiences.',
+      span: 'col-span-1'
+    },
+    {
+      id: '04',
+      title: 'Critical Thinking',
+      desc: 'Evaluating tech from multiple perspectives, especially in AI ethics and data privacy.',
+      span: 'col-span-1 md:col-span-2'
+    },
+    {
+      id: '05',
+      title: 'Creative Design',
+      desc: 'Combining technical skills with aesthetic vision for impactful digital storytelling.',
+      span: 'col-span-1'
+    },
+    {
+      id: '06',
+      title: 'Rapid Prototyping',
+      desc: 'Fast-paced development of MVPs and proof-of-concept models for emerging technologies.',
+      span: 'col-span-1 md:col-span-2'
+    },
   ]
 
   return (
-    <section className="py-24 px-8 md:px-16 bg-black border-t border-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-6 mb-12">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight uppercase text-white" style={{ letterSpacing: '-0.04em' }}>Soft Skills</h2>
-          <div className="h-px bg-gray-800 flex-1" />
+    <section className="py-24 px-6 md:px-10 bg-black border-t border-gray-900 relative overflow-hidden">
+      <style>{`
+        @keyframes laser-scan {
+          0% { top: -10%; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 110%; opacity: 0; }
+        }
+        .animate-laser {
+          animation: laser-scan 2s linear infinite;
+        }
+      `}</style>
+
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-violet-600/5 blur-[100px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <h2
+              className="text-3xl md:text-5xl font-black tracking-tight uppercase text-white mb-4"
+              style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.04em' }}
+            >
+              Soft Skills
+            </h2>
+            <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+              Interpersonal and cognitive abilities that complement my technical expertise.
+            </p>
+          </div>
+          <div className="hidden md:block h-px bg-gray-800 flex-1 ml-12 mb-4" />
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {skills.map((s) => (
-            <li key={s} className="text-gray-300 text-sm md:text-base">• {s}</li>
+            <div
+              key={s.id}
+              className={`${s.span} group relative bg-[#050505] border border-white/5 rounded-xl p-5 md:p-6 transition-all duration-500 hover:border-violet-500/30 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)] overflow-hidden`}
+            >
+              {/* Glassmorphism Overlay on Hover */}
+              <div className="absolute inset-0 bg-white/[0.01] backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Laser Scan Beam */}
+              <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-violet-400 to-transparent opacity-0 group-hover:animate-laser pointer-events-none z-20" />
+
+              {/* Card Number */}
+              <span
+                className="absolute top-3 right-5 text-3xl md:text-4xl font-black text-white/[0.02] group-hover:text-violet-500/20 group-hover:scale-110 transition-all duration-500"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                {s.id}
+              </span>
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-1 h-3 bg-violet-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom" />
+                  <h3
+                    className="text-base md:text-lg font-bold text-white group-hover:text-violet-300 transition-colors duration-300"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    {s.title}
+                  </h3>
+                </div>
+                <p className="text-gray-400 text-[11px] md:text-xs leading-relaxed group-hover:text-gray-200 transition-colors duration-300 pl-3">
+                  {s.desc}
+                </p>
+              </div>
+
+              {/* Corner Accent Glow */}
+              <div className="absolute -top-12 -left-12 w-24 h-24 bg-violet-600/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

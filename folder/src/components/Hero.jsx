@@ -64,7 +64,7 @@ export default function Hero() {
         </svg> 
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 md:px-12 text-center gap-8 max-w-5xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 sm:px-6 md:px-10 lg:px-16 text-center gap-8">
         <div className="relative">
           <div className="pointer-events-none absolute -inset-x-16 -top-12 h-32 blur-3xl opacity-60" style={{ background: 'radial-gradient(closest-side, rgba(255,255,255,0.18), transparent 60%)' }} />
           <h1

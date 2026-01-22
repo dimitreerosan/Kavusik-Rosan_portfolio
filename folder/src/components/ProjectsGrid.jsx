@@ -1,9 +1,9 @@
 import React, { useMemo, useState, useCallback } from 'react'
 import obscuraImg from '../Obscura Arcanum.jpg'
 import dravionImg from '../Obscura Dravion.jpg'
-import linkShiftImg from '../Link Shift.jpg'
+import linkShiftImg from '../Link shift.jfif'
 import deeplynkImg from '../deepLynk.jpg'
-import AutoformAssistImg from '../Autoform Assist.jpg' 
+import AutoformAssistImg from '../Autoform Assist.jpg'
 import VirtualNavigator from '../VirtualNavigator.jpg'
 import Card from './Card'
 import ProjectModal from './ProjectModal'
@@ -27,7 +27,7 @@ export default function ProjectsGrid() {
   const [selected, setSelected] = useState(null)
 
   const projects = useMemo(() => [
-      {
+    {
       id: 1,
       title: 'Virtual Navigator',
       description:
@@ -40,7 +40,7 @@ export default function ProjectsGrid() {
       link: '#',
     },
     {
-      id: 1,
+      id: 6,
       title: 'Obscura Arcanum',
       description:
         'Anti-AI image protection system using adversarial ML with encryption. Shortlisted among top 100 nationally (AICTE APF 2025). Built with Python, TensorFlow, cryptography libs.',

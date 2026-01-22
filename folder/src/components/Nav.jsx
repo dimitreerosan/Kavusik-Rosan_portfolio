@@ -5,6 +5,7 @@ export default function Nav() {
     { label: 'Home', href: '#' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
   ]
 

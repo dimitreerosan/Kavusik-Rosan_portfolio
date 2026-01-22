@@ -6,6 +6,7 @@ import ImageProtection from './components/ImageProtection'
 const About = lazy(() => import('./components/AboutNew'))
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'))
 const Achievements = lazy(() => import('./components/Achievements'))
+const Gallery = lazy(() => import('./components/Gallery'))
 const TechnicalSkills = lazy(() => import('./components/TechnicalSkills'))
 const KeyStrengths = lazy(() => import('./components/KeyStrengths'))
 const SoftSkills = lazy(() => import('./components/SoftSkills'))
@@ -28,6 +29,9 @@ function App() {
         </Suspense>
         <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
           <Achievements />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Gallery />
         </Suspense>
         <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
           <TechnicalSkills />

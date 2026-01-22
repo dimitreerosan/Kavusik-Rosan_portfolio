@@ -47,7 +47,7 @@ export default function TechnicalSkills() {
     },
     {
       label: 'Mobile Development',
-      value: 'Flutter and Android Studio',
+      value: 'Flutter and React',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -107,7 +107,7 @@ export default function TechnicalSkills() {
     {
       label: 'Tools & Platforms',
       value:
-        'Git, GitHub, VS Code, Windsurf, Cursor, Coder, Trae, Void, Android Studio, Supabase and Docker',
+        'Git, GitHub, VS Code, Windsurf, Cursor, Coder, Trae, Void, Android Studio, Supabase',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">

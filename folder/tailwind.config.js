@@ -35,6 +35,15 @@ module.exports = {
         'xs': '400px',
         '3xl': '1920px',
       },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 2s infinite linear',
+      },
     },
   },
   plugins: [],
