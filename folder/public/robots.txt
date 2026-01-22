@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap.xml
