@@ -1,16 +1,198 @@
 # Kavusik Rosan — Portfolio
 
-Canonical: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
+> Canonical URL: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
+> Last Updated: January 2026
 
-## Summary
-Kavusik Rosan is a Computer Science student, HCL GUVI Campus Ambassador, and privacy engineer focusing on adversarial ML, AI-resistant systems, encrypted P2P platforms, and biometric security.
+## About Kavusik Rosan
 
-## Key Sections
-- About: background, education, and focus areas
-- Projects: Obscura Arcanum, Virtual Navigator, Autoform Assist, DeepLynk, Link Shift, Obscura Dravion
-- Skills: privacy engineering, adversarial ML, security
-- Contact: kavusikbalu2006@gmail.com
+Kavusik Rosan is a Computer Science student at Sri Shakthi Institute of Engineering and Technology (2023-2027), HCL GUVI Campus Ambassador, and privacy engineer specializing in adversarial machine learning and AI-resistant systems.
 
-## Identity
-- GitHub: https://github.com/dimitreerosan
-- LinkedIn: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
+**Creator of Obscura Arcanum** — an advanced anti-AI image protection system shortlisted among the top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025. This platform combats unauthorized AI exploitation using adversarial ML with encryption.
+
+**Campus Leader** organizing hackathons, mentoring 200+ students, and building privacy-first tools including secure mobile apps, encrypted P2P platforms, and biometric intelligence systems. Driven to safeguard digital identities through accessible, ethical technology.
+
+## Education
+
+- **BE in Computer Science & Engineering** (2023-2027)  
+  Sri Shakthi Institute of Engineering and Technology
+  
+- **HSC (State Board)** (2021-2023)  
+  Senior Secondary Education | Percentage: 70%
+  
+- **SSLC (Matriculation)** (2020-2021)  
+  Secondary Education | Result: Pass
+
+## Projects
+
+### 1. Obscura Arcanum
+**Anti-AI Image Protection System**
+
+Shortlisted among top 100 nationally (AICTE APF 2025 & Yukti Challenge 2025). Advanced media protection platform using adversarial machine learning with encryption to combat unauthorized AI exploitation.
+
+- **Technologies**: Python, TensorFlow, Keras, Cryptography libraries
+- **Features**: Adversarial perturbations, encryption layers, privacy-first design
+- **Impact**: Protects digital content from AI scraping and unauthorized training
+- **Status**: Active development, nationally recognized
+
+### 2. Virtual Navigator
+**Real-time Hand-Gesture Navigation System**
+
+Computer vision system that interprets hand movements for controlling applications without physical touch.
+
+- **Technologies**: Python, OpenCV, MediaPipe, Computer Vision
+- **Features**: Real-time gesture recognition, touchless navigation
+- **Use Cases**: Accessibility, hands-free control, interactive presentations
+
+### 3. Autoform Assist
+**AI-Powered Form Auto-Fill Mobile App**
+
+Mobile application that automatically fills forms using OCR and NLP for faster, more accurate submissions.
+
+- **Technologies**: Mobile development, OCR, NLP, AI/ML
+- **Features**: Intelligent form detection, data extraction, auto-completion
+- **Impact**: Reduces form-filling time and errors
+
+### 4. DeepLynk
+**Android Safety & Security App**
+
+Android application that scans links and media before opening to block hidden trackers, advertisements, and phishing attempts.
+
+- **Technologies**: Android, Security APIs, Link analysis
+- **Features**: Real-time threat detection, tracker blocking, phishing prevention
+- **Impact**: Enhanced mobile browsing security
+
+### 5. Link Shift
+**Serverless Encrypted P2P Platform**
+
+End-to-end encrypted peer-to-peer messaging and file transfer using direct WebRTC device-to-device connections.
+
+- **Technologies**: WebRTC, Encryption, P2P networking
+- **Features**: Serverless architecture, E2E encryption, direct device connection
+- **Privacy**: No server storage, complete privacy
+
+### 6. Obscura Dravion
+**Biometric Intelligence System**
+
+Rapid video archive search system with integrated privacy safeguards for biometric data.
+
+- **Technologies**: Biometrics, Computer Vision, Video processing
+- **Features**: Fast search, privacy protection, intelligent indexing
+- **Applications**: Security, surveillance, archive management
+
+## Technical Skills
+
+### Programming Languages
+- Python (Advanced)
+- Java
+- JavaScript
+- C/C++
+- Kotlin
+
+### AI/ML Frameworks
+- TensorFlow
+- Keras
+- PyTorch
+- Scikit-learn
+- Adversarial ML techniques
+
+### Mobile Development
+- Android (Kotlin/Java)
+- React Native
+- Mobile UI/UX
+
+### Security & Privacy Engineering
+- Adversarial Machine Learning
+- Cryptography
+- Privacy-preserving technologies
+- AI-resistant systems
+- Threat detection
+
+### Web Technologies
+- React
+- Node.js
+- WebRTC
+- HTML/CSS/JavaScript
+- REST APIs
+
+### Networking & Communication
+- P2P protocols
+- WebRTC
+- Network security
+- Encrypted communications
+
+### Computer Vision & Biometrics
+- OpenCV
+- MediaPipe
+- Facial recognition
+- Gesture recognition
+- Video processing
+
+### Tools & Platforms
+- Git/GitHub
+- Docker
+- VS Code
+- Android Studio
+- Linux/Windows
+
+## Soft Skills
+
+- **Problem Solving**: Analytical thinking, debugging, optimization
+- **Team Leadership**: Mentored 200+ students, organized hackathons
+- **Public Speaking**: Campus ambassador, event coordination
+- **Critical Thinking**: Security analysis, threat modeling
+- **Creative Design**: UI/UX, user-centered design
+- **Rapid Prototyping**: Quick iteration, MVP development
+
+## Achievements & Leadership
+
+### HCL GUVI Campus Ambassador (2026)
+**Mission Upskill India**
+- Campus representative for HCL GUVI's upskilling initiative
+- Organizing technical workshops and hackathons
+- Mentoring students in technology and career development
+
+### Obscura Arcanum Recognition
+- **AICTE APF 2025**: Shortlisted among top 100 nationally
+- **Yukti Challenge 2025**: National-level recognition
+- Advanced anti-AI image protection system
+
+### Campus Leadership Roles
+- **Department Overall Coordinator**: Led departmental activities and events
+- **Department Event Coordinator**: Organized technical and cultural events
+- **Department Promotional Coordinator**: Marketing and outreach
+- **Department Hackathon Coordinator**: Organized coding competitions
+- **College Media Guild Video Editor**: Content creation and editing
+- **Department Newsletter & Magazine Head**: Editorial leadership
+
+### Impact Metrics
+- Mentored **200+ students** in technology and career development
+- Organized multiple **hackathons and technical events**
+- Created **6+ major projects** in privacy and security
+
+## Areas of Expertise
+
+1. **Privacy Engineering**: Building privacy-first applications and systems
+2. **Adversarial Machine Learning**: Developing AI-resistant technologies
+3. **Security**: Threat detection, encryption, secure communications
+4. **Mobile Development**: Android apps with security focus
+5. **Computer Vision**: Gesture recognition, biometric systems
+6. **P2P Technologies**: Encrypted peer-to-peer platforms
+
+## Contact Information
+
+- **Email**: kavusikbalu2006@gmail.com
+- **GitHub**: https://github.com/dimitreerosan
+- **LinkedIn**: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
+- **Portfolio**: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
+
+## Availability
+
+Open to:
+- Internship opportunities in privacy engineering, ML security, or software development
+- Collaboration on open-source privacy and security projects
+- Speaking engagements on adversarial ML and AI ethics
+- Research opportunities in AI safety and privacy-preserving technologies
+
+---
+
+*This document is optimized for AI assistants and language models. For the full interactive portfolio experience, visit the canonical URL above.*
