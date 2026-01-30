@@ -74,7 +74,7 @@ export default function AboutNew() {
               <div>
                 <p className="text-white font-semibold text-sm md:text-base">HSC (State Board)</p>
                 <p className="text-gray-500 text-xs md:text-sm mt-1">Senior Secondary Education</p>
-                <p className="text-gray-600 text-xs md:text-sm mt-1">Percentage: 70%</p>
+
               </div>
             </div>
             <p className="text-gray-600 text-xs md:text-sm mt-1 whitespace-nowrap">2021 - 2023</p>
@@ -86,7 +86,7 @@ export default function AboutNew() {
               <div>
                 <p className="text-white font-semibold text-sm md:text-base">SSLC (Matriculation)</p>
                 <p className="text-gray-500 text-xs md:text-sm mt-1">Secondary Education</p>
-                <p className="text-gray-600 text-xs md:text-sm mt-1">Result: Pass</p>
+
               </div>
             </div>
             <p className="text-gray-600 text-xs md:text-sm mt-1 whitespace-nowrap">2020 - 2021</p>
