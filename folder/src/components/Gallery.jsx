@@ -177,7 +177,7 @@ export default function Gallery() {
                         Moments & Milestones
                     </h2>
                     <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-                        A visual journey through achievements, events, and memorable experiences
+                        A visual journey through achievements, events and memorable experiences
                     </p>
                 </div>
 
