@@ -130,12 +130,12 @@ export default function Achievements() {
       span: 'span-6'
     },
     {
-      title: 'Department Event Coordinator',
+      title: 'Department Event & Hackathon Coordinator',
       icon: 'award',
       role: 'COORDINATOR',
-      year: '2024',
-      impact: 'EVENTS',
-      detail: 'Planned and executed department technical events and workshops, handling scheduling, registrations and on-ground coordination to ensure smooth, high-participation sessions.',
+      year: '2023-2024',
+      impact: 'CAMPUS EVENTS',
+      detail: 'Planned and executed department technical events, workshops, and innovation challenges. Handled scheduling, registrations, and on-ground coordination while mentoring student teams to foster a problem-solving culture across campus.',
       span: 'span-6'
     },
     {
@@ -146,15 +146,7 @@ export default function Achievements() {
       detail: 'Led marketing campaigns reaching 5,000+ students, created digital content and coordinated with faculty for event growth.',
       span: 'span-6'
     },
-    {
-      title: 'Department Hackathon Coordinator',
-      icon: 'sparkles',
-      role: 'MENTOR',
-      year: '2023',
-      impact: 'CAMPUS',
-      detail: 'Organized innovation challenges, mentored student teams and fostered problem-solving culture across campus.',
-      span: 'span-6'
-    },
+
     {
       title: 'College Media Guild Video Editor',
       icon: 'video',
