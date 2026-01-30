@@ -130,11 +130,11 @@ export default function Achievements() {
       span: 'span-6'
     },
     {
-      title: 'Department Event & Hackathon Coordinator',
+      title: 'Department Hackathon Coordinator',
       icon: 'award',
       role: 'COORDINATOR',
-      year: '2023-2024',
-      impact: 'CAMPUS EVENTS',
+      year: '2023',
+
       detail: 'Planned and executed department technical events, workshops, and innovation challenges. Handled scheduling, registrations, and on-ground coordination while mentoring student teams to foster a problem-solving culture across campus.',
       span: 'span-6'
     },
@@ -162,7 +162,7 @@ export default function Achievements() {
       year: '2023',
       impact: 'EDITORIAL',
       detail: 'Managed editorial direction, content design and publishing pipeline.',
-      span: 'span-12'
+      span: 'span-6'
     },
   ]
 
@@ -193,7 +193,7 @@ export default function Achievements() {
                 <div className="flex flex-wrap gap-4 mb-3">
                   <span className="system-tag">[ ROLE: {it.role} ]</span>
                   <span className="system-tag">[ YEAR: {it.year} ]</span>
-                  <span className="system-tag">[ IMPACT: {it.impact} ]</span>
+                  {it.impact && <span className="system-tag">[ IMPACT: {it.impact} ]</span>}
                 </div>
 
                 <h3 className="blueprint-title">{it.title}</h3>
