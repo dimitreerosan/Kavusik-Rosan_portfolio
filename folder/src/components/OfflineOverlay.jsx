@@ -63,58 +63,6 @@ export default function OfflineOverlay() {
   }, [])
 
   useEffect(() => {
-    let cancelled = false
-    let intervalId
-
-    const ping = async () => {
-      try {
-        const controller = new AbortController()
-        const to = setTimeout(() => controller.abort(), 4000)
-        const url = `/__ping?ts=${Date.now()}`
-        const res = await fetch(url, {
-          method: 'GET',
-          cache: 'no-store',
-          headers: { 'cache-control': 'no-store' },
-          signal: controller.signal,
-        })
-        clearTimeout(to)
-        // Any response means the network is reachable; status code doesn't matter for connectivity
-        if (!cancelled) {
-          setOffline(false)
-          setErrorReason(null)
-        }
-      } catch (e) {
-        if (!cancelled) {
-          setOffline(true)
-          if (!navigator.onLine) {
-            setErrorReason('No internet connection. Please check your network.')
-          } else {
-            setErrorReason('Cannot reach server. Please try again or check VPN/firewall.')
-          }
-        }
-      }
-    }
-
-    ping()
-    intervalId = setInterval(ping, 2000)
-
-    const onVisibility = () => {
-      if (document.visibilityState === 'visible') ping()
-    }
-    document.addEventListener('visibilitychange', onVisibility)
-    const conn = navigator.connection
-    const onConn = () => ping()
-    if (conn && conn.addEventListener) conn.addEventListener('change', onConn)
-
-    return () => {
-      cancelled = true
-      clearInterval(intervalId)
-      document.removeEventListener('visibilitychange', onVisibility)
-      if (conn && conn.removeEventListener) conn.removeEventListener('change', onConn)
-    }
-  }, [])
-
-  useEffect(() => {
     const tryPlay = () => {
       if (!videoRef.current) return
       const p = videoRef.current.play()
@@ -136,10 +84,6 @@ export default function OfflineOverlay() {
       window.removeEventListener('click', onInteract)
     }
   }, [offline, blobUrl])
-
-  useEffect(() => {
-    console.debug('OfflineOverlay: offline =', offline)
-  }, [offline])
 
   if (!offline) return null
 

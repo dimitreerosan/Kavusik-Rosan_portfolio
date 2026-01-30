@@ -68,6 +68,11 @@ export default function ProjectModal({ open, onClose, project }) {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading={open ? 'eager' : 'lazy'}
+                  decoding="async"
+                  fetchpriority={open ? 'high' : 'auto'}
+                  width="1280"
+                  height="720"
                   className="absolute inset-0 w-full h-full object-cover"
                   draggable={false}
                   onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}

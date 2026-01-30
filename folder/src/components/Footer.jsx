@@ -18,10 +18,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em'}}>Navigation</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" className="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
-              <li><a href="#projects" className="text-sm text-gray-500 hover:text-white transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+              <li><button type="button" onClick={() => { const el = document.querySelector('#'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Home</button></li>
+              <li><button type="button" onClick={() => { const el = document.querySelector('#about'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">About</button></li>
+              <li><button type="button" onClick={() => { const el = document.querySelector('#projects'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Projects</button></li>
+              <li><button type="button" onClick={() => { const el = document.querySelector('#contact'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Contact</button></li>
             </ul>
           </div>
 
@@ -29,19 +29,19 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em'}}>Contact & Networks</h4>
             <ul className="space-y-2">
-              <li><a href="mailto:kavusikbalu2006@gmail.com" className="text-sm text-gray-500 hover:text-white transition-colors">Mail</a></li>
-              <li><a href="https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="https://github.com/dimitreerosan" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">GitHub</a></li>
+              <li><button type="button" onClick={() => window.location.href = 'mailto:kavusikbalu2006@gmail.com'} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Mail</button></li>
+              <li><button type="button" onClick={() => window.open('https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">LinkedIn</button></li>
+              <li><button type="button" onClick={() => window.open('https://github.com/dimitreerosan', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">GitHub</button></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-600">© {currentYear} Kavusik Rosan. All rights reserved.</p>
-          <div className="flex gap-4 text-xs text-gray-600">
-            <a href="#" className="hover:text-white transition-colors">Legal Mention</a>
+            <div className="flex gap-4 text-xs text-gray-600">
+            <button type="button" onClick={() => {}} className="hover:text-white transition-colors bg-transparent border-none p-0">Legal Mention</button>
             <span>•</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <button type="button" onClick={() => {}} className="hover:text-white transition-colors bg-transparent border-none p-0">Privacy Policy</button>
           </div>
         </div>
       </div>

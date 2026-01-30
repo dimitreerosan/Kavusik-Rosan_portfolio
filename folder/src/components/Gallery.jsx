@@ -24,7 +24,7 @@ export default function Gallery() {
             id: 1,
             title: 'AICTE APF 2025',
             category: 'Achievement',
-            image:AICTEAPF2025,
+            image: AICTEAPF2025,
             alt: 'Award ceremony moment'
         },
         {
@@ -115,7 +115,7 @@ export default function Gallery() {
             id: 14,
             title: 'Technical Event',
             category: 'Event',
-            image:techEventImg,
+            image: techEventImg,
             alt: 'Technical presentation on privacy'
         },
         {
@@ -224,14 +224,35 @@ export default function Gallery() {
                                         }}
                                     >
                                         {/* Image */}
-                                        <div className="relative w-full h-[280px] bg-gray-100 rounded-sm overflow-hidden mb-4 border border-gray-100">
+                                        <div className="relative w-full h-[280px] bg-gray-100 rounded-sm overflow-hidden mb-4 border border-gray-100 group">
+                                            {/* Shimmer/Skeleton loader */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 animate-pulse" />
+
                                             <img
                                                 src={item.image}
-                                                alt={item.alt}
-                                                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                                                loading="lazy"
+                                                alt={`${item.title} - ${item.alt} | Kavusik Rosan`}
+                                                className="relative w-full h-full object-cover z-10"
+                                                loading={Math.abs(position) <= 1 ? "eager" : "lazy"}
+                                                decoding="async"
                                                 draggable={false}
                                                 onContextMenu={(e) => e.preventDefault()}
+                                                onLoad={(e) => e.target.style.opacity = 1}
+                                                onMouseEnter={(e) => {
+                                                    e.currentTarget.style.transform = 'scale(1.09) translate3d(0, 0, 0)'
+                                                    e.currentTarget.style.filter = 'brightness(1.05)'
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    e.currentTarget.style.transform = 'scale(1) translate3d(0, 0, 0)'
+                                                    e.currentTarget.style.filter = 'brightness(1)'
+                                                }}
+                                                style={{
+                                                    opacity: 0,
+                                                    transition: 'opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                    willChange: 'transform, filter',
+                                                    backfaceVisibility: 'hidden',
+                                                    WebkitBackfaceVisibility: 'hidden',
+                                                    transform: 'translate3d(0, 0, 0)'
+                                                }}
                                             />
                                         </div>
 

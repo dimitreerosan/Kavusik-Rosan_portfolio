@@ -127,19 +127,24 @@ export default function ProjectsGrid() {
               ariaLabel={`Open project: ${p.title}`}
             >
               <div className="overflow-hidden rounded-t-xl">
-                <div className="relative w-full aspect-[16/9] bg-black">
+                <div className="relative w-full aspect-[16/9] bg-gray-900 overflow-hidden">
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 animate-pulse" />
+
                   <img
                     src={p.image}
-                    alt={p.title}
+                    alt={`${p.title} - Project by Kavusik Rosan`}
                     loading="lazy"
                     decoding="async"
                     sizes="(min-width: 768px) 50vw, 100vw"
                     width="1280"
                     height="720"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-500 motion-reduce:transition-none z-10"
                     draggable={false}
                     onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
                     onDragStart={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                    onLoad={(e) => e.target.style.opacity = 1}
+                    style={{ opacity: 0 }}
                   />
                 </div>
               </div>
