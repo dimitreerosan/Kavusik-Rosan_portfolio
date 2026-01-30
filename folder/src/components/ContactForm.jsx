@@ -144,7 +144,7 @@ export default function ContactForm() {
                       onClick={() => {
                         const link = document.createElement('a')
                         link.href = resumePdf
-                        link.download = 'Kavusik_Rosan_Resume.pdf'
+                        link.download = 'Kavusik Rosan_Resume.pdf'
                         document.body.appendChild(link)
                         link.click()
                         document.body.removeChild(link)
