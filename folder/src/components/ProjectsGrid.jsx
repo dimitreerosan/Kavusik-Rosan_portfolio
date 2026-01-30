@@ -115,7 +115,7 @@ export default function ProjectsGrid() {
     <section id="projects" className="py-24 px-6 md:px-10 bg-black border-t border-gray-900">
       <div className="max-w-6xl mx-auto w-full">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white" style={{ letterSpacing: '-0.04em' }}>Projects</h2>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white" style={{ letterSpacing: '-0.04em' }}>PROJECT</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {projects.map((p) => (
