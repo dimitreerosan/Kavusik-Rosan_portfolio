@@ -156,7 +156,7 @@ export default function Achievements() {
       span: 'span-6'
     },
     {
-      title: 'Department Newsletter & Magazine Head',
+      title: 'Newsletter & Magazine Head',
       icon: 'newspaper',
       role: 'HEAD',
       year: '2023',
