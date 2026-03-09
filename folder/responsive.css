@@ -5,7 +5,7 @@
   --safe-right: env(safe-area-inset-right);
   --safe-bottom: env(safe-area-inset-bottom);
   --safe-left: env(safe-area-inset-left);
-}
+}r
 
 html {
   box-sizing: border-box;
@@ -35,6 +35,42 @@ img, video, canvas {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Ultra-smooth image hover animations with GPU acceleration */
+img {
+  will-change: transform, filter;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+img:hover {
+  transform: scale(1.08) translate3d(0, 0, 0);
+  filter: brightness(1.05);
+}
+
+/* Container for images */
+.image-wrapper, 
+.image-container,
+.img-container,
+.gallery-item img,
+.project-card img,
+[class*="img"],
+[class*="image"] {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Ensure smooth animation on images in cards */
+.gallery-item,
+.project-card,
+.card {
+  overflow: hidden;
 }
 
 /* Make iframes responsive */

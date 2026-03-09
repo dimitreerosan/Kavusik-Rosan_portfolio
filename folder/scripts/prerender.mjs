@@ -163,15 +163,35 @@ async function main() {
     throw new Error('dist/index.html not found. Run `vite build` first.')
   }
 
+  try {
+    const verifySrc = path.resolve(process.cwd(), '..', 'googlec914f1a6e947a4b4.html')
+    const verifyDest = path.join(DIST_DIR, 'googlec914f1a6e947a4b4.html')
+    if (existsSync(verifySrc)) {
+      await fs.copyFile(verifySrc, verifyDest)
+    }
+  } catch {
+    // ignore
+  }
+
   const delay = (ms) => new Promise((r) => setTimeout(r, ms))
 
   const server = await startStaticServer()
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    executablePath: findBrowserExecutable(),
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  })
+  let browser
+  try {
+    browser = await puppeteer.launch({
+      headless: true,
+      executablePath: findBrowserExecutable(),
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    })
+  } catch (e) {
+    console.warn(
+      '[prerender] Skipping prerender: no Chrome/Edge/Chromium executable found. ' +
+        'Set PUPPETEER_EXECUTABLE_PATH if you want prerendering enabled.'
+    )
+    await server.close()
+    return
+  }
 
   try {
     const page = await browser.newPage()

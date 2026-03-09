@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import './index.css'
 import Hero from './components/Hero'
 import OfflineOverlay from './components/OfflineOverlay'
@@ -14,41 +14,92 @@ const FutureScope = lazy(() => import('./components/FutureScope'))
 const ContactForm = lazy(() => import('./components/ContactForm'))
 const Footer = lazy(() => import('./components/Footer'))
 
+function LazyMount({ children, fallback, rootMargin = '300px 0px' }) {
+  const ref = useRef(null)
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || show) return
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (entry?.isIntersecting) {
+          setShow(true)
+          io.disconnect()
+        }
+      },
+      { rootMargin }
+    )
+
+    io.observe(el)
+    return () => io.disconnect()
+  }, [rootMargin, show])
+
+  return <div ref={ref}>{show ? children : fallback}</div>
+}
+
 function App() {
+  useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [])
+
   return (
     <>
       <OfflineOverlay />
       <ImageProtection />
       <main>
         <Hero />
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <ProjectsGrid />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <Achievements />
-        </Suspense>
-        <Suspense fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
-          <Gallery />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <TechnicalSkills />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <KeyStrengths />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <SoftSkills />
-        </Suspense>
-        <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <FutureScope />
-        </Suspense>
-        <Suspense fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
-          <ContactForm />
-          <Footer />
-        </Suspense>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <About />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <ProjectsGrid />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <Achievements />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
+            <Gallery />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <TechnicalSkills />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <KeyStrengths />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <SoftSkills />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <FutureScope />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>
+            <ContactForm />
+            <Footer />
+          </Suspense>
+        </LazyMount>
       </main>
     </>
   )
