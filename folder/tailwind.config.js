@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
       mono: ["Fira Mono", "Menlo", "Monaco", "Consolas", "monospace"],
+      poppins: ["Poppins", "sans-serif"],
     },
     extend: {
       colors: {

@@ -2,7 +2,7 @@ import React, { useMemo, useState, useCallback } from 'react'
 
 import obscuraImg from '../Obscura Arcanum.jpg'
 
-import dravionImg from '../Obscura Dravion.jpg'
+import dollseyeImg from '../Dolls Eye.jpg'
 
 import linkShiftImg from '../Link shift.jfif'
 
@@ -190,13 +190,13 @@ export default function ProjectsGrid() {
 
       id: 5,
 
-      title: 'Obscura Dravion',
+      title: 'Dolls Eye',
 
       description:
 
         'Biometric intelligence system for rapid video archive search with privacy safeguards.',
 
-      image: dravionImg,
+      image: dollseyeImg,
 
       year: 'AUG 2025',
 
@@ -383,6 +383,7 @@ export default function ProjectsGrid() {
                   {p.completed && !p.live && (
                     <div className="flex items-center gap-2 rounded-full bg-white/5 px-2 py-0.5 border border-white/10">
                       <span className="relative inline-flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                         <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
                       </span>
                       <span className="text-[10px] font-semibold tracking-widest uppercase text-white/70 font-sans">Completed</span>
@@ -391,9 +392,7 @@ export default function ProjectsGrid() {
                 </div>
 
                 <h3 className="text-left text-xl md:text-2xl font-black tracking-tight text-white mb-2" style={{ letterSpacing: '-0.02em' }}>{p.title}</h3>
-
-                <p className="text-left text-gray-400 text-sm md:text-base leading-relaxed">{p.description}</p>
-
+                <p className="text-left text-gray-400 leading-relaxed font-sans" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.85rem' }}>{p.description}</p>
               </div>
 
             </Card>

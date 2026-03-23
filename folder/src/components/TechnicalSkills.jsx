@@ -33,7 +33,7 @@ export default function TechnicalSkills() {
     },
     {
       label: 'AI / ML Frameworks',
-      value: 'PyTorch, TensorFlow, Scikit-learn, OpenCV',
+      value: 'PyTorch, TensorFlow, OpenCV',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -58,7 +58,7 @@ export default function TechnicalSkills() {
     {
       label: 'Security & Privacy Engineering',
       value:
-        'Cryptography Libraries, Encryption Protocols, Adversarial Machine Learning, AI‑Resistant Media Protection, Identity Distortion Protocols',
+        'Encryption Protocols, Adversarial Machine Learning, Identity Distortion Protocols',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -95,7 +95,7 @@ export default function TechnicalSkills() {
     {
       label: 'Computer Vision & Biometrics',
       value:
-        'Facial Landmarking, Object/Region Segmentation (YOLO / Mask R‑CNN / U‑Net), Re‑identification Defense, Deepfake & Synthetic Prevention',
+        'Facial Landmarking, Object/Region Segmentation (YOLO), Re‑identification Defense',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -134,7 +134,7 @@ export default function TechnicalSkills() {
                 <h3 className="text-white font-semibold tracking-tight">{s.label}</h3>
                 <div className="ml-auto"><Badge level={s.level} /></div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">{s.value}</p>
+              <p className="text-gray-400 text-xs font-poppins leading-relaxed">{s.value}</p>
             </div>
           ))}
         </div>

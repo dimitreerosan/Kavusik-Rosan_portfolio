@@ -108,7 +108,7 @@ export default function Achievements() {
       role: 'CAMPUS AMBASSADOR',
       year: '2026',
       impact: 'NATION WIDE',
-      detail: 'Selected as a Campus Ambassador for HCL GUVI under Mission Upskill India, promoting industry-relevant tech education and creating impactful learning opportunities across campus.',
+      detail: 'Selected as a Campus Ambassador for HCL GUVI under Mission Upskill India, promoting industry-relevant tech education and creating impactful learning opportunities across campus, while fostering a culture of innovation and technological advancement among students and faculty. This role enables me to bridge the gap between academia and industry, empowering students with the latest technological skills and knowledge to excel in their careers.',
       span: 'span-12'
     },
     {
@@ -126,7 +126,7 @@ export default function Achievements() {
       role: 'LEAD',
       year: '2024',
       impact: '200+',
-      detail: 'Orchestrated logistics for technical Department symposiums and workshops, managing a team of 20+ volunteers to ensure flawless execution. Spearheaded promotional campaigns that engaged over 5,000 students through digital marketing content and strategic outreach. Bridged communication between students, faculty and external partners to drive attendance and deliver impactful events.',
+      detail: 'Orchestrated logistics for technical department symposiums and workshops, managing a team of 20+ volunteers and executing campaigns that reached 5,000+ students.',
       span: 'span-6'
     },
     {
@@ -179,12 +179,7 @@ export default function Achievements() {
                 </div>
 
                 <h3 className="blueprint-title">{it.title}</h3>
-                <p className="blueprint-desc">{it.detail}</p>
-
-                <div className="mt-6 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
-                  <span className="system-tag mb-0">MODULE_ACTIVE</span>
-                </div>
+                <p className="blueprint-desc" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.85rem' }}>{it.detail}</p>
               </div>
             </div>
           ))}
