@@ -11,7 +11,7 @@ export default function Card({
   noHover = false,
   ...rest
 }) {
-  const base = 'rounded-xl border border-white/10 bg-white/[0.03] transition-all duration-300'
+  const base = 'rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden transition-all duration-300'
   const interactive = noHover ? '' : 'group hover:bg-white/[0.05]'
   const motion = noHover ? '' : 'hover:translate-y-1 hover:scale-[1.01] motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100'
   const focus = 'focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black'

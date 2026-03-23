@@ -4,12 +4,13 @@ import hackathonImg from '../Moments & Milestones/hackathon_coord.jpg'
 import deptMagazineImg from '../Moments & Milestones/dept_magazine.png'
 import deptNewsletterImg from '../Moments & Milestones/dept_newsletter.png'
 import deptEventImg from '../Moments & Milestones/dept_event_symposium.png'
-import workshopImg from '../Moments & Milestones/workshop_img.jpg'
+import workshopImg from '../Moments & Milestones/03.jpeg'
 import techTalkImg from '../Moments & Milestones/WhatsApp Image 2025-09-26 at 13.20.59_37ffbb1b.jpg'
 import deptPromotionalsImg from '../Moments & Milestones/Screenshot 2026-01-22.png'
 import nonTechEventImg from '../Moments & Milestones/non tech.png'
 import techEventImg from '../Moments & Milestones/tech event.png'
 import deptDevChallengeImg from '../Moments & Milestones/Development Challenge.png'
+import hclGuviAmbassadorImg from '../Moments & Milestones/2.png'
 import AICTEAPF2025 from '../Moments & Milestones/WhatsApp Image 2025-11-30 at 15.42.57_df7d9fe5.jpg'
 import YuktiChallenge2025 from '../Moments & Milestones/WhatsApp Image 2025-11-30 at 15.42.54_7db44399.jpg'
 import MediaGuild from '../Moments & Milestones/SAVE_20240428_182952.jpg'
@@ -31,7 +32,7 @@ export default function Gallery() {
             id: 2,
             title: 'HCL GUVI Ambassador',
             category: 'Leadership',
-            image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop',
+            image: hclGuviAmbassadorImg,
             alt: 'Campus ambassador event'
         },
         {

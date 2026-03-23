@@ -121,32 +121,14 @@ export default function Achievements() {
       span: 'span-6'
     },
     {
-      title: 'Department Overall Coordinator',
+      title: 'Overall & Promotional Coordinator ',
       icon: 'users',
       role: 'LEAD',
       year: '2024',
-      impact: '20+ TEAM',
-      detail: 'Managed end-to-end logistics for technical symposiums and workshops, coordinated 20+ volunteers and liaised between students, faculty and stakeholders.',
+      impact: '200+',
+      detail: 'Orchestrated logistics for technical Department symposiums and workshops, managing a team of 20+ volunteers to ensure flawless execution. Spearheaded promotional campaigns that engaged over 5,000 students through digital marketing content and strategic outreach. Bridged communication between students, faculty and external partners to drive attendance and deliver impactful events.',
       span: 'span-6'
     },
-    {
-      title: 'Department Hackathon Coordinator',
-      icon: 'award',
-      role: 'COORDINATOR',
-      year: '2023',
-
-      detail: 'Planned and executed department technical events, workshops, and innovation challenges. Handled scheduling, registrations, and on-ground coordination while mentoring student teams to foster a problem-solving culture across campus.',
-      span: 'span-6'
-    },
-    {
-      title: 'Department Promotional Coordinator',
-      icon: 'megaphone',
-      role: 'COORDINATOR',
-      year: '2024',
-      detail: 'Led marketing campaigns reaching 5,000+ students, created digital content and coordinated with faculty for event growth.',
-      span: 'span-6'
-    },
-
     {
       title: 'College Media Guild Video Editor',
       icon: 'video',
@@ -161,7 +143,7 @@ export default function Achievements() {
       role: 'HEAD',
       year: '2023',
       impact: 'EDITORIAL',
-      detail: 'Managed editorial direction, content design and publishing pipeline.',
+      detail: 'Managed Department Newsletter & Magazine, overseeing editorial direction, content design and publishing pipeline.',
       span: 'span-6'
     },
   ]
