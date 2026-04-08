@@ -1,26 +1,87 @@
 # Kavusik Rosan — Portfolio
 
 > Canonical URL: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
-> Last Updated: January 2026
+> Last Updated: April 2026
+> GitHub: https://github.com/dimitreerosan
+> LinkedIn: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
 
-## About Kavusik Rosan
+---
 
-Kavusik Rosan is a Computer Science student at Sri Shakthi Institute of Engineering and Technology (2023-2027), HCL GUVI Campus Ambassador, and privacy engineer specializing in adversarial machine learning and AI-resistant systems.
+## Executive Summary
+
+Kavusik Rosan is a Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology (2023-2027), **HCL GUVI Campus Ambassador**, and privacy engineer specializing in **adversarial machine learning** and **AI-resistant security systems**. 
 
 **Creator of Obscura Arcanum** — an advanced anti-AI image protection system shortlisted among the top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025. This platform combats unauthorized AI exploitation using adversarial ML with encryption.
 
-**Campus Leader** organizing hackathons, mentoring 200+ students, and building privacy-first tools including secure mobile apps, encrypted P2P platforms, and biometric intelligence systems. Driven to safeguard digital identities through accessible, ethical technology.
+**Key Focus Areas**: Privacy Engineering, Adversarial ML, Cybersecurity, AI Defense Systems
+
+---
+
+## About Kavusik Rosan
+
+As an HCL GUVI Campus Ambassador, Kavusik organizes hackathons, mentors 200+ students, and leads initiatives in privacy-first technology development. His work focuses on building ethical, accessible tools that protect digital identities through adversarial machine learning and encryption.
+
+**Core Values**: 
+- Privacy-first approach to AI
+- Ethical technology development
+- Mentorship and community leadership
+- Innovation in AI defense
+
+---
 
 ## Education
 
 - **BE in Computer Science & Engineering** (2023-2027)  
   Sri Shakthi Institute of Engineering and Technology
+  **Specialization**: AI Security, Adversarial ML, Privacy Engineering
   
 - **HSC (State Board)** (2021-2023)  
   Senior Secondary Education | Percentage: 70%
   
 - **SSLC (Matriculation)** (2020-2021)  
   Secondary Education | Result: Pass
+
+---
+
+## Technical Skills
+
+### Programming Languages
+- Python (Advanced) — ML, data science, automation
+- JavaScript/React (Advanced) — Web development, UI/UX
+- Java (Intermediate) — Backend development
+- C++ (Intermediate) — Systems programming
+- SQL (Advanced) — Database design and optimization
+
+### Machine Learning & AI
+- TensorFlow & Keras (Advanced)
+- Adversarial ML & Model Robustness
+- Computer Vision (OpenCV, MediaPipe)
+- Natural Language Processing (NLP)
+- PyTorch
+- Scikit-learn
+
+### Security & Privacy
+- Cryptography & Encryption
+- AI Security & Defense
+- Adversarial Perturbations
+- Privacy-preserving ML
+
+### Web Technologies
+- React.js
+- Node.js
+- HTML5, CSS3
+- Vite, Webpack
+- RESTful APIs
+- Database Design (SQL, NoSQL)
+
+### Tools & Platforms
+- Git & GitHub
+- Docker & Containerization
+- AWS & Cloud Computing
+- Linux/Unix
+- VS Code, PyCharm, Jupyter Notebooks
+
+---
 
 ## Projects
 
@@ -30,23 +91,107 @@ Kavusik Rosan is a Computer Science student at Sri Shakthi Institute of Engineer
 Shortlisted among top 100 nationally (AICTE APF 2025 & Yukti Challenge 2025). Advanced media protection platform using adversarial machine learning with encryption to combat unauthorized AI exploitation.
 
 - **Technologies**: Python, TensorFlow, Keras, Cryptography libraries
-- **Features**: Adversarial perturbations, encryption layers, privacy-first design
+- **Features**: 
+  - Adversarial perturbations for image obfuscation
+  - Multi-layer encryption
+  - Privacy-first architecture
+  - AI-resistant image transformation
 - **Impact**: Protects digital content from AI scraping and unauthorized training
 - **Status**: Active development, nationally recognized
+- **Recognition**: AICTE APF 2025, Yukti Challenge 2025
 
 ### 2. Virtual Navigator
 **Real-time Hand-Gesture Navigation System**
 
-Computer vision system that interprets hand movements for controlling applications without physical touch.
+Computer vision system that interprets hand movements for controlling applications without physical touch. Advanced gesture recognition for accessibility and hands-free interaction.
 
 - **Technologies**: Python, OpenCV, MediaPipe, Computer Vision
-- **Features**: Real-time gesture recognition, touchless navigation
-- **Use Cases**: Accessibility, hands-free control, interactive presentations
+- **Features**: 
+  - Real-time gesture recognition
+  - Touchless navigation interface
+  - Multi-gesture support
+  - Low-latency processing
+- **Use Cases**: 
+  - Accessibility for differently-abled users
+  - Hands-free control in sterile environments
+  - Interactive presentations and demos
+  - Gaming and entertainment
 
 ### 3. Autoform Assist
 **AI-Powered Form Auto-Fill Mobile App**
 
-Mobile application that automatically fills forms using OCR and NLP for faster, more accurate submissions.
+Mobile application that automatically fills forms using OCR and NLP for faster, more accurate submissions. Reduces manual data entry time and improves user experience.
+
+- **Technologies**: Mobile (React Native/Flutter), Python backend, OpenCV, TensorFlow
+- **Features**:
+  - Optical Character Recognition (OCR)
+  - Natural Language Processing
+  - Smart form field detection
+  - Auto-fill suggestions
+- **Use Cases**: 
+  - Government form submission
+  - Insurance applications
+  - Job applications
+  - Data collection
+
+---
+
+## Key Achievements & Recognition
+
+- **AICTE APF 2025 Shortlisted** — Among top 100 nationally for Obscura Arcanum
+- **Yukti Challenge 2025 Shortlisted** — Recognition for innovative AI defense solution
+- **HCL GUVI Campus Ambassador** — Leading technology initiatives and mentorship
+- **Community Leadership** — Mentored 200+ students in programming and ML
+- **Hackathon Organization** — Organized multiple hackathons to foster innovation
+- **AI Security Pioneer** — Early research in adversarial ML and privacy-preserving systems
+
+---
+
+## Experience
+
+### HCL GUVI - Campus Ambassador
+- Lead technical initiatives and workshops
+- Mentor students in programming and AI/ML
+- Organize and manage hackathons and technical events
+- Community engagement and knowledge sharing
+
+### Sri Shakthi Institute - Video Production & Event Coordination
+- Video editing and content creation for media guild
+- Event coordination and management
+- Technical support for institutional events
+
+---
+
+## Soft Skills
+
+- **Leadership**: Campus Ambassador, mentor to 200+ students
+- **Communication**: Clear technical documentation and presentation skills
+- **Problem-Solving**: Innovative approach to AI security challenges
+- **Collaboration**: Working with teams on national-level projects
+- **Project Management**: End-to-end project execution from ideation to deployment
+- **Adaptability**: Quick learner in emerging technologies
+
+---
+
+## Contact & Connect
+
+- **Email**: kavusikbalu2006@gmail.com
+- **GitHub**: https://github.com/dimitreerosan
+- **LinkedIn**: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
+- **Portfolio**: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
+- **Location**: India
+
+---
+
+## Search Keywords
+
+Kavusik Rosan, kavusik rosan, Adversarial ML, AI Security, Privacy Engineering, Machine Learning, Computer Science, Python Developer, Cybersecurity, AI Defense, Obscura Arcanum, HCL GUVI, AICTE APF, Yukti Challenge, Campus Ambassador, Sri Shakthi Institute, Anti-AI Protection, Image Protection, Cryptography, TensorFlow, Deep Learning Research
+
+---
+
+## Last Updated
+
+April 7, 2026 — This portfolio is actively maintained and regularly updated with new projects and achievements.
 
 - **Technologies**: Mobile development, OCR, NLP, AI/ML
 - **Features**: Intelligent form detection, data extraction, auto-completion
