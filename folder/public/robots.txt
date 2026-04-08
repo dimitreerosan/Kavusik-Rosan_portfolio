@@ -1,4 +1,33 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /test/
+Disallow: /temp/
+
+# Brand Identity - Specific for Kavusik Rosan
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI/ML Crawlers - Enhanced crawling for content
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
 
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap.xml
+Crawl-delay: 1
+
+# SEO Best Practices
+# Kavusik Rosan Portfolio - AI Security Researcher
+# GitHub: @dimitreerosan
+# Focus: Adversarial ML, AI Security, Privacy Engineering, Obscura Arcanum

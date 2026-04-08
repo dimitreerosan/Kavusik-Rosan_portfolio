@@ -105,10 +105,10 @@ export default function FutureScope() {
 
                   <div className="pl-4 border-l-2 border-indigo-500/20 space-y-4">
                     <p className="leading-relaxed text-[#e0e0e0]">
-                      <span className="text-gray-500">"</span>I envision a future where <span className="text-white font-bold">AI benefits every individual</span>, not just big systems.<span className="text-gray-500">"</span>
+                      <span className="text-gray-500">"</span>I envision a future where <span className="text-white font-bold">AI benefits every individual</span> not just big systems.<span className="text-gray-500">"</span>
                     </p>
                     <p className="leading-relaxed text-[#e0e0e0]">
-                      <span className="text-gray-500">"</span>My goal is to build technology that <span className="text-cyan-300 font-medium">empowers people</span>, protects identity, and <span className="text-cyan-300 font-medium">respects privacy</span>.<span className="text-gray-500">"</span>
+                      <span className="text-gray-500">"</span>My goal is to build technology that <span className="text-cyan-300 font-medium">empowers people</span>, protects identity and <span className="text-cyan-300 font-medium">respects privacy</span>.<span className="text-gray-500">"</span>
                     </p>
                     <p className="leading-relaxed text-[#e0e0e0]">
                       <span className="text-gray-500">"</span>AI should enhance human freedom and safety while remaining <span className="text-emerald-300 font-medium">ethical</span>, <span className="text-emerald-300 font-medium">accessible</span>, and <span className="text-emerald-300 font-medium">useful</span> for everyone.<span className="text-gray-500">"</span>

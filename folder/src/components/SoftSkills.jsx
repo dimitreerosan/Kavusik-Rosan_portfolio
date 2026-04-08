@@ -5,37 +5,37 @@ export default function SoftSkills() {
     {
       id: '01',
       title: 'Problem Solving',
-      desc: 'Analytical mindset focused on finding efficient solutions to complex technical challenges.',
+      desc: 'Analytical mindset to engineer efficient solutions for complex technical challenges across AI, security and full-stack development.',
       span: 'col-span-1 md:col-span-2'
     },
     {
       id: '02',
       title: 'Team Leadership',
-      desc: 'Experienced in coordinating diverse teams and mentoring students to achieve collective goals.',
+      desc: 'Lead 20+ volunteers, mentor 200+ students. Skilled in team coordination and collective goal achievement.',
       span: 'col-span-1'
     },
     {
       id: '03',
       title: 'Public Speaking',
-      desc: 'Confident in presenting complex AI and privacy concepts to technical and non-technical audiences.',
+      desc: 'Confident presenting complex AI, privacy and security concepts to diverse audiences.',
       span: 'col-span-1'
     },
     {
       id: '04',
-      title: 'Critical Thinking',
-      desc: 'Evaluating tech from multiple perspectives, especially in AI ethics and data privacy.',
+      title: 'Critical Thinking & Decision Making',
+      desc: 'Evaluate technology from multiple perspectives with focus on AI ethics, privacy, and security impacts.',
       span: 'col-span-1 md:col-span-2'
     },
     {
       id: '05',
       title: 'Creative Design',
-      desc: 'Combining technical skills with aesthetic vision for impactful digital storytelling.',
+      desc: 'Blend technical expertise with design vision for impactful digital experiences and storytelling.',
       span: 'col-span-1'
     },
     {
       id: '06',
       title: 'Rapid Prototyping',
-      desc: 'Fast-paced development of MVPs and proof-of-concept models for emerging technologies.',
+      desc: 'Fast-track development of MVPs and POCs. Skilled in quick iterations and emerging technology adoption.',
       span: 'col-span-1 md:col-span-2'
     },
   ]
@@ -67,7 +67,7 @@ export default function SoftSkills() {
               Soft Skills
             </h2>
             <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-              Interpersonal and cognitive abilities that complement my technical expertise.
+              Interpersonal and cognitive abilities that drive impact and innovation across teams and projects.
             </p>
           </div>
           <div className="hidden md:block h-px bg-gray-800 flex-1 ml-12 mb-4" />
