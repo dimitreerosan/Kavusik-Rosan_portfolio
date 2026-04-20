@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-04-20",
+    "author": "Kavusik Rosan",
+    "institution": "Sri Shakthi Institute of Engineering and Technology"
+  },
+  "resources": {
+    "newsletters": [
+      {
+        "id": "cse-mag-2024-2025",
+        "title": "CSE Magazine 2024 - 2025",
+        "type": "magazine",
+        "url": "https://www.siet.ac.in/newsletter_magazine/CSE%20MAGAZINE%202024%20-%202025.pdf",
+        "category": "academic",
+        "institution": "SIET",
+        "department": "Computer Science Engineering",
+        "year": "2024-2025",
+        "releaseDate": "2024-01-01",
+        "keywords": ["cse", "magazine", "siet", "computer science", "engineering"],
+        "description": "Comprehensive CSE magazine covering technical innovations, student achievements, and departmental activities"
+      },
+      {
+        "id": "cse-newsletter-iii-2024-2025",
+        "title": "CSE Newsletter Issue III 2024 - 2025",
+        "type": "newsletter",
+        "url": "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%202024%20-%202025.pdf",
+        "category": "academic",
+        "institution": "SIET",
+        "department": "Computer Science Engineering",
+        "year": "2024-2025",
+        "issue": 3,
+        "releaseDate": "2024-12-15",
+        "keywords": ["cse", "newsletter", "siet", "issue-3", "computer science"],
+        "description": "Third issue of CSE Newsletter featuring latest developments, student highlights, and industry partnerships"
+      },
+      {
+        "id": "cse-newsletter-ii-2024-2025",
+        "title": "CSE Newsletter Issue II 2024 - 2025",
+        "type": "newsletter",
+        "url": "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20II%202024%20-%202025.pdf",
+        "category": "academic",
+        "institution": "SIET",
+        "department": "Computer Science Engineering",
+        "year": "2024-2025",
+        "issue": 2,
+        "releaseDate": "2024-11-01",
+        "keywords": ["cse", "newsletter", "siet", "issue-2", "computer science"],
+        "description": "Second issue of CSE Newsletter with updates on research initiatives and academic programs"
+      },
+      {
+        "id": "cse-newsletter-i-2024-2025",
+        "title": "CSE Newsletter Issue I 2024 - 2025",
+        "type": "newsletter",
+        "url": "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20I%202024%20-%202025.pdf",
+        "category": "academic",
+        "institution": "SIET",
+        "department": "Computer Science Engineering",
+        "year": "2024-2025",
+        "issue": 1,
+        "releaseDate": "2024-09-15",
+        "keywords": ["cse", "newsletter", "siet", "issue-1", "computer science"],
+        "description": "First issue of CSE Newsletter introducing departmental initiatives and student success stories"
+      }
+    ]
+  },
+  "searchIndex": {
+    "indexed": true,
+    "totalResources": 4,
+    "categories": ["magazine", "newsletter"],
+    "institutions": ["SIET"],
+    "departments": ["Computer Science Engineering"]
+  }
+}
