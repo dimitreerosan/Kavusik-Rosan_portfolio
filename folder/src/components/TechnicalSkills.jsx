@@ -22,8 +22,8 @@ const Badge = ({ level }) => {
 export default function TechnicalSkills() {
   const skills = [
     {
-      label: 'Programming Languages',
-      value: 'Python, Dart (Flutter), JavaScript, TypeScript',
+      label: 'Languages',
+      value: 'Python',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -32,86 +32,85 @@ export default function TechnicalSkills() {
       ),
     },
     {
-      label: 'AI / ML Frameworks',
-      value: 'PyTorch, TensorFlow, OpenCV',
+      label: 'Mobile & Web Development',
+      value: 'React, Bootstrap, Dart (Flutter), Firebase',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="4" r="1.5" fill="currentColor" />
-          <circle cx="6" cy="12" r="1.5" fill="currentColor" />
-          <circle cx="18" cy="12" r="1.5" fill="currentColor" />
-          <circle cx="12" cy="20" r="1.5" fill="currentColor" />
-          <path strokeWidth="1.5" d="M12 5.5v3M7.5 11.5h3M13.5 11.5h3M12 18.5v-3M10 12l-2 6M14 12l2 6" />
+          <rect x="14" y="4" width="7" height="14" rx="2" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17.5 16h0" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M3 18h9" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 14h5" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h7a2 2 0 0 1 2 2v8" />
         </svg>
       ),
     },
     {
-      label: 'Mobile Development',
-      value: 'Flutter and React',
-      level: 'Advanced',
-      icon: (
-        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <rect x="7" y="2" width="10" height="20" rx="2" />
-        </svg>
-      ),
-    },
-    {
-      label: 'Security & Privacy Engineering',
-      value:
-        'Encryption Protocols, Adversarial Machine Learning, Identity Distortion Protocols',
-      level: 'Advanced',
-      icon: (
-        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 2L4 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-8-4z" />
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 12a2 2 0 100-4 2 2 0 000 4z" />
-        </svg>
-      ),
-    },
-    {
-      label: 'Web Technologies',
-      value: 'HTML, CSS, Bootstrap, React, Firebase, Node.js',
-      level: 'Advanced',
-      icon: (
-        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="10" strokeWidth="2" />
-          <path strokeWidth="2" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      ),
-    },
-    {
-      label: 'Networking & Communication',
-      value:
-        'WebRTC, Serverless P2P Connections, Real‑time Encrypted Messaging & File Transfer',
+      label: 'AI / ML',
+      value: 'TensorFlow, PyTorch, Scikit-learn, OpenCV',
       level: 'Intermediate',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="6" cy="6" r="1.5" fill="currentColor" />
-          <circle cx="18" cy="6" r="1.5" fill="currentColor" />
-          <circle cx="12" cy="18" r="1.5" fill="currentColor" />
-          <path strokeWidth="1.5" d="M7 7l5 10M17 7l-5 10M6 6h12" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 3v3M15 3v3M9 18v3M15 18v3" />
+          <rect x="7" y="7" width="10" height="10" rx="2" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 9h3M4 15h3M17 9h3M17 15h3" />
         </svg>
       ),
     },
     {
-      label: 'Computer Vision & Biometrics',
-      value:
-        'Facial Landmarking, Object/Region Segmentation (YOLO), Re‑identification Defense',
-      level: 'Advanced',
+      label: 'Computer Vision',
+      value: 'YOLO, Mask R-CNN, Deepfake Prevention, Facial Landmarks',
+      level: 'Intermediate',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-          <circle cx="12" cy="12" r="3" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M3 7h4l2-2h6l2 2h4v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+          <circle cx="12" cy="13" r="3" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 13h0M15 13h0" />
+        </svg>
+      ),
+    },
+    {
+      label: 'Security & Privacy',
+      value: 'Cryptography, Encryption Protocols, Adversarial ML',
+      level: 'Intermediate',
+      icon: (
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 7l3 1.5v2.5c0 2-1.5 4-3 5-1.5-1-3-3-3-5V8.5l3-1.5z" />
         </svg>
       ),
     },
     {
       label: 'Tools & Platforms',
-      value:
-        'Git, GitHub, VS Code, Windsurf, Cursor, Coder, Trae, Void, Android Studio, Supabase',
+      value: 'Git, Supabase, Firebase, VS Code, Android Studio',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.12 2.12 0 1 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z" />
+        </svg>
+      ),
+    },
+    {
+      label: 'AI Coding Tools',
+      value: 'Claude, GitHub Copilot, Cursor, Windsurf, Gemini',
+      level: 'Advanced',
+      icon: (
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 3l1.2 3.7L17 8l-3.8 1.3L12 13l-1.2-3.7L7 8l3.8-1.3L12 3z" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M19 12l.8 2.4L22 15l-2.2.6L19 18l-.8-2.4L16 15l2.2-.6L19 12z" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 14l.8 2.4L8 17l-2.2.6L5 20l-.8-2.4L2 17l2.2-.6L5 14z" />
+        </svg>
+      ),
+    },
+    {
+      label: 'Backend / APIs',
+      value: 'Node.js, REST APIs (Express), Authentication',
+      level: 'Intermediate',
+      icon: (
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <rect x="4" y="4" width="16" height="6" rx="2" strokeWidth="2" />
+          <rect x="4" y="14" width="16" height="6" rx="2" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M8 7h0M8 17h0" />
         </svg>
       ),
     },

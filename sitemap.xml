@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/</loc>
-<lastmod>2026-04-08</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
+<!-- Main Portfolio Pages -->
+<sitemap>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap-pages.xml</loc>
+<lastmod>2026-04-20</lastmod>
+</sitemap>
+
+<!-- External PDF Resources (SIET Newsletters & Magazines) -->
+<sitemap>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/pdfs-sitemap.xml</loc>
+<lastmod>2026-04-20</lastmod>
+</sitemap>
+
+</sitemapindex>
 

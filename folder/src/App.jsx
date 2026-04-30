@@ -3,6 +3,7 @@ import './index.css'
 import Hero from './components/Hero'
 import OfflineOverlay from './components/OfflineOverlay'
 import ImageProtection from './components/ImageProtection'
+import { injectAchievementMetadata } from './utils/metadata-injector'
 const About = lazy(() => import('./components/AboutNew'))
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'))
 const Achievements = lazy(() => import('./components/Achievements'))
@@ -46,6 +47,9 @@ function App() {
     window.scrollTo(0, 0)
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
+
+    // Inject multi-search-engine metadata for all platforms
+    injectAchievementMetadata()
   }, [])
 
   return (
