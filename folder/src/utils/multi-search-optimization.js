@@ -125,7 +125,6 @@ export function generateOpenGraphTags() {
     ]
   };
 }
-
 /**
  * Generate JSON-LD structured data for search engines and AI crawlers
  */

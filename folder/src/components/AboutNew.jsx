@@ -24,7 +24,7 @@ export default function AboutNew() {
                 KAVUSIK ROSAN
               </h3>
               <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-400 font-sans" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.9rem' }}>
-                Pre-final Year Computer Science student, HCL GUVI Campus Ambassador and privacy engineer specializing in adversarial ML and AI-resistant
+                Final Year Computer Science student, HCL GUVI Campus Ambassador and privacy engineer specializing in adversarial ML and AI-resistant
                 systems. Creator of Obscura Arcanum – shortlisted for AICTE APF 2025 & Yukti Challenge 2025 – an advanced media protection
                 platform combating unauthorized AI exploitation. Campus leader organizing hackathons, mentoring 200+ students and building
                 privacy-first tools: secure mobile apps, encrypted P2P platforms and biometric systems. Driven to safeguard digital

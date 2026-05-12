@@ -14,8 +14,8 @@ const path = require('path');
 console.log(`
 ╔════════════════════════════════════════════════════════════════════╗
 ║         MULTI-SEARCH ENGINE OPTIMIZATION - DEPLOYMENT READY        ║
-║              HCL GUVI Campus Ambassador Achievement                 ║
-║                        Created: 2026-04-20                          ║
+║              HCL GUVI Campus Ambassador Achievement                ║
+║                        Created: 2026-04-20                         ║
 ╚════════════════════════════════════════════════════════════════════╝
 
 📋 SUMMARY
