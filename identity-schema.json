@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#person",
+  "name": "Kavusik Rosan",
+  "alternateName": [
+    "Dimitree",
+    "Alias Dimitree",
+    "Kavusik"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "GitHub Username",
+    "value": "dimitreerosan",
+    "url": "https://github.com/dimitreerosan"
+  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/og-image.svg",
+      "name": "Kavusik Rosan Portfolio Logo",
+      "description": "Official logo of Kavusik Rosan's portfolio"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-hero.jpg",
+      "name": "Kavusik Rosan Professional Portrait",
+      "description": "Professional portrait of Kavusik Rosan, AI Security Engineer"
+    }
+  ],
+  "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
+  "sameAs": [
+    "https://github.com/dimitreerosan",
+    "https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum",
+    "https://twitter.com/dimitreerosan"
+  ],
+  "jobTitle": [
+    "Final Year Computer Science Engineering Student",
+    "AI Security Engineer",
+    "Privacy Engineer",
+    "HCL GUVI Campus Ambassador"
+  ],
+  "worksFor": {
+    "@type": "EducationalOrganization",
+    "name": "Sri Shakthi Institute of Engineering and Technology",
+    "url": "https://www.siet.ac.in/"
+  },
+  "knows": {
+    "@type": "Thing",
+    "name": "Obscura Arcanum",
+    "description": "AI-resistant media protection system"
+  },
+  "birthPlace": {
+    "@type": "Place",
+    "name": "Coimbatore, Tamil Nadu, India"
+  }
+}
