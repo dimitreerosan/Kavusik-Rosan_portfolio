@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run refine-seo && vite build && npm run prerender",
+    "build": "npm run sync-portrait && npm run refine-seo && vite build && npm run prerender",
+    "sync-portrait": "node scripts/sync-official-portrait.mjs",
     "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint . --ext .jsx",

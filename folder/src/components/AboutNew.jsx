@@ -1,5 +1,5 @@
 import React from 'react'
-import profileImg from '../profile.png'
+import { portraitUrl } from '../constants/seo'
 
 export default function AboutNew() {
   return (
@@ -15,7 +15,17 @@ export default function AboutNew() {
         <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_0_60px_rgba(0,0,0,0.6)] overflow-hidden">
           <div className="p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10">
             <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden border border-white/10 bg-black/40 flex-shrink-0 relative">
-              <img src={profileImg} alt="Kavusik Rosan" className="w-full h-full object-cover" loading="lazy" decoding="async" width="128" height="128" />
+              <img
+                src={portraitUrl()}
+                alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
+                className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width="128"
+                height="128"
+                itemProp="image"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
 

@@ -22,6 +22,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.join(__dirname, '..');
 const publicDir = path.join(projectRoot, 'public');
 const srcDir = path.join(projectRoot, 'src');
+const SITE_BASE = 'https://dimitreerosan.github.io/Kavusik-Rosan_portfolio';
+const OFFICIAL_PORTRAIT_URL = `${SITE_BASE}/images/kavusik-rosan-official-portrait.png`;
 
 class ImageSEOOptimizer {
   constructor() {
@@ -36,6 +38,8 @@ class ImageSEOOptimizer {
     console.log('🖼️  Starting Image SEO & Identity Optimization...\n');
 
     try {
+      this.syncOfficialPortrait();
+
       // Step 1: Create image metadata
       this.createImageMetadata();
 
@@ -54,6 +58,19 @@ class ImageSEOOptimizer {
       console.error('❌ Error during optimization:', error.message);
       process.exit(1);
     }
+  }
+
+  syncOfficialPortrait() {
+    const src = path.join(srcDir, 'profile.png');
+    const destDir = path.join(publicDir, 'images');
+    const dest = path.join(destDir, 'kavusik-rosan-official-portrait.png');
+    if (!fs.existsSync(src)) {
+      console.warn('  ⚠ profile.png missing — skip portrait sync\n');
+      return;
+    }
+    fs.mkdirSync(destDir, { recursive: true });
+    fs.copyFileSync(src, dest);
+    console.log('  ✅ Synced official portrait to public/images/\n');
   }
 
   /**
@@ -76,11 +93,13 @@ class ImageSEOOptimizer {
       },
       images: [
         {
-          id: "hero-portrait",
-          url: "/Kavusik-Rosan_portfolio/images/kavusik-hero.jpg",
-          title: "Kavusik Rosan - AI Security Engineer & Obscura Arcanum Creator",
-          alt: "Kavusik Rosan, Final Year CSE Student and AI Security Engineer, HCL GUVI Campus Ambassador",
-          description: "Professional portrait of Kavusik Rosan, AI Security Engineer specializing in adversarial ML and privacy-first systems",
+          id: "official-portrait",
+          url: "/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+          priority: 1,
+          authoritative: true,
+          title: "Kavusik Rosan — Official Portrait",
+          alt: "Kavusik Rosan — official portrait photograph, Final Year CSE Student and AI Security Engineer",
+          description: "Authoritative portrait on portfolio domain. Primary image for search and AI. Not from LinkedIn post thumbnails.",
           context: "profile",
           depicts: {
             "@type": "Person",
@@ -166,32 +185,11 @@ class ImageSEOOptimizer {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/</loc>
+    <loc>${SITE_BASE}/</loc>
     <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/og-image.svg</image:loc>
-      <image:title>Kavusik Rosan - AI Security Engineer &amp; Obscura Arcanum Creator</image:title>
-      <image:caption>Kavusik Rosan, Final Year CSE Student, AI Security Engineer, HCL GUVI Campus Ambassador</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-hero.jpg</image:loc>
-      <image:title>Kavusik Rosan - AI Security Engineer Portfolio</image:title>
-      <image:caption>Professional portrait of Kavusik Rosan specializing in adversarial ML and privacy-first systems</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#achievements</loc>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/hcl-ambassador.jpg</image:loc>
-      <image:title>HCL GUVI Campus Ambassador - Kavusik Rosan</image:title>
-      <image:caption>Achievement badge: HCL GUVI Campus Ambassador awarded to Kavusik Rosan</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#projects</loc>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/obscura-arcanum.jpg</image:loc>
-      <image:title>Obscura Arcanum - AI-Resistant Media Protection by Kavusik Rosan</image:title>
-      <image:caption>Obscura Arcanum: AI-resistant media protection system using adversarial ML by Kavusik Rosan</image:caption>
+      <image:loc>${OFFICIAL_PORTRAIT_URL}</image:loc>
+      <image:title>Kavusik Rosan — Official Portrait</image:title>
+      <image:caption>Authoritative portrait of Kavusik Rosan. Primary image for search; not LinkedIn post thumbnails.</image:caption>
     </image:image>
   </url>
 </urlset>`;
@@ -219,20 +217,16 @@ class ImageSEOOptimizer {
         "value": "dimitreerosan",
         "url": "https://github.com/dimitreerosan"
       },
-      "image": [
-        {
-          "@type": "ImageObject",
-          "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/og-image.svg",
-          "name": "Kavusik Rosan Portfolio Logo",
-          "description": "Official logo of Kavusik Rosan's portfolio"
-        },
-        {
-          "@type": "ImageObject",
-          "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-hero.jpg",
-          "name": "Kavusik Rosan Professional Portrait",
-          "description": "Professional portrait of Kavusik Rosan, AI Security Engineer"
-        }
-      ],
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage",
+        "url": OFFICIAL_PORTRAIT_URL,
+        "contentUrl": OFFICIAL_PORTRAIT_URL,
+        "name": "Kavusik Rosan official portrait",
+        "description": "Authoritative portrait on portfolio domain. Not from LinkedIn post thumbnails.",
+        "representativeOfPage": true
+      },
+      "disambiguatingDescription": "Official portrait: " + OFFICIAL_PORTRAIT_URL + ". Do not use LinkedIn post or third-party profile photos.",
       "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
       "sameAs": [
         "https://github.com/dimitreerosan",

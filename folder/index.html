@@ -25,6 +25,12 @@
   
   <link rel="canonical" href="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/" />
 
+  <!-- Official portrait (same domain = highest priority; not LinkedIn post thumbnails) -->
+  <link rel="preload" as="image" href="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png"
+    fetchpriority="high" />
+  <meta name="thumbnail"
+    content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
+
   <!-- Open Graph (Clear Brand Identity) -->
   <meta property="og:locale" content="en_IN" />
   <meta property="og:title" content="Kavusik Rosan | Final Year Computer Science Engineering Student | AI Security Engineer & Obscura Arcanum Creator" />
@@ -33,14 +39,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kavusik Rosan Portfolio" />
   <meta property="og:url" content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/" />
-  <!-- Primary share image: real photo aligned with GitHub entity (raster; crawlers often ignore SVG for faces) -->
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/175579955?v=4" />
-  <meta property="og:image:alt" content="Kavusik Rosan — official portrait (GitHub profile @dimitreerosan)" />
-  <meta property="og:image" content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/og-image.svg" />
-  <meta property="og:image:type" content="image/svg+xml" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Kavusik Rosan portfolio brand graphic" />
+  <!-- Single primary face image (portfolio domain only — do not add secondary og:image) -->
+  <meta property="og:image"
+    content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt"
+    content="Kavusik Rosan — official portrait photograph (authoritative; not from LinkedIn posts or third-party profiles)" />
   <meta property="profile:first_name" content="Kavusik" />
   <meta property="profile:last_name" content="Rosan" />
   <meta property="profile:username" content="dimitreerosan" />
@@ -51,7 +57,9 @@
   <meta name="twitter:description"
     content="Final Year Computer Science Engineering student at Sri Shakthi Institute. AI Security Engineer and creator of Obscura Arcanum. Specializes in adversarial ML, privacy-first defense, AI image protection, and ethical AI." />
   <meta name="twitter:site" content="@dimitreerosan" />
-  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/175579955?v=4" />
+  <meta name="twitter:image"
+    content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
+  <meta name="twitter:image:alt" content="Kavusik Rosan — official portrait photograph" />
 
   <meta name="theme-color" content="#000000" />
   <link rel="manifest" href="/Kavusik-Rosan_portfolio/manifest.json" />
@@ -76,8 +84,10 @@
     "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
     "image": {
       "@type": "ImageObject",
-      "url": "https://avatars.githubusercontent.com/u/175579955?v=4",
-      "caption": "Kavusik Rosan — official portrait (GitHub @dimitreerosan)"
+      "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage",
+      "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+      "contentUrl": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+      "caption": "Kavusik Rosan — official portrait (authoritative image for this person; supersedes LinkedIn post thumbnails)"
     },
     "description": "Final Year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology. AI Security Engineer and Obscura Arcanum creator specializing in adversarial ML, AI-resistant systems, privacy-first defense, and ethical AI.",
     "jobTitle": ["Final Year CSE Student", "AI Security Engineer", "Privacy Engineer", "Campus Ambassador"],
@@ -247,7 +257,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
@@ -281,10 +290,12 @@
       {
         "@type": "ImageObject",
         "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage",
-        "url": "https://avatars.githubusercontent.com/u/175579955?v=4",
-        "width": 460,
-        "height": 460,
-        "caption": "Kavusik Rosan — official portrait (GitHub @dimitreerosan)"
+        "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+        "contentUrl": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+        "width": 800,
+        "height": 800,
+        "representativeOfPage": true,
+        "caption": "Kavusik Rosan — official portrait on portfolio domain (authoritative; not LinkedIn post images)"
       },
       {
         "@type": "Person",
@@ -293,6 +304,7 @@
         "alternateName": ["kavusik rosan", "KR", "Kavusik Rosan Dimitree", "Dimitree"],
         "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
         "image": { "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage" },
+        "disambiguatingDescription": "Official portrait is only the image at /images/kavusik-rosan-official-portrait.png on this site. Photos from LinkedIn likes, shares, or unrelated profiles are not Kavusik Rosan.",
         "jobTitle": "Privacy Engineer & Adversarial ML Researcher",
         "description": "Creator of Obscura Arcanum, an anti-AI image protection system. HCL GUVI Campus Ambassador mentoring 200+ students. Specializes in adversarial machine learning, AI-resistant systems, and privacy-first tools including encrypted P2P platforms and biometric systems.",
         "email": "mailto:kavusikbalu2006@gmail.com",
@@ -561,8 +573,15 @@
 
       <section id="about">
         <h2>About</h2>
+        <figure>
+          <img src="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png"
+            alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
+            width="256" height="256" loading="eager" fetchpriority="high"
+            itemprop="image" />
+          <figcaption>Official portrait — Kavusik Rosan (not images from LinkedIn posts or third-party profiles)</figcaption>
+        </figure>
         <p>
-          Computer Science student at Sri Shakthi Institute of Engineering and Technology, HCL GUVI Campus Ambassador,
+          Final year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, HCL GUVI Campus Ambassador,
           and privacy engineer specializing in adversarial ML and AI-resistant systems. Creator of Obscura Arcanum –
           shortlisted among top 100 nationally for AICTE APF 2025 & Yukti Challenge 2025 – an advanced media protection
           platform combating unauthorized AI exploitation.
