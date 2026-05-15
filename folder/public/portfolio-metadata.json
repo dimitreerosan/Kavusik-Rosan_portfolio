@@ -1,0 +1,146 @@
+{
+  "version": "2.1",
+  "lastRefined": "2026-05-15",
+  "portfolio": {
+    "title": "Kavusik Rosan | Final Year CSE Student | AI Security Engineer & Obscura Arcanum Creator",
+    "shortTitle": "Kavusik Rosan - AI Security Engineer",
+    "description": "Portfolio of Kavusik Rosan, Final year Computer Science Engineering student at Sri Shakthi Institute. AI Security Engineer and creator of Obscura Arcanum, specializing in adversarial ML, privacy-first systems, AI image protection, and ethical technology.",
+    "language": "en",
+    "locale": "en_IN",
+    "region": "India",
+    "lastUpdated": "2026-05-15"
+  },
+  "person": {
+    "name": "Kavusik Rosan",
+    "aliases": [
+      "Kavusik Rosan",
+      "Dimitree",
+      "Alias Dimitree",
+      "KR"
+    ],
+    "identifier": "dimitreerosan",
+    "email": "contact@example.com",
+    "phone": "+91-XXXXXXXXXX",
+    "location": "Coimbatore, Tamil Nadu, India",
+    "coordinates": {
+      "latitude": 11.0081,
+      "longitude": 76.886
+    }
+  },
+  "roles": [
+    {
+      "role": "Final Year CSE Student",
+      "organization": "Sri Shakthi Institute of Engineering and Technology",
+      "verified": true,
+      "startDate": "2023",
+      "endDate": "2027",
+      "status": "current"
+    },
+    {
+      "role": "AI Security Engineer",
+      "organization": "Self / Projects",
+      "verified": true,
+      "status": "current"
+    },
+    {
+      "role": "HCL GUVI Campus Ambassador",
+      "organization": "HCL & GUVI",
+      "verified": true,
+      "status": "current",
+      "focus": "AI Security, Digital Identity, Tech Education"
+    }
+  ],
+  "expertise": [
+    {
+      "area": "Adversarial Machine Learning",
+      "level": "Expert",
+      "verification": "Projects & Achievements",
+      "relevance_score": 95
+    },
+    {
+      "area": "Privacy Engineering",
+      "level": "Advanced",
+      "verification": "Projects & Achievements",
+      "relevance_score": 90
+    },
+    {
+      "area": "AI Security & Defense",
+      "level": "Expert",
+      "verification": "Projects & Achievements",
+      "relevance_score": 95
+    },
+    {
+      "area": "Digital Forensics",
+      "level": "Intermediate",
+      "verification": "Education",
+      "relevance_score": 80
+    },
+    {
+      "area": "Ethical AI",
+      "level": "Advanced",
+      "verification": "Projects & Research",
+      "relevance_score": 90
+    }
+  ],
+  "socialProfiles": [
+    {
+      "platform": "GitHub",
+      "username": "dimitreerosan",
+      "url": "https://github.com/dimitreerosan",
+      "verified": true,
+      "followers": "150+",
+      "repositories": "15+"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum",
+      "verified": true,
+      "followers": "500+",
+      "headline": "AI Security Engineer & Obscura Arcanum Creator"
+    },
+    {
+      "platform": "Twitter/X",
+      "username": "dimitreerosan",
+      "url": "https://twitter.com/dimitreerosan",
+      "verified": false
+    }
+  ],
+  "projects": [
+    {
+      "name": "Obscura Arcanum",
+      "description": "AI-resistant media protection system using adversarial ML",
+      "recognition": [
+        "AICTE APF 2025",
+        "Yukti Challenge 2025"
+      ],
+      "relevance_score": 100
+    }
+  ],
+  "keywords": [
+    "Kavusik Rosan",
+    "AI Security",
+    "Adversarial Machine Learning",
+    "Privacy Engineering",
+    "Obscura Arcanum",
+    "Final Year CSE Student",
+    "HCL GUVI Campus Ambassador",
+    "AI-Resistant Systems",
+    "Ethical AI",
+    "Digital Forensics",
+    "Sri Shakthi Institute"
+  ],
+  "searchMetrics": {
+    "primaryKeyword": "Kavusik Rosan",
+    "secondaryKeywords": [
+      "AI Security Engineer",
+      "Adversarial ML Researcher",
+      "Obscura Arcanum Creator",
+      "Privacy Engineer"
+    ],
+    "brandKeywords": [
+      "dimitreerosan",
+      "Kavusik Rosan",
+      "Alias Dimitree"
+    ]
+  }
+}

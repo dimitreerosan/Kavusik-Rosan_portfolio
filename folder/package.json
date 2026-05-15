@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run prerender",
+    "build": "npm run refine-seo && vite build && npm run prerender",
     "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint . --ext .jsx",
+    "optimize-images": "node scripts/optimize-image-seo.mjs",
+    "refine-seo": "node scripts/refine-portfolio-seo.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
