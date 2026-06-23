@@ -3,6 +3,7 @@ import './index.css'
 import Hero from './components/Hero'
 import OfflineOverlay from './components/OfflineOverlay'
 import ImageProtection from './components/ImageProtection'
+import WelcomeScreen from './components/WelcomeScreen'
 const About = lazy(() => import('./components/AboutNew'))
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'))
 const Achievements = lazy(() => import('./components/Achievements'))
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <>
+      <WelcomeScreen />
       <OfflineOverlay />
       <ImageProtection />
       <main>

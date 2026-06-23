@@ -2,15 +2,11 @@ import React, { useMemo, useState, useCallback } from 'react'
 
 import obscuraImg from '../Obscura Arcanum.jpg'
 
-import dollseyeImg from '../Dolls Eye.jpg'
-
 import linkShiftImg from '../Link shift.jfif'
 
 import deeplynkImg from '../deeplynk.jpg'
 
 import AutoformAssistImg from '../Autoform Assist.jpg'
-
-import VirtualNavigator from '../VirtualNavigator.jpg'
 
 import Card from './Card'
 
@@ -58,32 +54,6 @@ export default function ProjectsGrid() {
 
     {
 
-      id: 1,
-
-      title: 'ALPort',
-
-      description:
-
-        'Centralized platform for securely managing student, faculty and alumni records. It simplifies document verification, data access, and long-term academic record keeping.',
-
-      image: VirtualNavigator,
-
-      year: 'DEC 2025',
-
-      tags: ['Gesture Control', 'Python'],
-
-      role: 'OpenCV',
-
-      impact: 'Computer Vision',
-
-      live: true,
-
-      link: '#',
-
-    },
-
-    {
-
       id: 6,
 
       title: 'Obscura Arcanum',
@@ -94,7 +64,7 @@ export default function ProjectsGrid() {
 
       image: obscuraImg,
 
-      year: 'Aug 2024',
+      year: 'APR 2024',
 
       tags: ['AI/ML', 'SECURITY'],
 
@@ -120,7 +90,7 @@ export default function ProjectsGrid() {
 
       image: AutoformAssistImg,
 
-      year: 'JAN 2025',
+      year: 'NOV 2025',
 
       tags: ['MOBILE', 'OCR/NLP'],
 
@@ -172,7 +142,7 @@ export default function ProjectsGrid() {
 
       image: linkShiftImg,
 
-      year: 'NOV 2025',
+      year: 'JUL 2025',
 
       tags: ['P2P', 'WEBRTC'],
 
@@ -181,32 +151,6 @@ export default function ProjectsGrid() {
       impact: 'E2E',
 
       completed: true,
-
-      link: '#',
-
-    },
-
-    {
-
-      id: 5,
-
-      title: 'Dolls Eye',
-
-      description:
-
-        'Biometric intelligence system for rapid video archive search with privacy safeguards.',
-
-      image: dollseyeImg,
-
-      year: 'AUG 2025',
-
-      tags: ['CV/BIOMETRICS'],
-
-      role: 'Research',
-
-      impact: 'Privacy',
-
-      live: true,
 
       link: '#',
 

@@ -9,7 +9,6 @@ export default function ImageProtection() {
       if (tag === 'IMG' || tag === 'VIDEO') return { allow: false, protected: true }
       return { allow: false, protected: false }
     }
-
     const isProtectedTarget = (el, x, y) => {
       // First check the composed path
       const path = typeof el?.composedPath === 'function' ? el.composedPath() : null
