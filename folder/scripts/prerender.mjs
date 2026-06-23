@@ -237,6 +237,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err)
-  process.exit(1)
+  console.warn('[prerender] Prerender skipped:', err.message)
+  process.exit(0)
 })

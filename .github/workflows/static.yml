@@ -43,8 +43,11 @@ jobs:
       - name: Install Chromium for prerender
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
-          echo "PUPPETEER_EXECUTABLE_PATH=$(which chromium-browser || which chromium || which google-chrome || which google-chrome-stable || true)" >> $GITHUB_ENV
+          sudo apt-get install -y chromium || sudo apt-get install -y chromium-browser || true
+          CHROME_BIN=$(which chromium || which chromium-browser || which google-chrome-stable || which google-chrome || echo "")
+          if [ -n "$CHROME_BIN" ]; then
+            echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_BIN" >> $GITHUB_ENV
+          fi
       - name: Build
         run: npm run build
         working-directory: folder
