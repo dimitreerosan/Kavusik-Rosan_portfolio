@@ -1,50 +1,38 @@
 import React, { useEffect, useState } from 'react'
-import profileImg from '../profile.png'
 import resumePdf from '../Kavusik Rosan_Resume.pdf'
 import signatureMark from '../Copy of O.png'
+import './ContactForm.css'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     message: '',
     company: '', // honeypot
   })
-  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [startedAt, setStartedAt] = useState(Date.now())
+  const [toast, setToast] = useState(false)
   const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
 
   useEffect(() => {
     setStartedAt(Date.now())
   }, [])
 
-  const [errors, setErrors] = useState({})
+  const showToast = () => {
+    setToast(true)
+    setTimeout(() => setToast(false), 3000)
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target
-
-    // Auto-expand message textarea as user types
-    if (name === 'message') {
-      const el = e.target
-      if (el) {
-        el.style.height = 'auto'
-        el.style.height = `${el.scrollHeight}px`
-      }
-    }
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }))
-    setErrors(prev => ({ ...prev, [name]: '' }))
+    setFormData(prev => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const nextErrors = {}
-    if (!formData.name.trim()) nextErrors.name = 'Please enter your full name.'
-    if (!formData.message.trim()) nextErrors.message = 'Please enter a message.'
-    setErrors(nextErrors)
-    if (Object.keys(nextErrors).length > 0) return
+    const missing = !formData.name.trim() || !formData.email.trim() || !formData.message.trim()
+    if (missing) { showToast(); return }
 
     if (formData.company && formData.company.trim() !== '') return
     const elapsed = Date.now() - startedAt
@@ -54,13 +42,14 @@ export default function ContactForm() {
     try {
       if (FORMSPREE_ID) {
         const subject = `Portfolio Contact from ${formData.name}`
-        const composed = `New message from portfolio\n\nName: ${formData.name}\nTime on page: ${Math.round(elapsed / 1000)}s\n\nMessage:\n${formData.message}`
+        const composed = `New message from portfolio\n\nName: ${formData.name}\nEmail: ${formData.email}\nTime on page: ${Math.round(elapsed / 1000)}s\n\nMessage:\n${formData.message}`
         const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify({
             subject,
             name: formData.name,
+            email: formData.email,
             message: composed,
             _honeypot: formData.company,
             _elapsed: elapsed,
@@ -69,13 +58,11 @@ export default function ContactForm() {
         if (!res.ok) throw new Error('Form submit failed')
       } else {
         const subject = `Portfolio Contact from ${formData.name}`
-        const body = `New message from portfolio\n\nName: ${formData.name}\n\nMessage:\n${formData.message}`
+        const body = `New message from portfolio\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
         const mailtoLink = `mailto:kavusikbalu2006@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
         window.location.href = mailtoLink
       }
-      setSubmitted(true)
-      setFormData({ name: '', message: '', company: '' })
-      setTimeout(() => setSubmitted(false), 3000)
+      setFormData({ name: '', email: '', message: '', company: '' })
     } catch (err) {
       // Fallback
     } finally {
@@ -84,7 +71,15 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="pt-20 pb-10 px-6 md:px-10 bg-black relative overflow-hidden border-t border-gray-900 selection:bg-white selection:text-black">
+    <section id="contact" className="pt-28 pb-10 px-6 md:px-10 bg-black relative overflow-hidden border-t border-gray-900 selection:bg-white selection:text-black">
+
+      {/* Toast notification */}
+      <div className={`contact-toast${toast ? ' contact-toast--visible' : ''}`}>
+        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+        </svg>
+        Fill all the credentials
+      </div>
       <div className="max-w-6xl mx-auto w-full relative z-10 px-4">
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24">
@@ -176,65 +171,63 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Column 2: Send Message */}
-          <div className="md:col-span-7 lg:pl-10">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight uppercase" style={{ letterSpacing: '-0.04em' }}>
-              Send Us A Message
-            </h2>
+          {/* Column 2: Contact Form */}
+          <div className="md:col-span-7 lg:pl-10 flex items-start">
+            <div className="contact-form-card w-full">
+              <form onSubmit={handleSubmit} className="contact-form" autoComplete="off">
+                <div className="contact-form-field">
+                  <label htmlFor="contact-name" className="contact-form-label">Name</label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="contact-form-input"
+                  />
+                </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8" autoComplete="off">
-              <div className="relative group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-neutral-500 focus:outline-none focus:border-white/60 text-lg font-light transition-colors"
-                />
-                {errors.name && <p className="mt-2 font-sans text-sm font-light tracking-tight text-red-500/80">{errors.name}</p>}
-              </div>
-              <div className="relative group">
-                <textarea
-                  name="message"
-                  placeholder="Your message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="1"
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-neutral-500 focus:outline-none focus:border-white/60 resize-none overflow-hidden text-lg font-light min-h-[180px] transition-colors"
-                />
-                {errors.message && <p className="mt-2 font-sans text-sm font-light tracking-tight text-red-500/80">{errors.message}</p>}
-              </div>
+                <div className="contact-form-field">
+                  <label htmlFor="contact-email" className="contact-form-label">Email</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="contact-form-input"
+                  />
+                </div>
 
-              {/* Honeypot */}
-              <input type="text" name="company" className="hidden" value={formData.company} onChange={handleChange} />
+                <div className="contact-form-field">
+                  <label htmlFor="contact-project" className="contact-form-label">Your Message</label>
+                  <textarea
+                    id="contact-project"
+                    name="message"
+                    placeholder="Tell us about your project"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={7}
+                    className="contact-form-textarea"
+                  />
+                </div>
 
-              <div className="pt-10">
+                {/* Honeypot */}
+                <input type="text" name="company" className="hidden" value={formData.company} onChange={handleChange} tabIndex={-1} autoComplete="off" />
+
                 <button
                   type="submit"
                   disabled={loading}
-                  className="relative inline-flex items-center justify-center gap-3 px-10 py-3.5 rounded-full bg-white text-black text-sm font-semibold tracking-wide shadow-sm hover:bg-neutral-100 hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-all duration-300"
+                  className="contact-form-submit"
                 >
-                  <div className="relative z-10 flex items-center justify-center gap-2">
-                    <span className={loading ? 'opacity-70 animate-pulse' : ''}>
-                      {loading ? 'Sending…' : 'Send Message'}
-                    </span>
-                    {!loading && (
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    )}
-                  </div>
+                  {loading ? 'Submitting…' : 'Submit'}
                 </button>
-              </div>
 
-              {submitted && (
-                <div className="flex items-center justify-center gap-2 text-green-400 text-xs font-bold tracking-[0.2em] uppercase animate-in fade-in slide-in-from-bottom-2">
-                  <span>✓</span>
-                  <span>Transmission Received</span>
-                </div>
-              )}
-            </form>
+
+              </form>
+            </div>
           </div>
 
         </div>

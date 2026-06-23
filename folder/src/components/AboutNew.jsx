@@ -1,5 +1,7 @@
 import React from 'react'
 import { portraitUrl } from '../constants/seo'
+import HubSpotSeoBadge from './HubSpotSeoBadge'
+import './AboutNew.css'
 
 export default function AboutNew() {
   return (
@@ -12,7 +14,11 @@ export default function AboutNew() {
           <div className="flex-1 h-px bg-white/10" />
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_0_60px_rgba(0,0,0,0.6)] overflow-hidden">
+        <div className="about-card mt-10 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_0_60px_rgba(0,0,0,0.6)]">
+          <div className="academy-badge">
+            <HubSpotSeoBadge />
+          </div>
+
           <div className="p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10">
             <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden border border-white/10 bg-black/40 flex-shrink-0 relative">
               <img
@@ -29,7 +35,7 @@ export default function AboutNew() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 about-card-content">
               <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase" style={{ letterSpacing: '-0.03em' }}>
                 KAVUSIK ROSAN
               </h3>
@@ -42,12 +48,12 @@ export default function AboutNew() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <a href="#" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <button type="button" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors cursor-default" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   Computer Science & Engineering
-                </a>
-                <a href="#" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                </button>
+                <button type="button" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors cursor-default" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   HCL GUVI Campus Ambassador
-                </a>
+                </button>
               </div>
             </div>
           </div>
