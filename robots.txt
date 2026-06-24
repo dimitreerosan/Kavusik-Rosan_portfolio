@@ -9,6 +9,10 @@ Allow: /pdfs-sitemap.xml
 Allow: /sitemap-pages.xml
 Allow: /achievements-sitemap.xml
 Allow: /achievements-metadata.json
+Allow: /image-sitemap.xml
+Allow: /image-metadata.json
+Allow: /identity-schema.json
+Allow: /images/kavusik-rosan-official-portrait.png
 
 # =======================================
 # GOOGLE SEARCH OPTIMIZATION
@@ -76,6 +80,7 @@ Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap-pages.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/pdfs-sitemap.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/achievements-sitemap.xml
+Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/image-sitemap.xml
 
 Crawl-delay: 1
 

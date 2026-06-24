@@ -4,30 +4,9 @@
   <url>
     <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/</loc>
     <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/og-image.svg</image:loc>
-      <image:title>Kavusik Rosan - AI Security Engineer &amp; Obscura Arcanum Creator</image:title>
-      <image:caption>Kavusik Rosan, Final Year CSE Student, AI Security Engineer, HCL GUVI Campus Ambassador</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-hero.jpg</image:loc>
-      <image:title>Kavusik Rosan - AI Security Engineer Portfolio</image:title>
-      <image:caption>Professional portrait of Kavusik Rosan specializing in adversarial ML and privacy-first systems</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#achievements</loc>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/hcl-ambassador.jpg</image:loc>
-      <image:title>HCL GUVI Campus Ambassador - Kavusik Rosan</image:title>
-      <image:caption>Achievement badge: HCL GUVI Campus Ambassador awarded to Kavusik Rosan</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#projects</loc>
-    <image:image>
-      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/obscura-arcanum.jpg</image:loc>
-      <image:title>Obscura Arcanum - AI-Resistant Media Protection by Kavusik Rosan</image:title>
-      <image:caption>Obscura Arcanum: AI-resistant media protection system using adversarial ML by Kavusik Rosan</image:caption>
+      <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png</image:loc>
+      <image:title>Kavusik Rosan — Official Portrait</image:title>
+      <image:caption>Authoritative portrait of Kavusik Rosan, Final Year CSE Student and AI Security Engineer. Primary image for search; not LinkedIn post thumbnails.</image:caption>
     </image:image>
   </url>
 </urlset>
