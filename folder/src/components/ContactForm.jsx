@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import resumePdf from '../Kavusik Rosan_Resume.pdf'
 import signatureMark from '../Copy of O.png'
 import './ContactForm.css'
+
+const ModelViewer = lazy(() => import('./ModelViewer'))
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -71,7 +73,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="pt-28 pb-10 px-6 md:px-10 bg-black relative overflow-hidden border-t border-gray-900 selection:bg-white selection:text-black">
+    <section id="contact" className="pt-28 pb-1 px-6 md:px-10 bg-black relative overflow-hidden border-t border-gray-900 selection:bg-white selection:text-black">
 
       {/* Toast notification */}
       <div className={`contact-toast${toast ? ' contact-toast--visible' : ''}`}>
@@ -105,59 +107,32 @@ export default function ContactForm() {
               </div>
 
               <div className="space-y-10">
-                <div className="flex gap-4 items-start translate-x-[-4px]">
-                  <div className="w-10 h-10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
-                      <path d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-neutral-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-1">Inquiry</h4>
-                    <p className="text-white text-base font-medium tracking-tight">kavusikbalu2006@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 items-start translate-x-[-4px]">
-                  <div className="w-10 h-10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  </div>
-                  <div>
-                    <h4 className="text-neutral-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-1">Status</h4>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-400 shadow-[0_0_12px_rgba(74,222,128,0.8)] animate-blink" />
-                      <p className="text-white text-base font-medium tracking-tight">Online</p>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Download Resume Button */}
                 <div className="pt-1">
-                  <div className="flex flex-col justify-center">
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a')
+                      link.href = resumePdf
+                      link.download = 'Kavusik Rosan_Resume.pdf'
+                      document.body.appendChild(link)
+                      link.click()
+                      document.body.removeChild(link)
+                    }}
+                    className="group inline-flex items-center gap-3 border-none bg-transparent p-0 cursor-pointer"
+                  >
+                    <span className="flex items-center justify-center w-9 h-9 rounded-full border border-white/20 bg-white/5 group-hover:bg-white/10 transition-colors duration-200">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+                      </svg>
+                    </span>
+                    <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.82rem', fontWeight: '500', color: '#d1d5db', letterSpacing: '0.01em' }}
+                      className="group-hover:text-white transition-colors duration-200">
+                      Download Resume
+                    </span>
+                  </button>
 
-                    <button
-                      onClick={() => {
-                        const link = document.createElement('a')
-                        link.href = resumePdf
-                        link.download = 'Kavusik Rosan_Resume.pdf'
-                        document.body.appendChild(link)
-                        link.click()
-                        document.body.removeChild(link)
-                      }}
-                      className="relative inline-flex items-center justify-center gap-3 px-10 py-3.5 rounded-full bg-white text-black text-sm font-semibold tracking-wide shadow-sm hover:bg-neutral-100 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-all duration-300 cursor-pointer border-none"
-                    >
-                      <span className="relative z-10 whitespace-nowrap">
-                        Download Resume
-                      </span>
-
-                      <div className="relative z-10 w-4 h-4 text-white/70 group-hover:text-white transition-colors duration-300">
-                        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                  <div className="mt-4 flex justify-center">
+                  <div className="mt-2 flex justify-start">
                     <img
                       src={signatureMark}
                       alt="Personal mark"
@@ -165,6 +140,13 @@ export default function ContactForm() {
                       decoding="async"
                       className="w-full max-w-sm h-auto object-contain"
                     />
+                  </div>
+
+                  {/* 3D Model */}
+                  <div className="-mt-4 w-full">
+                    <Suspense fallback={<div style={{ height: '260px' }} />}>
+                      <ModelViewer />
+                    </Suspense>
                   </div>
                 </div>
               </div>
@@ -206,7 +188,7 @@ export default function ContactForm() {
                   <textarea
                     id="contact-project"
                     name="message"
-                    placeholder="Tell us about your project"
+                    placeholder="Enter Your Message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={7}

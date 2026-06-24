@@ -24,16 +24,16 @@ export default function WelcomeScreen() {
       }
     }, 120); // 120ms per letter (approx. 0.84s total typing)
 
-    // Fade out trigger after 10.0 seconds
+    // Fade out trigger after 7.0 seconds
     const fadeTimeout = setTimeout(() => {
       setIsFading(true);
-    }, 10000);
+    }, 7000);
 
-    // Unmount trigger after 10.8 seconds (allows 800ms fade transition)
+    // Unmount trigger after 7.8 seconds (allows 800ms fade transition)
     const unmountTimeout = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = '';
-    }, 10800);
+    }, 7800);
 
     return () => {
       clearInterval(typingInterval);

@@ -1,6 +1,6 @@
 import React from 'react'
 import { portraitUrl } from '../constants/seo'
-import HubSpotSeoBadge from './HubSpotSeoBadge'
+import certImg from '../2f1dcbfc1d894.png'
 import './AboutNew.css'
 
 export default function AboutNew() {
@@ -16,7 +16,30 @@ export default function AboutNew() {
 
         <div className="about-card mt-10 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_0_60px_rgba(0,0,0,0.6)]">
           <div className="academy-badge">
-            <HubSpotSeoBadge />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
+              <img
+                src={certImg}
+                alt="Certification badge"
+                width="110"
+                height="110"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="w-[80px] md:w-[110px] h-auto object-contain"
+              />
+              <span style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '9px',
+                fontWeight: '700',
+                letterSpacing: '0.15em',
+                color: '#b8bcc4',
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                lineHeight: 1.2,
+              }}>
+                SEO Certified
+              </span>
+            </div>
           </div>
 
           <div className="p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10">
