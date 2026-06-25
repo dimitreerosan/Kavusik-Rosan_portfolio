@@ -1,10 +1,10 @@
 /**
- * Backend Search API - Resource Index Handler
- * Processes search queries against SIET CSE Newsletter/Magazine database
- * This is served as a static JSON API but can be enhanced with backend processing
+ * Backend Search API - Resource & External Links Index Handler
+ * Processes search queries against SIET newsletters and verified external citations
  */
 
 import resourceIndex from '../public/resources-index.json' assert { type: 'json' };
+import externalLinksIndex from '../public/external-links-index.json' assert { type: 'json' };
 
 /**
  * Search through indexed resources
@@ -28,6 +28,18 @@ export function searchResources(query, category = null) {
         ...resource,
         searchScore: matchScore,
         type: 'pdf'
+      });
+    }
+  });
+
+  // Search verified external links (GUVI, The Org, HBRP, etc.)
+  externalLinksIndex.links.forEach((link) => {
+    const matchScore = calculateExternalLinkScore(link, searchTerm);
+    if (matchScore > 0) {
+      results.push({
+        ...link,
+        searchScore: matchScore,
+        type: 'external-link'
       });
     }
   });
@@ -82,6 +94,21 @@ function calculateMatchScore(resource, query) {
 }
 
 /**
+ * Calculate relevance score for external link against search query
+ */
+function calculateExternalLinkScore(link, query) {
+  let score = 0;
+
+  if (link.title?.toLowerCase().includes(query)) score += 50;
+  if (link.description?.toLowerCase().includes(query)) score += 30;
+  if (link.relationship?.toLowerCase().includes(query)) score += 25;
+  if (link.keywords?.some(k => k.toLowerCase().includes(query))) score += 20;
+  if (link.organization?.toLowerCase().includes(query)) score += 15;
+
+  return score;
+}
+
+/**
  * Get resource by ID
  * @param {string} id - Resource ID
  * @returns {Object|null} Resource object or null
@@ -95,7 +122,17 @@ export function getResourceById(id) {
  * @returns {Object} All resources with search index metadata
  */
 export function getAllResources() {
-  return resourceIndex;
+  return {
+    ...resourceIndex,
+    externalLinks: externalLinksIndex
+  };
+}
+
+/**
+ * Get all verified external links
+ */
+export function getExternalLinks() {
+  return externalLinksIndex;
 }
 
 /**
@@ -157,7 +194,7 @@ export function getSEOMetadata() {
     title: "SIET CSE Resources - Newsletters & Magazines",
     description: "Comprehensive index of Sri Shakthi Institute of Engineering and Technology CSE Department newsletters and magazines",
     keywords: ["SIET", "CSE", "computer science", "engineering", "newsletter", "magazine"],
-    resourceCount: resourceIndex.resources.newsletters.length,
+    resourceCount: resourceIndex.resources.newsletters.length + externalLinksIndex.links.length,
     lastUpdated: resourceIndex.metadata.lastUpdated,
     searchable: true
   };

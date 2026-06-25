@@ -18,7 +18,7 @@ function STLModel() {
   const size = new THREE.Vector3()
   box.getSize(size)
   const maxDim = Math.max(size.x, size.y, size.z)
-  const scale = 2.0 / maxDim
+  const scale = 0.7 / maxDim
 
   useFrame(({ clock }) => {
     if (!floatRef.current) return
@@ -31,12 +31,12 @@ function STLModel() {
     floatRef.current.rotation.z = Math.sin(t * 0.9) * 0.18
 
     // Jump: smooth bounce arc (abs sine — lands and leaps)
-    const jumpY = Math.abs(Math.sin(t * 0.75)) * 0.85
+    const jumpY = Math.abs(Math.sin(t * 0.75)) * 0.5
 
     // Float: slow gentle drift layered on jump
     const floatY = Math.sin(t * 0.42) * 0.1
 
-    floatRef.current.position.y = jumpY + floatY
+    floatRef.current.position.y = jumpY + floatY + 0.3
   })
 
   return (
@@ -62,9 +62,9 @@ function STLModel() {
 
 export default function ModelViewer() {
   return (
-    <div style={{ width: '100%', height: '300px', borderRadius: '12px', overflow: 'hidden' }}>
+    <div style={{ width: '100%', height: '100%' }}>
       <Canvas
-        camera={{ position: [0, 1.5, 6], fov: 40 }}
+        camera={{ position: [0, 0, 5], fov: 40 }}
         gl={{ antialias: true, alpha: true }}
         style={{ background: 'transparent' }}
         shadows

@@ -90,7 +90,7 @@
   line-height: 1;
   letter-spacing: -0.01em;
   cursor: pointer;
-  margin-bottom: 0;
+  margin-bottom: 40px;
   transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 

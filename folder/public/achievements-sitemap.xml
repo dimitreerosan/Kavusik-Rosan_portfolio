@@ -7,10 +7,9 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
 <!-- HCL GUVI Campus Ambassador Achievement -->
-<!-- Primary searchable achievement across all search engines -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/achievements#hcl-guvi-ambassador</loc>
-<lastmod>2026-04-20</lastmod>
+<lastmod>2026-06-25</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1.0</priority>
 </url>
@@ -18,17 +17,32 @@
 <!-- All Achievement Section -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio#achievements</loc>
-<lastmod>2026-04-20</lastmod>
+<lastmod>2026-06-25</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 
-<!-- Detailed Achievement Metadata -->
+<!-- Verified External Links (GUVI, The Org, HBRP, SIET) -->
 <url>
-<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/public/achievements-metadata.json</loc>
-<lastmod>2026-04-20</lastmod>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#verified-links</loc>
+<lastmod>2026-06-25</lastmod>
 <changefreq>monthly</changefreq>
-<priority>0.8</priority>
+<priority>0.95</priority>
+</url>
+
+<!-- Achievement & External Links Metadata -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/achievements-metadata.json</loc>
+<lastmod>2026-06-25</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.85</priority>
+</url>
+
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-index.json</loc>
+<lastmod>2026-06-25</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
 </url>
 
 </urlset>

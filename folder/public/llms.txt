@@ -1,7 +1,7 @@
 # Kavusik Rosan — Portfolio
 
 > Canonical URL: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
-> Last Updated: May 2026
+> Last Updated: June 2026
 > GitHub: https://github.com/dimitreerosan
 > LinkedIn: https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum
 
@@ -197,15 +197,30 @@ Mobile application that automatically fills forms using OCR and NLP for faster, 
 
 ---
 
+## Verified External Links (Worldwide Search Index)
+
+Backend discovery file: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-index.json
+
+| Source | URL | Relationship |
+|--------|-----|--------------|
+| The Org — GUVI Campus Engagement | https://theorg.com/org/guvi-in/teams/campus-engagement | HCL GUVI Campus Ambassador |
+| GUVI Blog — Windsurf AI Guide | https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/ | GUVI technical education |
+| HBRP Publication — JRRFIH Journal | https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN | Research author, SIET CSE |
+| SIET CSE Newsletter Issue III 2023-2024 | https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%20%202023%20-%202024.pdf | Newsletter & Magazine Head |
+| SIET CSE Newsletter Issue II 2024-2025 | https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20II%202024%20-%202025.pdf | Editorial leadership |
+| SIET CSE Newsletter Issue I 2024-2025 | https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20I%202024%20-%202025.pdf | Editorial leadership |
+
+---
+
 ## Search Keywords
 
-Kavusik Rosan, kavusik rosan, Adversarial ML, AI Security, Privacy Engineering, Machine Learning, Computer Science, Python Developer, Cybersecurity, AI Defense, Obscura Arcanum, HCL GUVI, AICTE APF, Yukti Challenge, Campus Ambassador, Sri Shakthi Institute, Anti-AI Protection, Image Protection, Cryptography, TensorFlow, Deep Learning Research
+Kavusik Rosan, kavusik rosan portfolio, kavusik rosan AI security, kavusik rosan privacy engineer, kavusik rosan Coimbatore, kavusik rosan SIET, kavusik rosan obscura arcanum, kavusik rosan HCL GUVI, kavusik rosan GUVI Campus Engagement, kavusik rosan The Org, kavusik rosan Windsurf AI, kavusik rosan HBRP, kavusik rosan author, kavusik rosan newsletter, kavusik rosan AICTE, kavusik rosan Yukti, kavusik rosan github, kavusik rosan linkedin, kavusik rosan dimitree, dimitreerosan, Adversarial ML India, AI Security Engineer India, Privacy Engineering student India, Machine Learning security researcher, Computer Science student Coimbatore, Python developer Tamil Nadu, Cybersecurity student India, AI Defense researcher, Obscura Arcanum creator, HCL GUVI Campus Ambassador 2026, AICTE APF 2025 top 100, Yukti Challenge 2025 finalist, Campus Ambassador India, Sri Shakthi Institute of Engineering Technology, SIET CSE student, Anti-AI Protection system, AI image protection tool, Cryptography developer India, TensorFlow adversarial ML, Deep Learning security, deepfake prevention India, encrypted P2P WebRTC, biometric security system, student AI researcher India, ethical AI developer, privacy-first technology, AI-resistant systems developer, secure mobile app Android, hackathon organizer student, tech mentor India, 200 students mentored, campus leader CSE
 
 ---
 
 ## Last Updated
 
-April 7, 2026 — This portfolio is actively maintained and regularly updated with new projects and achievements.
+June 2026 — This portfolio is actively maintained and regularly updated with new projects and achievements.
 
 - **Technologies**: Mobile development, OCR, NLP, AI/ML
 - **Features**: Intelligent form detection, data extraction, auto-completion

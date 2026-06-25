@@ -163,6 +163,12 @@ async function main() {
     throw new Error('dist/index.html not found. Run `vite build` first.')
   }
 
+  const originalHtml = await fs.readFile(indexPath, 'utf8')
+  const originalHeadMatch = originalHtml.match(/<head[^>]*>[\s\S]*?<\/head>/i)
+  const originalHead = originalHeadMatch ? originalHeadMatch[0] : null
+  const originalNoscriptMatch = originalHtml.match(/<noscript[^>]*>[\s\S]*?<\/noscript>/i)
+  const originalNoscript = originalNoscriptMatch ? originalNoscriptMatch[0] : null
+
   try {
     const verifySrc = path.resolve(process.cwd(), '..', 'googlec914f1a6e947a4b4.html')
     const verifyDest = path.join(DIST_DIR, 'googlec914f1a6e947a4b4.html')
@@ -227,6 +233,18 @@ async function main() {
     let html = await page.content()
     if (!/^<!doctype html>/i.test(html)) {
       html = `<!DOCTYPE html>\n${html}`
+    }
+
+    if (originalHead) {
+      html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/i, originalHead)
+    }
+
+    if (originalNoscript) {
+      if (/<noscript[^>]*>[\s\S]*?<\/noscript>/i.test(html)) {
+        html = html.replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/i, originalNoscript)
+      } else {
+        html = html.replace(/<body[^>]*>/i, (match) => `${match}\n  ${originalNoscript}\n`)
+      }
     }
 
     await fs.writeFile(indexPath, html, 'utf8')

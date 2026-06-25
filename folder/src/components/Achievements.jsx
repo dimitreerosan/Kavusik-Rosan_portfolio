@@ -1,189 +1,359 @@
-import React from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Achievements.css'
 
-// Technical Icons using inline SVGs
-const Icon = ({ name, className = 'w-6 h-6' }) => {
-  const common = 'stroke-current fill-none';
-  const w = "1.5";
-  switch (name) {
-    case 'award':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <circle cx="12" cy="8" r="4" />
-          <path d="M10 12 7 21l5-3 5 3-3-9" />
-        </svg>
-      )
-    case 'shield':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3Z" />
-          <path d="M9 12l2 2 4-4" />
-        </svg>
-      )
-    case 'megaphone':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M3 10v4m0-4 12-5v14L3 14m6 2 1 4" />
-          <path d="M18 9l2-1m-2 4 2 1" />
-        </svg>
-      )
-    case 'users':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <circle cx="8" cy="8" r="3" />
-          <path d="M2 20a6 6 0 0 1 12 0" />
-          <circle cx="17" cy="9" r="2.5" />
-          <path d="M13.5 20a5.5 5.5 0 0 1 8.5 0" />
-        </svg>
-      )
-    case 'mortarboard':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0-1.66 0z" />
-          <path d="M22 10v6" />
-          <path d="M6 12.5V16a6 3 0 0 0 12 0v-4" />
-        </svg>
-      )
-    case 'sparkles':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M12 3l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4Z" />
-          <path d="m19 13 1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z" />
-        </svg>
-      )
-    case 'newspaper':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M4 5h12v14H5a1 1 0 0 1-1-1V5Z" />
-          <path d="M16 7h3v11a1 1 0 0 1-1 1h-2V7ZM7 9h7M7 12h7M7 15h5" />
-        </svg>
-      )
-    case 'video':
-      return (
-        <svg className={className} viewBox="0 0 24 24" strokeWidth={w}>
-          <path d="M3 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z" />
-          <path d="m17 10 4-2v8l-4-2v-4Z" />
-        </svg>
-      )
-    default:
-      return null
+const items = [
+  {
+    role: 'Campus Ambassador',
+    year: '2026',
+    impact: 'Nation Wide',
+    title: 'HCL GUVI Campus Ambassador',
+    detail:
+      'Selected as a Campus Ambassador for HCL GUVI under Mission Upskill India, promoting industry-relevant tech education and creating impactful learning opportunities across campus, while fostering a culture of innovation and technological advancement among students and faculty. This role enables me to bridge the gap between academia and industry, empowering students with the latest technological skills and knowledge to excel in their careers.',
+  },
+  {
+    role: 'Founder',
+    year: '2025',
+    impact: 'Top 100',
+    title: 'Obscura Arcanum',
+    detail:
+      'Shortlisted for AICTE APF 2025 and Yukti Innovation Challenge 2025, recognizing national-level innovation in AI safety, privacy engineering and adversarial ML.',
+  },
+  {
+    role: 'Lead',
+    year: '2024',
+    impact: '200+',
+    title: 'Overall & Promotional Coordinator',
+    detail:
+      'Orchestrated logistics for technical department symposiums and workshops, managing a team of 20+ volunteers and executing campaigns that reached 5,000+ students.',
+  },
+  {
+    role: 'Executive',
+    year: '2023',
+    title: 'College Media Guild Video Editor',
+    detail:
+      'Produced high-impact promotional content and recognized for enhancing media visibility.',
+  },
+  {
+    role: 'Head',
+    year: '2023',
+    impact: 'Editorial',
+    title: 'Newsletter & Magazine Head',
+    detail:
+      'Managed Department Newsletter & Magazine, overseeing editorial direction, content design and publishing pipeline.',
+  },
+]
+
+const ENTER_PX        = 220
+const HOLD_PX         = 350
+const EXIT_PX         = 180
+const ZONE_PX         = ENTER_PX + HOLD_PX + EXIT_PX  // 750
+const TOTAL_SCROLL_PX = ZONE_PX * items.length
+const MOBILE_BREAKPOINT = 768
+
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)) }
+function easeOutExpo(t)   { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t) }
+function easeInExpo(t)    { return t === 0 ? 0 : Math.pow(2, 10 * t - 10) }
+
+function getItemState(i, scrolled) {
+  const zoneStart  = i * ZONE_PX
+  const enterStart = zoneStart
+  const holdStart  = enterStart + ENTER_PX
+  const exitStart  = holdStart  + HOLD_PX
+  const exitEnd    = exitStart  + EXIT_PX
+
+  if (scrolled < enterStart)
+    return { phase: 'before', progress: 0, opacity: 0, translateY: 40 }
+
+  if (scrolled < holdStart) {
+    const raw = (scrolled - enterStart) / ENTER_PX
+    const t   = easeOutExpo(raw)
+    return {
+      phase: 'enter', progress: t, opacity: t,
+      translateY: (1 - t) * 40, blur: (1 - t) * 6,
+      meta:  clamp((t - 0.00) / 0.50, 0, 1),
+      title: clamp((t - 0.20) / 0.55, 0, 1),
+      body:  clamp((t - 0.40) / 0.60, 0, 1),
+    }
   }
+
+  if (scrolled < exitStart)
+    return { phase: 'hold', progress: 1, opacity: 1, translateY: 0, blur: 0, meta: 1, title: 1, body: 1 }
+
+  if (scrolled < exitEnd) {
+    const raw = (scrolled - exitStart) / EXIT_PX
+    const t   = easeInExpo(raw)
+    return {
+      phase: 'exit', progress: 1 - t, opacity: 1 - t,
+      translateY: -t * 40, blur: t * 6,
+      meta:  clamp(1 - (t - 0.00) / 0.60, 0, 1),
+      title: clamp(1 - (t - 0.20) / 0.55, 0, 1),
+      body:  clamp(1 - (t - 0.40) / 0.50, 0, 1),
+    }
+  }
+
+  return { phase: 'after', progress: 0, opacity: 0, translateY: -40 }
 }
 
-const StarField = () => {
-  const stars = Array.from({ length: 40 }).map((_, i) => ({
-    id: i,
-    top: `${Math.random() * 100}%`,
-    left: `${Math.random() * 100}%`,
-    size: `${Math.random() * 2 + 1}px`,
-    duration: `${Math.random() * 3 + 2}s`,
-    delay: `${Math.random() * 5}s`,
-  }));
-
-  return (
-    <div className="stars-container">
-      {stars.map((s) => (
-        <div
-          key={`star-${s.id}`}
-          className="star"
-          style={{
-            top: s.top,
-            left: s.left,
-            width: s.size,
-            height: s.size,
-            '--duration': s.duration,
-            '--delay': s.delay,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+function randomHex(len = 18) {
+  return Array.from({ length: len }, () =>
+    Math.floor(Math.random() * 16).toString(16).toUpperCase()
+  ).join('')
+}
 
 export default function Achievements() {
-  const items = [
-    {
-      title: 'HCL GUVI Campus Ambassador',
-      icon: 'mortarboard',
-      role: 'CAMPUS AMBASSADOR',
-      year: '2026',
-      impact: 'NATION WIDE',
-      detail: 'Selected as a Campus Ambassador for HCL GUVI under Mission Upskill India, promoting industry-relevant tech education and creating impactful learning opportunities across campus, while fostering a culture of innovation and technological advancement among students and faculty. This role enables me to bridge the gap between academia and industry, empowering students with the latest technological skills and knowledge to excel in their careers.',
-      span: 'span-12'
-    },
-    {
-      title: 'Obscura Arcanum',
-      icon: 'shield',
-      role: 'FOUNDER',
-      year: '2025',
-      impact: 'TOP 100',
-      detail: 'Shortlisted for AICTE APF 2025 and Yukti Innovation Challenge 2025, recognizing national-level innovation in AI safety, privacy engineering and adversarial ML.',
-      span: 'span-6'
-    },
-    {
-      title: 'Overall & Promotional Coordinator ',
-      icon: 'users',
-      role: 'LEAD',
-      year: '2024',
-      impact: '200+',
-      detail: 'Orchestrated logistics for technical department symposiums and workshops, managing a team of 20+ volunteers and executing campaigns that reached 5,000+ students.',
-      span: 'span-6'
-    },
-    {
-      title: 'College Media Guild Video Editor',
-      icon: 'video',
-      role: 'EXECUTIVE',
-      year: '2023',
-      detail: 'Produced high-impact promotional content and recognized for enhancing media visibility.',
-      span: 'span-6'
-    },
-    {
-      title: 'Newsletter & Magazine Head',
-      icon: 'newspaper',
-      role: 'HEAD',
-      year: '2023',
-      impact: 'EDITORIAL',
-      detail: 'Managed Department Newsletter & Magazine, overseeing editorial direction, content design and publishing pipeline.',
-      span: 'span-6'
-    },
-  ]
+  const sectionRef    = useRef(null)
+  const rafRef        = useRef(null)
+  const sectionTopRef = useRef(null)
+  const [scrolled, setScrolled] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [hexLines, setHexLines] = useState(() => Array.from({ length: 7 }, () => randomHex()))
+  const [glitch, setGlitch]     = useState(false)
+
+  // Refresh hex stream every 1.4s
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHexLines(Array.from({ length: 7 }, () => randomHex()))
+    }, 1400)
+    return () => clearInterval(id)
+  }, [])
+
+  // Random glitch on heading
+  useEffect(() => {
+    let timeoutId
+    const schedule = () => {
+      timeoutId = setTimeout(() => {
+        setGlitch(true)
+        setTimeout(() => { setGlitch(false); schedule() }, 280)
+      }, 4000 + Math.random() * 4000)
+    }
+    schedule()
+    return () => clearTimeout(timeoutId)
+  }, [])
+
+  const cacheTop = () => {
+    const el = sectionRef.current
+    if (!el) return
+    sectionTopRef.current = el.getBoundingClientRect().top + window.scrollY
+  }
+
+  const update = () => {
+    if (window.innerWidth < MOBILE_BREAKPOINT) { setIsMobile(true); return }
+    setIsMobile(false)
+    if (sectionTopRef.current === null) cacheTop()
+    if (sectionTopRef.current === null) return
+    const s = clamp(window.scrollY - sectionTopRef.current, 0, TOTAL_SCROLL_PX)
+    setScrolled(s)
+  }
+
+  const onScroll = () => {
+    if (rafRef.current) return
+    rafRef.current = requestAnimationFrame(() => { rafRef.current = null; update() })
+  }
+
+  useEffect(() => {
+    const timers = [50, 150, 300, 600].map((d) =>
+      setTimeout(() => { cacheTop(); update() }, d)
+    )
+    window.addEventListener('scroll', onScroll, { passive: true })
+    const onResize = () => { sectionTopRef.current = null; cacheTop(); update() }
+    window.addEventListener('resize', onResize, { passive: true })
+    return () => {
+      timers.forEach(clearTimeout)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onResize)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const activeIdx = !isMobile
+    ? items.reduce((found, _, i) => {
+        const s = getItemState(i, scrolled)
+        return (s.phase === 'hold' || s.phase === 'enter' || s.phase === 'exit') ? i : found
+      }, 0)
+    : 0
+
+  const activeState = getItemState(activeIdx, scrolled)
+  const overallPct  = clamp((scrolled / TOTAL_SCROLL_PX) * 100, 0, 100)
 
   return (
-    <section id="achievements" className="relative py-20 px-6 md:px-10 bg-[#050505] overflow-hidden">
-      <StarField />
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="mb-20">
-          <span className="system-tag text-white/20 mb-4 tracking-[0.3em]">/// ACHV_SPEC_V2.0</span>
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase">
-            Achievements
-          </h2>
-          <div className="h-px bg-white/10 w-full mt-6"></div>
-        </div>
+    <section
+      ref={sectionRef}
+      id="achievements"
+      className="achv-section"
+      style={isMobile ? {} : { height: `calc(100vh + ${TOTAL_SCROLL_PX}px)` }}
+    >
+      <div className="achv-sticky">
+        {/* Scanlines */}
+        <div className="achv-scanlines" aria-hidden="true" />
 
-        <div className="blueprint-grid">
-          {items.map((it, idx) => (
-            <div key={idx} className={`blueprint-module ${it.span}`}>
-              <div className="bracket-bottom"></div>
-              <div className="noise-overlay"></div>
-              <div className="scanline"></div>
+        <div className="achv-inner">
 
-              <div className="blueprint-icon-box">
-                <Icon name={it.icon} className="w-12 h-12 text-white" />
+          {/* ── LEFT PANEL ── */}
+          <div className="achv-left">
+            <div className="achv-left__grid" aria-hidden="true" />
+
+            {/* Ghost number */}
+            {!isMobile && (
+              <div
+                className="achv-ghost-num"
+                aria-hidden="true"
+                style={{ opacity: 0.04 + activeState.progress * 0.04 }}
+              >
+                {String(activeIdx + 1).padStart(2, '0')}
               </div>
+            )}
 
-              <div className="relative z-10">
-                <div className="flex flex-wrap gap-4 mb-3">
-                  <span className="system-tag">[ ROLE: {it.role} ]</span>
-                  <span className="system-tag">[ YEAR: {it.year} ]</span>
-                  {it.impact && <span className="system-tag">[ IMPACT: {it.impact} ]</span>}
-                </div>
+            {/* Corner brackets */}
+            <div className="achv-corner achv-corner--tl" aria-hidden="true" />
+            <div className="achv-corner achv-corner--br" aria-hidden="true" />
 
-                <h3 className="blueprint-title">{it.title}</h3>
-                <p className="blueprint-desc" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.85rem' }}>{it.detail}</p>
+            {/* Heading */}
+            <h2 className={`achv-heading${glitch ? ' achv-heading--glitch' : ''}`}>
+              ACHIEVEMENTS
+            </h2>
+
+            {/* HUD status row */}
+            {!isMobile && (
+              <div className="achv-hud" aria-hidden="true">
+                <span className="achv-hud__dot" />
+                <span className="achv-hud__label">SYS:ACTIVE</span>
+                <span className="achv-hud__sep">|</span>
+                <span className="achv-hud__label">
+                  REC&nbsp;{String(activeIdx + 1).padStart(2, '0')}&nbsp;OF&nbsp;{String(items.length).padStart(2, '0')}
+                </span>
               </div>
+            )}
+
+            {/* Hex data stream */}
+            {!isMobile && (
+              <div className="achv-hexstream" aria-hidden="true">
+                {hexLines.map((line, i) => (
+                  <div key={i} className="achv-hexstream__line">{line}</div>
+                ))}
+              </div>
+            )}
+
+            {/* Vertical progress track */}
+            {!isMobile && (
+              <div className="achv-vtrack" aria-hidden="true">
+                <div className="achv-vtrack__fill" style={{ height: `${overallPct}%` }} />
+              </div>
+            )}
+
+
+          </div>
+
+          {/* ── RIGHT PANEL ── */}
+          <div className="achv-right">
+            <div className="achv-frame achv-frame--tl" aria-hidden="true" />
+            <div className="achv-frame achv-frame--tr" aria-hidden="true" />
+            <div className="achv-frame achv-frame--bl" aria-hidden="true" />
+            <div className="achv-frame achv-frame--br" aria-hidden="true" />
+
+
+
+            <div className="achv-viewport">
+              {isMobile
+                ? items.map((item) => (
+                    <div key={item.title} className="achv-item-mobile">
+                      <div className="achv-meta">
+                        <span className="achv-meta__tag">[ ROLE: {item.role.toUpperCase()} ]</span>
+                        <span className="achv-meta__tag">[ YEAR: {item.year} ]</span>
+                        {item.impact && (
+                          <span className="achv-meta__tag">[ IMPACT: {item.impact.toUpperCase()} ]</span>
+                        )}
+                      </div>
+                      <h3 className="achv-title">{item.title}</h3>
+                      <p className="achv-detail">{item.detail}</p>
+                    </div>
+                  ))
+                : items.map((item, i) => {
+                    const s = getItemState(i, scrolled)
+                    if (s.phase === 'before' || s.phase === 'after') return null
+
+                    return (
+                      <div
+                        key={item.title}
+                        className={`achv-item${s.phase === 'hold' ? ' achv-item--locked' : ''}`}
+                        style={{
+                          opacity: s.opacity,
+                          transform: `translate(-50%, calc(-50% + ${s.translateY}px))`,
+                          filter: s.blur ? `blur(${s.blur}px)` : 'none',
+                        }}
+                      >
+                        <div
+                          className="achv-meta"
+                          style={{
+                            opacity: s.meta ?? s.opacity,
+                            transform: `translateY(${(1 - (s.meta ?? 1)) * 18}px)`,
+                          }}
+                        >
+                          <span className="achv-meta__tag">[ ROLE: {item.role.toUpperCase()} ]</span>
+                          <span className="achv-meta__tag">[ YEAR: {item.year} ]</span>
+                          {item.impact && (
+                            <span className="achv-meta__tag">[ IMPACT: {item.impact.toUpperCase()} ]</span>
+                          )}
+                        </div>
+                        <h3
+                          className="achv-title"
+                          style={{
+                            opacity: s.title ?? s.opacity,
+                            transform: `translateY(${(1 - (s.title ?? 1)) * 22}px)`,
+                          }}
+                        >
+                          {item.title}
+                        </h3>
+                        <div
+                          className="achv-item__body"
+                          style={{
+                            opacity: s.body ?? s.opacity,
+                            transform: `translateY(${(1 - (s.body ?? 1)) * 26}px)`,
+                          }}
+                        >
+                          <p className="achv-detail">{item.detail}</p>
+                        </div>
+
+                        {s.phase === 'hold' && (
+                          <div className="achv-lock-bar" aria-hidden="true">
+                            <div
+                              className="achv-lock-bar__fill"
+                              style={{
+                                width: `${clamp(
+                                  ((scrolled - (i * ZONE_PX + ENTER_PX)) / HOLD_PX) * 100,
+                                  0, 100
+                                )}%`,
+                              }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
             </div>
-          ))}
+          </div>
+
         </div>
+        {/* end achv-inner */}
+
+        {/* Bottom ticker tape */}
+        {!isMobile && (
+          <div className="achv-ticker" aria-hidden="true">
+            <div className="achv-ticker__track">
+              {[...Array(3)].map((_, r) => (
+                <span key={r} className="achv-ticker__set">
+                  {items.map((item) => (
+                    <span key={item.title} className="achv-ticker__item">
+                      <span className="achv-ticker__bullet">◆</span>
+                      {item.title.toUpperCase()}
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   )

@@ -77,6 +77,16 @@ class PortfolioSEORefinement {
 
     let achievements = JSON.parse(fs.readFileSync(achievementsPath, 'utf8'));
 
+    // Ensure verified external link credentials on ambassador record
+    if (achievements.achievement?.credentials) {
+      achievements.achievement.credentials = {
+        ...achievements.achievement.credentials,
+        theOrgProfile: "https://theorg.com/org/guvi-in/teams/campus-engagement",
+        guviBlogArticle: "https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/",
+        hbrpAuthorProfile: "https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN"
+      };
+    }
+
     // Update timestamps and current status
     achievements.lastUpdated = timestamp;
     achievements.lastVerified = new Date().toISOString();
@@ -323,8 +333,54 @@ class PortfolioSEORefinement {
           username: "dimitreerosan",
           url: "https://twitter.com/dimitreerosan",
           verified: false
+        },
+        {
+          platform: "The Org — GUVI Campus Engagement",
+          url: "https://theorg.com/org/guvi-in/teams/campus-engagement",
+          verified: true,
+          headline: "HCL GUVI Campus Ambassador — Campus Engagement Team"
+        },
+        {
+          platform: "GUVI Blog",
+          url: "https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/",
+          verified: true,
+          headline: "Windsurf AI Guide for Beginners"
+        },
+        {
+          platform: "HBRP Publication — JRRFIH Journal",
+          url: "https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN",
+          verified: true,
+          headline: "Kavusik Rosan B — Research Author, SIET CSE"
         }
       ],
+      publications: [
+        {
+          title: "HBRP Journal Author Profile — Kavusik Rosan B",
+          type: "academic-author",
+          url: "https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN",
+          publisher: "HBRP Publication",
+          verified: true
+        },
+        {
+          title: "Windsurf AI Guide for Beginners",
+          type: "blog-article",
+          url: "https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/",
+          publisher: "GUVI",
+          verified: true
+        }
+      ],
+      editorialLeadership: [
+        {
+          role: "Department Newsletter & Magazine Head",
+          organization: "SIET CSE",
+          resources: [
+            "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%20%202023%20-%202024.pdf",
+            "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20II%202024%20-%202025.pdf",
+            "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20I%202024%20-%202025.pdf"
+          ]
+        }
+      ],
+      verifiedExternalLinksIndex: "/external-links-index.json",
       projects: [
         {
           name: "Obscura Arcanum",
@@ -341,6 +397,11 @@ class PortfolioSEORefinement {
         "Obscura Arcanum",
         "Final Year CSE Student",
         "HCL GUVI Campus Ambassador",
+        "GUVI Campus Engagement",
+        "Windsurf AI GUVI",
+        "HBRP Publication Kavusik Rosan",
+        "SIET CSE Newsletter",
+        "The Org GUVI",
         "AI-Resistant Systems",
         "Ethical AI",
         "Digital Forensics",
@@ -378,7 +439,9 @@ class PortfolioSEORefinement {
       'achievements-metadata.json',
       'image-metadata.json',
       'identity-schema.json',
-      'portfolio-metadata.json'
+      'portfolio-metadata.json',
+      'external-links-index.json',
+      'resources-index.json'
     ];
 
     schemasToValidate.forEach(schema => {

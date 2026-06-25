@@ -132,21 +132,21 @@ export default function ContactForm() {
                     </span>
                   </button>
 
-                  <div className="mt-2 flex justify-start">
+                  {/* Signature + 3D Model side by side */}
+                  <div className="mt-2 flex items-center gap-0">
                     <img
                       src={signatureMark}
                       alt="Personal mark"
                       loading="lazy"
                       decoding="async"
-                      className="w-full max-w-sm h-auto object-contain"
+                      style={{ width: '320px', height: 'auto', objectFit: 'contain' }}
                     />
-                  </div>
-
-                  {/* 3D Model */}
-                  <div className="-mt-4 w-full">
-                    <Suspense fallback={<div style={{ height: '260px' }} />}>
-                      <ModelViewer />
-                    </Suspense>
+                    {/* 3D Model — right of signature */}
+                    <div style={{ width: '280px', height: '340px', flexShrink: 0, marginLeft: '-160px', overflow: 'visible' }}>
+                      <Suspense fallback={null}>
+                        <ModelViewer />
+                      </Suspense>
+                    </div>
                   </div>
                 </div>
               </div>

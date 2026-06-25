@@ -1,9 +1,10 @@
 {
   "metadata": {
-    "version": "1.0",
-    "lastUpdated": "2026-04-20",
+    "version": "1.1",
+    "lastUpdated": "2026-06-25",
     "author": "Kavusik Rosan",
-    "institution": "Sri Shakthi Institute of Engineering and Technology"
+    "institution": "Sri Shakthi Institute of Engineering and Technology",
+    "crossIndex": "/external-links-index.json"
   },
   "resources": {
     "newsletters": [
@@ -17,8 +18,22 @@
         "department": "Computer Science Engineering",
         "year": "2024-2025",
         "releaseDate": "2024-01-01",
-        "keywords": ["cse", "magazine", "siet", "computer science", "engineering"],
-        "description": "Comprehensive CSE magazine covering technical innovations, student achievements, and departmental activities"
+        "keywords": ["cse", "magazine", "siet", "computer science", "engineering", "Kavusik Rosan"],
+        "description": "Comprehensive CSE magazine covering technical innovations, student achievements, and departmental activities. Indexed under Kavusik Rosan portfolio (Department Newsletter & Magazine Head)."
+      },
+      {
+        "id": "cse-newsletter-iii-2023-2024",
+        "title": "CSE Newsletter Issue III 2023 - 2024",
+        "type": "newsletter",
+        "url": "https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%20%202023%20-%202024.pdf",
+        "category": "academic",
+        "institution": "SIET",
+        "department": "Computer Science Engineering",
+        "year": "2023-2024",
+        "issue": 3,
+        "releaseDate": "2024-06-01",
+        "keywords": ["cse", "newsletter", "siet", "issue-3", "2023-2024", "computer science", "Kavusik Rosan", "newsletter head"],
+        "description": "Third issue of CSE Newsletter for academic year 2023-2024. Editorial leadership by Kavusik Rosan as Department Newsletter & Magazine Head."
       },
       {
         "id": "cse-newsletter-iii-2024-2025",
@@ -31,7 +46,7 @@
         "year": "2024-2025",
         "issue": 3,
         "releaseDate": "2024-12-15",
-        "keywords": ["cse", "newsletter", "siet", "issue-3", "computer science"],
+        "keywords": ["cse", "newsletter", "siet", "issue-3", "computer science", "Kavusik Rosan"],
         "description": "Third issue of CSE Newsletter featuring latest developments, student highlights, and industry partnerships"
       },
       {
@@ -45,8 +60,8 @@
         "year": "2024-2025",
         "issue": 2,
         "releaseDate": "2024-11-01",
-        "keywords": ["cse", "newsletter", "siet", "issue-2", "computer science"],
-        "description": "Second issue of CSE Newsletter with updates on research initiatives and academic programs"
+        "keywords": ["cse", "newsletter", "siet", "issue-2", "computer science", "Kavusik Rosan", "newsletter head"],
+        "description": "Second issue of CSE Newsletter with updates on research initiatives and academic programs. Indexed for Kavusik Rosan worldwide search."
       },
       {
         "id": "cse-newsletter-i-2024-2025",
@@ -59,16 +74,21 @@
         "year": "2024-2025",
         "issue": 1,
         "releaseDate": "2024-09-15",
-        "keywords": ["cse", "newsletter", "siet", "issue-1", "computer science"],
-        "description": "First issue of CSE Newsletter introducing departmental initiatives and student success stories"
+        "keywords": ["cse", "newsletter", "siet", "issue-1", "computer science", "Kavusik Rosan", "newsletter head"],
+        "description": "First issue of CSE Newsletter introducing departmental initiatives and student success stories. Indexed for Kavusik Rosan worldwide search."
       }
     ]
   },
   "searchIndex": {
     "indexed": true,
-    "totalResources": 4,
+    "totalResources": 5,
     "categories": ["magazine", "newsletter"],
     "institutions": ["SIET"],
-    "departments": ["Computer Science Engineering"]
+    "departments": ["Computer Science Engineering"],
+    "primarySearchQueries": [
+      "Kavusik Rosan SIET newsletter",
+      "Kavusik Rosan CSE newsletter",
+      "Kavusik Rosan magazine head"
+    ]
   }
 }

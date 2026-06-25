@@ -151,7 +151,10 @@ export function generateJsonLdStructuredData() {
         'sameAs': [
           'https://linkedin.com/in/kavusik-rosan',
           'https://github.com/dimitreerosan',
-          'https://twitter.com/kavusik_rosan'
+          'https://twitter.com/kavusik_rosan',
+          'https://theorg.com/org/guvi-in/teams/campus-engagement',
+          'https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/',
+          'https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN'
         ],
         'jobTitle': achievement.title,
         'worksFor': {
@@ -172,7 +175,8 @@ export function generateJsonLdStructuredData() {
         'description': 'Mission Upskill India campus program run by HCL and GUVI.',
         'sameAs': [
           'https://www.hcl.com',
-          'https://www.guvi.in'
+          'https://www.guvi.in',
+          'https://theorg.com/org/guvi-in/teams/campus-engagement'
         ]
       },
       {
