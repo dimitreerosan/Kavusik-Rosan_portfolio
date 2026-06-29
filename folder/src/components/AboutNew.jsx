@@ -66,13 +66,13 @@ export default function AboutNew() {
                 Final year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, HCL GUVI Campus Ambassador
                 and privacy engineer specializing in adversarial ML and AI-resistant systems. Creator of Obscura Arcanum – shortlisted for
                 AICTE APF 2025 & Yukti Challenge 2025 – an advanced media protection platform combating unauthorized AI exploitation. Campus
-                leader organizing hackathons, mentoring 200+ students and building privacy-first tools: secure mobile apps, encrypted P2P
+                leader organizing hackathons,  mentoring 200+ students and building privacy-first tools: secure mobile apps, encrypted P2P
                 platforms and biometric systems. Driven to safeguard digital identities through accessible, ethical technology.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
                 <button type="button" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors cursor-default" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  Computer Science & Engineering
+                  Computer Science Engineer
                 </button>
                 <button type="button" className="px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 transition-colors cursor-default" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   HCL GUVI Campus Ambassador

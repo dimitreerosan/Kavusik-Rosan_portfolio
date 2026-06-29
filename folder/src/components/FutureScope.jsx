@@ -111,7 +111,7 @@ export default function FutureScope() {
                       <span className="text-gray-500">"</span>My goal is to build technology that <span className="text-cyan-300 font-medium">empowers people</span>, protects identity and <span className="text-cyan-300 font-medium">respects privacy</span>.<span className="text-gray-500">"</span>
                     </p>
                     <p className="leading-relaxed text-[#e0e0e0]">
-                      <span className="text-gray-500">"</span>AI should enhance human freedom and safety while remaining <span className="text-emerald-300 font-medium">ethical</span>, <span className="text-emerald-300 font-medium">accessible</span>, and <span className="text-emerald-300 font-medium">useful</span> for everyone.<span className="text-gray-500">"</span>
+                      <span className="text-gray-500">"</span>AI should enhance human freedom and safety while remaining <span className="text-emerald-300 font-medium">ethical</span>, <span className="text-emerald-300 font-medium">accessible</span> and <span className="text-emerald-300 font-medium">useful</span> for everyone.<span className="text-gray-500">"</span>
                     </p>
                   </div>
 

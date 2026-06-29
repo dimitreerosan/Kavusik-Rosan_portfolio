@@ -1,10 +1,17 @@
 .about-card {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .about-card-content {
   padding-right: 0;
+}
+
+.about-card-content p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: justify;
+  hyphens: none;
 }
 
 .academy-badge {
@@ -18,7 +25,7 @@
 
 @media (min-width: 768px) {
   .about-card-content {
-    padding-right: 110px;
+    padding-right: 150px;
   }
 
   .academy-badge {

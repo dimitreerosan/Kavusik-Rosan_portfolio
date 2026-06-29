@@ -94,41 +94,12 @@ function getItemState(i, scrolled) {
   return { phase: 'after', progress: 0, opacity: 0, translateY: -40 }
 }
 
-function randomHex(len = 18) {
-  return Array.from({ length: len }, () =>
-    Math.floor(Math.random() * 16).toString(16).toUpperCase()
-  ).join('')
-}
-
 export default function Achievements() {
   const sectionRef    = useRef(null)
   const rafRef        = useRef(null)
   const sectionTopRef = useRef(null)
   const [scrolled, setScrolled] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
-  const [hexLines, setHexLines] = useState(() => Array.from({ length: 7 }, () => randomHex()))
-  const [glitch, setGlitch]     = useState(false)
-
-  // Refresh hex stream every 1.4s
-  useEffect(() => {
-    const id = setInterval(() => {
-      setHexLines(Array.from({ length: 7 }, () => randomHex()))
-    }, 1400)
-    return () => clearInterval(id)
-  }, [])
-
-  // Random glitch on heading
-  useEffect(() => {
-    let timeoutId
-    const schedule = () => {
-      timeoutId = setTimeout(() => {
-        setGlitch(true)
-        setTimeout(() => { setGlitch(false); schedule() }, 280)
-      }, 4000 + Math.random() * 4000)
-    }
-    schedule()
-    return () => clearTimeout(timeoutId)
-  }, [])
 
   const cacheTop = () => {
     const el = sectionRef.current
@@ -198,7 +169,7 @@ export default function Achievements() {
               <div
                 className="achv-ghost-num"
                 aria-hidden="true"
-                style={{ opacity: 0.04 + activeState.progress * 0.04 }}
+                style={{ opacity: 0.18 + activeState.progress * 0.12 }}
               >
                 {String(activeIdx + 1).padStart(2, '0')}
               </div>
@@ -209,30 +180,13 @@ export default function Achievements() {
             <div className="achv-corner achv-corner--br" aria-hidden="true" />
 
             {/* Heading */}
-            <h2 className={`achv-heading${glitch ? ' achv-heading--glitch' : ''}`}>
+            <h2 className="achv-heading">
               ACHIEVEMENTS
             </h2>
 
-            {/* HUD status row */}
-            {!isMobile && (
-              <div className="achv-hud" aria-hidden="true">
-                <span className="achv-hud__dot" />
-                <span className="achv-hud__label">SYS:ACTIVE</span>
-                <span className="achv-hud__sep">|</span>
-                <span className="achv-hud__label">
-                  REC&nbsp;{String(activeIdx + 1).padStart(2, '0')}&nbsp;OF&nbsp;{String(items.length).padStart(2, '0')}
-                </span>
-              </div>
-            )}
 
-            {/* Hex data stream */}
-            {!isMobile && (
-              <div className="achv-hexstream" aria-hidden="true">
-                {hexLines.map((line, i) => (
-                  <div key={i} className="achv-hexstream__line">{line}</div>
-                ))}
-              </div>
-            )}
+
+
 
             {/* Vertical progress track */}
             {!isMobile && (
