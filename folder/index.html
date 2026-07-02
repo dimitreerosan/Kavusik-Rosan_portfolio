@@ -42,8 +42,7 @@
   <link rel="canonical" href="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/" />
 
   <!-- Official portrait (same domain = highest priority; not LinkedIn post thumbnails) -->
-  <link rel="preload" as="image" href="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png"
-    fetchpriority="high" />
+  <link rel="prefetch" as="image" href="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
   <meta name="thumbnail"
     content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
 
@@ -85,6 +84,7 @@
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Arial' font-size='34' fill='%23fff'%3EKR%3C/text%3E%3C/svg%3E" />
   <link rel="help" href="/Kavusik-Rosan_portfolio/llms.txt" />
+  <link rel="alternate" href="/Kavusik-Rosan_portfolio/about-kavusik-rosan.html" hreflang="en" title="About Kavusik Rosan" />
   <link rel="alternate" type="application/json" href="/Kavusik-Rosan_portfolio/external-links-index.json" title="Verified External Links — Kavusik Rosan" />
   <link rel="alternate" type="application/json" href="/Kavusik-Rosan_portfolio/resources-index.json" title="SIET CSE Resources Index" />
 
@@ -282,6 +282,49 @@
   }
   </script>
 
+  <!-- JSON-LD: ProfilePage — modern Google/AI standard for personal profile pages -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#profilepage",
+    "dateCreated": "2024-01-01",
+    "dateModified": "2026-07-02",
+    "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
+    "name": "Kavusik Rosan — Official Portfolio",
+    "description": "Official portfolio of Kavusik Rosan, AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador, and creator of Obscura Arcanum. Final-year CSE student at Sri Shakthi Institute of Engineering and Technology, Coimbatore.",
+    "inLanguage": "en",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#person",
+      "name": "Kavusik Rosan",
+      "alternateName": ["kavusik rosan", "Kavusik Rosan Dimitree", "Dimitree", "KR", "dimitreerosan"],
+      "description": "Final-year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology. AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador, and creator of Obscura Arcanum — an advanced anti-AI image protection system shortlisted Top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025. Specializes in adversarial machine learning, encrypted P2P systems, and biometric security. Mentors 200+ students.",
+      "image": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+      "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
+      "email": "kavusikbalu2006@gmail.com",
+      "jobTitle": ["AI Security Engineer", "Privacy Engineer", "HCL GUVI Campus Ambassador", "Final Year CSE Student"],
+      "sameAs": [
+        "https://github.com/dimitreerosan",
+        "https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum"
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable — signals to Google AI which text to read aloud -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "noscript header p", ".about-bio", "noscript #about p"]
+    },
+    "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
@@ -311,7 +354,7 @@
         "isPartOf": { "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#website" },
         "about": { "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#person" },
         "primaryImageOfPage": { "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage" },
-        "dateModified": "2026-06-26",
+        "dateModified": "2026-07-02",
         "inLanguage": "en"
       },
       {
@@ -454,18 +497,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is Obscura Arcanum?",
+            "name": "Kavusik Rosan",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Obscura Arcanum is an advanced anti-AI image protection platform created by Kavusik Rosan. It uses adversarial machine learning and encryption to protect digital media from unauthorized AI exploitation. It was shortlisted among the Top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are Kavusik Rosan's specialties?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kavusik Rosan specializes in privacy engineering, adversarial machine learning, and AI-resistant systems. He is the HCL GUVI Campus Ambassador for Mission Upskill India, mentors 200+ students, and builds privacy-first tools including encrypted P2P platforms and biometric systems."
+              "text": "Kavusik Rosan (alias Dimitree) is a final-year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, Coimbatore, Tamil Nadu, India. He is an AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador, and the creator of Obscura Arcanum — a nationally recognized anti-AI image protection system. His portfolio is at https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/"
             }
           },
           {
@@ -473,7 +508,39 @@
             "name": "Who is Kavusik Rosan?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kavusik Rosan is a Computer Science student at Sri Shakthi Institute of Engineering and Technology, a Privacy Engineer, HCL GUVI Campus Ambassador, and the creator of Obscura Arcanum – an anti-AI image protection system shortlisted for AICTE APF 2025 and Yukti Challenge 2025. He organizes hackathons and mentors 200+ students in technology and security."
+              "text": "Kavusik Rosan is a Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology (2023–2027), a Privacy Engineer, HCL GUVI Campus Ambassador for Mission Upskill India, and the creator of Obscura Arcanum — an anti-AI image protection system shortlisted Top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025. He organizes hackathons, mentors 200+ students, and specializes in adversarial machine learning, AI-resistant systems, encrypted P2P platforms, and biometric security."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "About Kavusik Rosan",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kavusik Rosan is a final-year CSE student and AI Security Engineer based in Coimbatore, India. He is known as the creator of Obscura Arcanum, an advanced anti-AI image protection platform using adversarial machine learning. He serves as HCL GUVI Campus Ambassador mentoring over 200 students, has published technical content on the GUVI blog, authored academic research via HBRP Publication, and leads the SIET CSE department newsletter. Official profile: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "kavusik rosan",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kavusik Rosan is an AI Security Engineer and Privacy Engineer from Coimbatore, Tamil Nadu. He is a final-year Computer Science student at SIET, creator of Obscura Arcanum (Top 100 AICTE APF 2025, Yukti Challenge 2025), and HCL GUVI Campus Ambassador. GitHub: dimitreerosan. LinkedIn: kavusik-rosan-dimitree-creator-of-obscura-arcanum. Portfolio: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Obscura Arcanum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Obscura Arcanum is an advanced anti-AI image protection platform created by Kavusik Rosan. It uses adversarial machine learning and encryption to protect digital media from unauthorized AI exploitation and data scraping. It was shortlisted among the Top 100 nationally for AICTE APF 2025 and Yukti Challenge 2025."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Kavusik Rosan's specialties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kavusik Rosan specializes in privacy engineering, adversarial machine learning, and AI-resistant systems. He is the HCL GUVI Campus Ambassador for Mission Upskill India, mentors 200+ students, and builds privacy-first tools including encrypted P2P platforms, biometric security systems, and AI image protection."
             }
           },
           {
@@ -481,7 +548,15 @@
             "name": "What awards has Kavusik Rosan received?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kavusik Rosan's project Obscura Arcanum was shortlisted in the Top 100 nationally for both AICTE APF 2025 (All India Council for Technical Education – Atal Pradhyogiki Pratisthan) and Yukti Challenge 2025. He also serves as HCL GUVI Campus Ambassador for Mission Upskill India."
+              "text": "Kavusik Rosan's project Obscura Arcanum was shortlisted in the Top 100 nationally for both AICTE APF 2025 (All India Council for Technical Education – Atal Pradhyogiki Pratisthan) and Yukti Challenge 2025. He also serves as HCL GUVI Campus Ambassador for Mission Upskill India and is a published research author at HBRP Publication."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What projects has Kavusik Rosan built?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kavusik Rosan has built: 1) Obscura Arcanum – anti-AI image protection system (Top 100 AICTE APF 2025, Yukti Challenge 2025); 2) Virtual Navigator – real-time hand-gesture navigation using OpenCV and MediaPipe; 3) Link Shift – serverless E2E encrypted P2P messaging via WebRTC; 4) DeepLynk – Android security app blocking trackers, ads, and phishing; 5) Autoform Assist – AI-powered form auto-fill mobile app using OCR and NLP; 6) Obscura Dravion – biometric intelligence system for video archive search."
             }
           },
           {
@@ -489,7 +564,23 @@
             "name": "Where is Kavusik Rosan published or listed online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kavusik Rosan is listed on The Org GUVI Campus Engagement team (theorg.com/org/guvi-in/teams/campus-engagement), GUVI Blog (Windsurf AI Guide for Beginners), HBRP Publication JRRFIH journal author profile, and SIET CSE newsletters as Department Newsletter & Magazine Head. Full verified links: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-index.json"
+              "text": "Kavusik Rosan is listed on: The Org GUVI Campus Engagement team (theorg.com/org/guvi-in/teams/campus-engagement) as HCL GUVI Campus Ambassador; GUVI Blog as author of the Windsurf AI Guide for Beginners; HBRP Publication JRRFIH as a research author affiliated with SIET CSE, Coimbatore; and SIET CSE newsletters (Issues I, II, III) as Department Newsletter & Magazine Head. Full index: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-index.json"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does Kavusik Rosan study?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kavusik Rosan is a final-year student pursuing BE in Computer Science and Engineering at Sri Shakthi Institute of Engineering and Technology (SIET), Coimbatore, Tamil Nadu, India (batch 2023–2027)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to contact Kavusik Rosan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact Kavusik Rosan via email at kavusikbalu2006@gmail.com, through his portfolio at https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/, on GitHub at https://github.com/dimitreerosan, or on LinkedIn at https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum"
             }
           }
         ]

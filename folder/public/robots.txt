@@ -17,6 +17,7 @@ Allow: /image-sitemap.xml
 Allow: /image-metadata.json
 Allow: /identity-schema.json
 Allow: /images/kavusik-rosan-official-portrait.png
+Allow: /about-kavusik-rosan.html
 
 # =======================================
 # GOOGLE SEARCH OPTIMIZATION

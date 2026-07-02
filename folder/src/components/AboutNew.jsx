@@ -62,7 +62,7 @@ export default function AboutNew() {
               <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase" style={{ letterSpacing: '-0.03em' }}>
                 KAVUSIK ROSAN
               </h3>
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-400 font-sans" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.9rem' }}>
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-400 font-sans about-bio" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.9rem' }}>
                 Final year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, HCL GUVI Campus Ambassador
                 and privacy engineer specializing in adversarial ML and AI-resistant systems. Creator of Obscura Arcanum – shortlisted for
                 AICTE APF 2025 & Yukti Challenge 2025 – an advanced media protection platform combating unauthorized AI exploitation. Campus
