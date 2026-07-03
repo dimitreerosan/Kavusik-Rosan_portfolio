@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import './LegalNotice.css' // reuse same modal styles
 
 export default function PrivacyPolicy({ onClose }) {
@@ -12,7 +13,7 @@ export default function PrivacyPolicy({ onClose }) {
     }
   }, [onClose])
 
-  return (
+  return createPortal(
     <div className="ln-overlay" role="dialog" aria-modal="true" aria-label="Privacy Policy" onClick={onClose}>
       <div className="ln-panel" onClick={(e) => e.stopPropagation()}>
 
@@ -130,6 +131,7 @@ export default function PrivacyPolicy({ onClose }) {
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

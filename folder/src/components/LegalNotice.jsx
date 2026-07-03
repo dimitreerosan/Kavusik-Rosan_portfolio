@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import './LegalNotice.css'
 
 export default function LegalNotice({ onClose }) {
-  // Close on Escape key
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', onKey)
-    // Prevent body scroll while open
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', onKey)
@@ -14,7 +13,7 @@ export default function LegalNotice({ onClose }) {
     }
   }, [onClose])
 
-  return (
+  return createPortal(
     <div className="ln-overlay" role="dialog" aria-modal="true" aria-label="Legal Notice" onClick={onClose}>
       <div className="ln-panel" onClick={(e) => e.stopPropagation()}>
 
@@ -101,6 +100,7 @@ export default function LegalNotice({ onClose }) {
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
