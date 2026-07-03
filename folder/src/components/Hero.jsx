@@ -1,6 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Hero() {
+  const [typed, setTyped] = useState('')
+
+  useEffect(() => {
+    const full = 'KAVUSIK ROSAN'
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) {
+      setTyped(full)
+      return
+    }
+    let i = 0
+    let deleting = false
+    let pause = 0
+    const stepMs = 150
+    setTyped('')
+    const id = setInterval(() => {
+      if (pause > 0) {
+        pause -= 1
+        return
+      }
+      if (!deleting) {
+        i = Math.min(i + 1, full.length)
+        setTyped(full.slice(0, i))
+        if (i === full.length) {
+          deleting = true
+          pause = Math.round(1400 / stepMs)
+        }
+      } else {
+        i = Math.max(i - 1, 0)
+        setTyped(full.slice(0, i))
+        if (i === 0) {
+          deleting = false
+          pause = Math.round(1000 / stepMs)
+        }
+      }
+    }, stepMs)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen pt-24 pb-24 bg-black select-none overflow-hidden">
       <div className="absolute inset-0" aria-hidden>
@@ -34,7 +75,7 @@ export default function Hero() {
             style={{ letterSpacing: '-0.04em' }}
           >
             <span className="sr-only">KAVUSIK ROSAN</span>
-            <span aria-hidden="true">KAVUSIK ROSAN</span>
+            <span aria-hidden="true">{typed}</span>
             <span className="w-[2px] h-[0.9em] bg-white inline-block ml-1 align-middle hero-cursor motion-reduce:hidden" />
           </h1>
         </div>
