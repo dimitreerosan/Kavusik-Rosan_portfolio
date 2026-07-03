@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState, lazy, Suspense, useRef } from 'react'
 import resumePdf from '../Kavusik Rosan_Resume.pdf'
 import signatureMark from '../Copy of O.png'
 import './ContactForm.css'
@@ -6,6 +6,8 @@ import './ContactForm.css'
 const ModelViewer = lazy(() => import('./ModelViewer'))
 
 export default function ContactForm() {
+  const [showModel, setShowModel] = useState(false)
+  const modelHostRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,6 +21,24 @@ export default function ContactForm() {
 
   useEffect(() => {
     setStartedAt(Date.now())
+  }, [])
+
+  useEffect(() => {
+    const host = modelHostRef.current
+    if (!host) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowModel(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '120px 0px' }
+    )
+
+    observer.observe(host)
+    return () => observer.disconnect()
   }, [])
 
   const showToast = () => {
@@ -142,10 +162,15 @@ export default function ContactForm() {
                       style={{ width: '320px', height: 'auto', objectFit: 'contain' }}
                     />
                     {/* 3D Model — right of signature */}
-                    <div style={{ width: '280px', height: '340px', flexShrink: 0, marginLeft: '-160px', overflow: 'visible' }}>
-                      <Suspense fallback={null}>
-                        <ModelViewer />
-                      </Suspense>
+                    <div
+                      ref={modelHostRef}
+                      style={{ width: '280px', height: '340px', flexShrink: 0, marginLeft: '-160px', overflow: 'visible' }}
+                    >
+                      {showModel && (
+                        <Suspense fallback={null}>
+                          <ModelViewer />
+                        </Suspense>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,9 @@
 import React, { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import './index.css'
 import Hero from './components/Hero'
-import OfflineOverlay from './components/OfflineOverlay'
 import ImageProtection from './components/ImageProtection'
+
+const OfflineOverlay = lazy(() => import('./components/OfflineOverlay'))
 const About = lazy(() => import('./components/AboutNew'))
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'))
 const Achievements = lazy(() => import('./components/Achievements'))
@@ -14,7 +15,7 @@ const FutureScope = lazy(() => import('./components/FutureScope'))
 const ContactForm = lazy(() => import('./components/ContactForm'))
 const Footer = lazy(() => import('./components/Footer'))
 
-function LazyMount({ children, fallback, rootMargin = '300px 0px' }) {
+function LazyMount({ children, fallback, rootMargin = '200px 0px' }) {
   const ref = useRef(null)
   const [show, setShow] = useState(false)
 
@@ -37,7 +38,7 @@ function LazyMount({ children, fallback, rootMargin = '300px 0px' }) {
     return () => io.disconnect()
   }, [rootMargin, show])
 
-  return <div ref={ref}>{show ? children : fallback}</div>
+  return <div ref={ref} className="lazy-section">{show ? children : fallback}</div>
 }
 
 function App() {
@@ -53,7 +54,9 @@ function App() {
 
   return (
     <>
-      <OfflineOverlay />
+      <Suspense fallback={null}>
+        <OfflineOverlay />
+      </Suspense>
       <ImageProtection />
       <main>
         <Hero />

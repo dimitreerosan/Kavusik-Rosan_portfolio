@@ -14,9 +14,12 @@ export default defineConfig({
       output: {
         manualChunks: {
           'three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'react-vendor': ['react', 'react-dom'],
         },
       },
     },
     minify: 'terser',
+    cssMinify: true,
+    target: 'es2020',
   },
 })

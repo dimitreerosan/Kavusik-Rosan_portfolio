@@ -1,44 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 export default function Hero() {
-  const [typed, setTyped] = useState('')
-
-  useEffect(() => {
-    const full = 'KAVUSIK ROSAN'
-    const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) {
-      setTyped(full)
-      return
-    }
-    let i = 0
-    let deleting = false
-    let pause = 0
-    const stepMs = 150 // slower, smoother typing speed
-    setTyped('')
-    const id = setInterval(() => {
-      if (pause > 0) {
-        pause -= 1
-        return
-      }
-      if (!deleting) {
-        i = Math.min(i + 1, full.length)
-        setTyped(full.slice(0, i))
-        if (i === full.length) {
-          deleting = true
-          pause = Math.round(1400 / stepMs) // slightly longer pause at full text
-        }
-      } else {
-        i = Math.max(i - 1, 0)
-        setTyped(full.slice(0, i))
-        if (i === 0) {
-          deleting = false
-          pause = Math.round(1000 / stepMs) // pause at empty
-        }
-      }
-    }, stepMs)
-    return () => clearInterval(id)
-  }, [])
-
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen pt-24 pb-24 bg-black select-none overflow-hidden">
       <div className="absolute inset-0" aria-hidden>
@@ -72,8 +34,8 @@ export default function Hero() {
             style={{ letterSpacing: '-0.04em' }}
           >
             <span className="sr-only">KAVUSIK ROSAN</span>
-            <span aria-hidden="true">{typed}</span>
-            <span className="w-[2px] h-[0.9em] bg-white inline-block ml-1 align-middle animate-pulse motion-reduce:animate-none" />
+            <span aria-hidden="true">KAVUSIK ROSAN</span>
+            <span className="w-[2px] h-[0.9em] bg-white inline-block ml-1 align-middle hero-cursor motion-reduce:hidden" />
           </h1>
         </div>
         <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
@@ -135,11 +97,29 @@ export default function Hero() {
         </button>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce motion-reduce:animate-none">
-        <p className="text-xs text-gray-500 uppercase tracking-widest">Scroll</p>
-        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center" aria-hidden="true">
+        <style>{`
+          @keyframes hs-arr1 {
+            0%,100% { opacity:0; transform:translateY(-3px); }
+            25%     { opacity:0.4; transform:translateY(0); }
+            55%     { opacity:0; transform:translateY(4px); }
+          }
+          @keyframes hs-arr2 {
+            0%,100% { opacity:0; transform:translateY(-3px); }
+            42%     { opacity:0.2; transform:translateY(0); }
+            70%     { opacity:0; transform:translateY(4px); }
+          }
+        `}</style>
+        {[
+          'hs-arr1 2s ease-in-out infinite',
+          'hs-arr2 2s ease-in-out infinite',
+        ].map((anim, i) => (
+          <svg key={i} width="12" height="7" viewBox="0 0 12 7" fill="none"
+            style={{ animation: anim, display: 'block', marginTop: i === 0 ? 0 : -2 }}>
+            <path d="M1 1L6 6L11 1" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        ))}
       </div>
     </section>
   )

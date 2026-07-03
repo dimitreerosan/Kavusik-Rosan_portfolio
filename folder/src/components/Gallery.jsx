@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import studentMentorshipImg from '../Moments & Milestones/WhatsApp Image 2025-07-18 at 11.50.34_3b0c05c9.jpg'
 import hackathonImg from '../Moments & Milestones/hackathon_coord.jpg'
 import deptMagazineImg from '../Moments & Milestones/dept_magazine.png'
@@ -19,6 +19,21 @@ import MediaGuild from '../Moments & Milestones/SAVE_20240428_182952.jpg'
 export default function Gallery() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isAnimating, setIsAnimating] = useState(false)
+    const [sectionInView, setSectionInView] = useState(false)
+    const sectionRef = useRef(null)
+
+    useEffect(() => {
+        const section = sectionRef.current
+        if (!section) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setSectionInView(entry.isIntersecting),
+            { threshold: 0.1 }
+        )
+
+        observer.observe(section)
+        return () => observer.disconnect()
+    }, [])
 
     const galleryItems = [
         {
@@ -128,19 +143,29 @@ export default function Gallery() {
         }
     ]
 
-    const nextSlide = () => {
-        if (isAnimating) return
+    const animatingRef = useRef(false)
+
+    const nextSlide = useCallback(() => {
+        if (animatingRef.current) return
+        animatingRef.current = true
         setIsAnimating(true)
         setCurrentIndex((prev) => (prev + 1) % galleryItems.length)
-        setTimeout(() => setIsAnimating(false), 500)
-    }
+        setTimeout(() => {
+            animatingRef.current = false
+            setIsAnimating(false)
+        }, 500)
+    }, [])
 
-    const prevSlide = () => {
-        if (isAnimating) return
+    const prevSlide = useCallback(() => {
+        if (animatingRef.current) return
+        animatingRef.current = true
         setIsAnimating(true)
         setCurrentIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length)
-        setTimeout(() => setIsAnimating(false), 500)
-    }
+        setTimeout(() => {
+            animatingRef.current = false
+            setIsAnimating(false)
+        }, 500)
+    }, [])
 
     const goToSlide = (index) => {
         if (isAnimating || index === currentIndex) return
@@ -149,13 +174,14 @@ export default function Gallery() {
         setTimeout(() => setIsAnimating(false), 500)
     }
 
-    // Auto-play (optional - can be removed if not needed)
     useEffect(() => {
+        if (!sectionInView) return undefined
+
         const interval = setInterval(() => {
             nextSlide()
-        }, 6000) // Change slide every 6 seconds for smoother experience
+        }, 6000)
         return () => clearInterval(interval)
-    }, [currentIndex, isAnimating])
+    }, [sectionInView, nextSlide])
 
     const getSlidePosition = (index) => {
         const diff = index - currentIndex
@@ -170,7 +196,7 @@ export default function Gallery() {
     }
 
     return (
-        <section className="py-24 px-6 md:px-10 bg-black border-t border-gray-900 overflow-hidden">
+        <section ref={sectionRef} className="py-24 px-6 md:px-10 bg-black border-t border-gray-900 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="mb-16 text-center">
@@ -226,33 +252,23 @@ export default function Gallery() {
                                     >
                                         {/* Image */}
                                         <div className="relative w-full h-[280px] bg-gray-100 rounded-sm overflow-hidden mb-4 border border-gray-100 group">
-                                            {/* Shimmer/Skeleton loader */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 animate-pulse" />
-
                                             <img
                                                 src={item.image}
                                                 alt={`${item.title} - ${item.alt} | Kavusik Rosan`}
-                                                className="relative w-full h-full object-cover z-10"
-                                                loading={Math.abs(position) <= 1 ? "eager" : "lazy"}
+                                                className="relative w-full h-full object-cover"
+                                                loading={isCenter ? 'eager' : 'lazy'}
                                                 decoding="async"
                                                 draggable={false}
                                                 onContextMenu={(e) => e.preventDefault()}
-                                                onLoad={(e) => e.target.style.opacity = 1}
                                                 onMouseEnter={(e) => {
-                                                    e.currentTarget.style.transform = 'scale(1.09) translate3d(0, 0, 0)'
-                                                    e.currentTarget.style.filter = 'brightness(1.05)'
+                                                    if (!isCenter) return
+                                                    e.currentTarget.style.transform = 'scale(1.05)'
                                                 }}
                                                 onMouseLeave={(e) => {
-                                                    e.currentTarget.style.transform = 'scale(1) translate3d(0, 0, 0)'
-                                                    e.currentTarget.style.filter = 'brightness(1)'
+                                                    e.currentTarget.style.transform = 'scale(1)'
                                                 }}
                                                 style={{
-                                                    opacity: 0,
-                                                    transition: 'opacity 0.5s ease-in-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-                                                    willChange: 'transform, filter',
-                                                    backfaceVisibility: 'hidden',
-                                                    WebkitBackfaceVisibility: 'hidden',
-                                                    transform: 'translate3d(0, 0, 0)'
+                                                    transition: 'transform 0.4s ease-out',
                                                 }}
                                             />
                                         </div>

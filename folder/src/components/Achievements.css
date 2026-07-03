@@ -99,7 +99,7 @@
   border-left: 1px solid rgba(255,255,255,0.35);
 }
 .achv-corner--br {
-  bottom: 16px; right: 26px;
+  bottom: 38px; right: 26px;
   border-bottom: 1px solid rgba(255,255,255,0.35);
   border-right: 1px solid rgba(255,255,255,0.35);
 }
@@ -157,8 +157,8 @@
 }
 .achv-frame--tl { top: 18px;    left: 18px;   border-top: 1px solid rgba(255,255,255,0.2); border-left:  1px solid rgba(255,255,255,0.2); }
 .achv-frame--tr { top: 18px;    right: 18px;  border-top: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); }
-.achv-frame--bl { bottom: 18px; left: 18px;   border-bottom: 1px solid rgba(255,255,255,0.2); border-left:  1px solid rgba(255,255,255,0.2); }
-.achv-frame--br { bottom: 18px; right: 18px;  border-bottom: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); }
+.achv-frame--bl { bottom: 38px; left: 18px;   border-bottom: 1px solid rgba(255,255,255,0.2); border-left:  1px solid rgba(255,255,255,0.2); }
+.achv-frame--br { bottom: 38px; right: 18px;  border-bottom: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); }
 
 /* Viewport — the stage */
 .achv-viewport {
@@ -222,6 +222,8 @@
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
+  text-align: justify;
+  hyphens: none;
 }
 
 /* Metadata tags */

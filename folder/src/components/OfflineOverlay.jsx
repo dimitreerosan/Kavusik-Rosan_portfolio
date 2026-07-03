@@ -1,12 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import videoSrc from '../video-1.mp4'
 
 export default function OfflineOverlay() {
   const [offline, setOffline] = useState(!navigator.onLine)
-  const [blobUrl, setBlobUrl] = useState(null)
+  const [videoUrl, setVideoUrl] = useState(null)
   const videoRef = useRef(null)
   const [autoPlayFailed, setAutoPlayFailed] = useState(false)
-  const preloadingRef = useRef(false)
   const [errorReason, setErrorReason] = useState(() => (
     navigator.onLine ? 'Cannot reach server. Please try again.' : 'No internet connection. Please check your network.'
   ))
@@ -33,36 +31,38 @@ export default function OfflineOverlay() {
     }
   }, [])
 
+  // Only fetch the offline video when actually offline — avoids ~4.6MB download on every visit
   useEffect(() => {
-    let revoked = false
-    const preload = async () => {
-      if (preloadingRef.current) return
-      preloadingRef.current = true
+    if (!offline || videoUrl) return
+
+    let cancelled = false
+    const loadVideo = async () => {
       try {
-        const res = await fetch(videoSrc, { cache: 'force-cache' })
+        const { default: src } = await import('../video-1.mp4?url')
+        const res = await fetch(src, { cache: 'force-cache' })
         if (!res.ok) throw new Error('video fetch failed')
         const blob = await res.blob()
-        const url = URL.createObjectURL(blob)
-        if (!revoked) setBlobUrl((prev) => {
-          if (prev && prev !== url) URL.revokeObjectURL(prev)
-          return url
-        })
-      } catch (e) {
-        // swallow; we'll try again when back online
-      } finally {
-        preloadingRef.current = false
+        if (!cancelled) setVideoUrl(URL.createObjectURL(blob))
+      } catch {
+        // swallow; overlay still shows offline message
       }
     }
-    if (navigator.onLine) preload()
-    const onOnline = () => preload()
-    window.addEventListener('online', onOnline)
+    loadVideo()
+
     return () => {
-      revoked = true
-      window.removeEventListener('online', onOnline)
+      cancelled = true
     }
-  }, [])
+  }, [offline, videoUrl])
 
   useEffect(() => {
+    return () => {
+      if (videoUrl) URL.revokeObjectURL(videoUrl)
+    }
+  }, [videoUrl])
+
+  useEffect(() => {
+    if (!offline || !videoUrl) return
+
     const tryPlay = () => {
       if (!videoRef.current) return
       const p = videoRef.current.play()
@@ -73,17 +73,13 @@ export default function OfflineOverlay() {
 
     if (videoRef.current) {
       videoRef.current.load()
-      if (offline) tryPlay()
+      tryPlay()
     }
 
-    const onInteract = () => {
-      if (offline) tryPlay()
-    }
+    const onInteract = () => tryPlay()
     window.addEventListener('click', onInteract, { once: true })
-    return () => {
-      window.removeEventListener('click', onInteract)
-    }
-  }, [offline, blobUrl])
+    return () => window.removeEventListener('click', onInteract)
+  }, [offline, videoUrl])
 
   if (!offline) return null
 
@@ -111,26 +107,30 @@ export default function OfflineOverlay() {
           justifyContent: 'center',
           width: '100%',
           maxWidth: '480px',
-          marginBottom: '10vh', // lift video a bit up
+          marginBottom: '10vh',
         }}
       >
-        <video
-          ref={videoRef}
-          key={blobUrl || videoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          controls={autoPlayFailed}
-          onLoadedData={() => { try { if (videoRef.current) videoRef.current.play() } catch (e) {} }}
-          onCanPlay={() => { try { if (videoRef.current && videoRef.current.paused) videoRef.current.play() } catch (e) {} }}
-          onPlay={() => { setAutoPlayFailed(false); console.debug('OfflineOverlay: video playing') }}
-          onError={(e) => { setAutoPlayFailed(true); console.debug('OfflineOverlay: video error', e?.currentTarget?.error) }}
-          style={{ width: 'min(420px, 90vw)', maxWidth: '90vw', maxHeight: '55vh', borderRadius: '12px', background: '#000000' }}
-        >
-          <source src={blobUrl || videoSrc} type="video/mp4" />
-        </video>
+        {videoUrl ? (
+          <video
+            ref={videoRef}
+            key={videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            controls={autoPlayFailed}
+            onLoadedData={() => { try { if (videoRef.current) videoRef.current.play() } catch (e) {} }}
+            onCanPlay={() => { try { if (videoRef.current && videoRef.current.paused) videoRef.current.play() } catch (e) {} }}
+            onPlay={() => setAutoPlayFailed(false)}
+            onError={() => setAutoPlayFailed(true)}
+            style={{ width: 'min(420px, 90vw)', maxWidth: '90vw', maxHeight: '55vh', borderRadius: '12px', background: '#000000' }}
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+        ) : (
+          <div style={{ width: 'min(420px, 90vw)', height: '200px', borderRadius: '12px', background: '#111' }} aria-hidden />
+        )}
       </div>
       <div
         style={{
