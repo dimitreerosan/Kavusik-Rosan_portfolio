@@ -1,6 +1,5 @@
 import React from 'react'
-import { portraitUrl } from '../constants/seo'
-import certImg from '../2f1dcbfc1d894.png'
+import { certBadgeWebpUrl, portraitSrcSet, portraitWebpUrl } from '../constants/seo'
 import './AboutNew.css'
 
 export default function AboutNew() {
@@ -18,10 +17,10 @@ export default function AboutNew() {
           <div className="academy-badge">
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
               <img
-                src={certImg}
+                src={certBadgeWebpUrl()}
                 alt="Certification badge"
                 width="110"
-                height="110"
+                height="90"
                 loading="lazy"
                 decoding="async"
                 draggable={false}
@@ -44,17 +43,24 @@ export default function AboutNew() {
 
           <div className="p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10">
             <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden border border-white/10 bg-black/40 flex-shrink-0 relative">
-              <img
-                src={portraitUrl()}
-                alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
-                className="w-full h-full object-cover"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width="128"
-                height="128"
-                itemProp="image"
-              />
+              <picture>
+                <source
+                  srcSet={portraitSrcSet()}
+                  sizes="(min-width: 768px) 128px, 112px"
+                  type="image/webp"
+                />
+                <img
+                  src={portraitWebpUrl()}
+                  alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width="128"
+                  height="128"
+                  itemProp="image"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
 

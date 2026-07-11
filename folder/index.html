@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavusik Rosan | Campus Ambassador of HCL GUVI | Obscura Arcanum Creator | CSE Student Coimbatore</title>
+  <title>Kavusik Rosan — Campus Ambassador of HCL GUVI & CSE Student Coimbatore</title>
 
   <!-- Entity Disambiguation & Brand Identity -->
   <meta name="description"
-    content="Kavusik Rosan — Final Year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, Coimbatore. AI Security Engineer, Privacy Engineer, and creator of Obscura Arcanum (Top 100 AICTE APF 2025 & Yukti Challenge 2025). HCL GUVI Campus Ambassador specializing in adversarial ML, AI-resistant systems, encrypted P2P platforms, and biometric security." />
+    content="Kavusik Rosan — HCL GUVI Campus Ambassador. Final-year CSE student at Sri Shakthi Institute, Coimbatore" />
   <meta name="subject" content="AI Security Engineer, Adversarial Machine Learning, Privacy Engineering, Ethical AI, Portfolio, Obscura Arcanum, HCL GUVI Campus Ambassador" />
   <meta name="author" content="Kavusik Rosan" />
   <meta name="keywords"
@@ -41,16 +41,17 @@
 
   <link rel="canonical" href="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/" />
 
-  <!-- Official portrait (same domain = highest priority; not LinkedIn post thumbnails) -->
-  <link rel="prefetch" as="image" href="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
+  <!-- Official portrait: preload (not prefetch) so the browser uses this fetch for the <img> tag too -->
+  <link rel="preload" as="image" href="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-256.webp"
+    type="image/webp" fetchpriority="high" imagesrcset="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-128.webp 128w, /Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-256.webp 256w" imagesizes="(min-width: 768px) 128px, 112px" />
   <meta name="thumbnail"
     content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png" />
 
   <!-- Open Graph (Clear Brand Identity) -->
   <meta property="og:locale" content="en_IN" />
-  <meta property="og:title" content="Kavusik Rosan | Campus Ambassador of HCL GUVI | Obscura Arcanum Creator | CSE Student" />
+  <meta property="og:title" content="Kavusik Rosan — AI Security Engineer & Obscura Arcanum Creator" />
   <meta property="og:description"
-    content="Kavusik Rosan — AI Security Engineer, Privacy Engineer and creator of Obscura Arcanum (Top 100 AICTE APF 2025 & Yukti Challenge 2025). HCL GUVI Campus Ambassador. Final Year CSE student at Sri Shakthi Institute, Coimbatore. Expert in adversarial ML, AI image protection, encrypted P2P systems, and biometric security." />
+    content="AI Security Engineer, creator of Obscura Arcanum (Top 100 AICTE APF 2025 & Yukti 2025), and HCL GUVI Campus Ambassador. Specializes in adversarial ML, AI image protection, and biometric security." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kavusik Rosan Portfolio" />
   <meta property="og:url" content="https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/" />
@@ -288,8 +289,6 @@
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#profilepage",
-    "dateCreated": "2024-01-01T00:00:00Z",
-    "dateModified": "2026-07-11T00:00:00Z",
     "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
     "name": "Kavusik Rosan — Official Portfolio",
     "description": "Official portfolio of Kavusik Rosan, AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador, and creator of Obscura Arcanum. Final-year CSE student at Sri Shakthi Institute of Engineering and Technology, Coimbatore.",
@@ -325,12 +324,7 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
-    rel="stylesheet">
+  <!-- Fonts are self-hosted via @fontsource in main.jsx (no Google Fonts chain) -->
 
   <!-- Structured data (Schema.org) for search engines + AI assistants -->
   <script type="application/ld+json">
@@ -775,7 +769,9 @@
       <section id="about">
         <h2>About</h2>
         <figure>
-          <img src="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png"
+          <img src="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-256.webp"
+            srcset="/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-128.webp 128w, /Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait-256.webp 256w"
+            sizes="256px"
             alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
             width="256" height="256" loading="eager" fetchpriority="high"
             itemprop="image" />
@@ -988,6 +984,13 @@
       </footer>
     </main>
   </noscript>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Kavusik-Rosan_portfolio/sw.js', {
+        scope: '/Kavusik-Rosan_portfolio/',
+      }).catch(function () { /* non-fatal */ });
+    }
+  </script>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

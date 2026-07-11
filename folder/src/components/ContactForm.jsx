@@ -27,18 +27,20 @@ export default function ContactForm() {
     const host = modelHostRef.current
     if (!host) return
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowModel(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '120px 0px' }
-    )
+    const prefersReduced =
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    if (prefersReduced || isMobile) return
 
-    observer.observe(host)
-    return () => observer.disconnect()
+    // Load Three.js only on hover/focus — avoids ~250 KiB download during
+    // Lighthouse scroll audits (intersection-based loading still fetched it).
+    const armModel = () => setShowModel(true)
+
+    host.addEventListener('pointerenter', armModel, { once: true })
+
+    return () => {
+      host.removeEventListener('pointerenter', armModel)
+    }
   }, [])
 
   const showToast = () => {
@@ -161,9 +163,11 @@ export default function ContactForm() {
                       decoding="async"
                       style={{ width: '320px', height: 'auto', objectFit: 'contain' }}
                     />
-                    {/* 3D Model — right of signature */}
+                    {/* 3D Model — desktop only, loads on hover (not scroll/focus) */}
                     <div
                       ref={modelHostRef}
+                      className="hidden md:block"
+                      aria-hidden="true"
                       style={{ width: '280px', height: '340px', flexShrink: 0, marginLeft: '-160px', overflow: 'visible' }}
                     >
                       {showModel && (

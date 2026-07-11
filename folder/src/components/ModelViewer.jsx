@@ -1,7 +1,7 @@
 import { useRef, Suspense, useMemo } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
-import * as THREE from 'three'
+import { Vector3 } from 'three'
 
 import stlUrl from '../clawd_large.stl?url'
 
@@ -11,11 +11,11 @@ function STLModel() {
 
   geometry.computeBoundingBox()
   const box = geometry.boundingBox
-  const center = new THREE.Vector3()
+  const center = new Vector3()
   box.getCenter(center)
   geometry.translate(-center.x, -center.y, -center.z)
 
-  const size = new THREE.Vector3()
+  const size = new Vector3()
   box.getSize(size)
   const maxDim = Math.max(size.x, size.y, size.z)
   const scale = 0.7 / maxDim

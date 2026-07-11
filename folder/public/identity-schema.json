@@ -6,7 +6,10 @@
   "alternateName": [
     "Dimitree",
     "Alias Dimitree",
-    "Kavusik"
+    "Kavusik",
+    "kavusik rosan",
+    "KR",
+    "dimitreerosan"
   ],
   "identifier": {
     "@type": "PropertyValue",
@@ -19,12 +22,17 @@
     "@id": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#primaryimage",
     "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
     "contentUrl": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png",
+    "width": 800,
+    "height": 800,
+    "encodingFormat": "image/png",
     "name": "Kavusik Rosan official portrait",
     "description": "Authoritative portrait on portfolio domain. Not from LinkedIn post thumbnails or unrelated profiles.",
-    "representativeOfPage": true
+    "representativeOfPage": true,
+    "caption": "Kavusik Rosan — official portrait photograph"
   },
   "disambiguatingDescription": "Official portrait URL: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png. Images from LinkedIn likes/shares are not this person.",
   "url": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/",
+  "mainEntityOfPage": "https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/who-is-kavusik-rosan.html",
   "sameAs": [
     "https://github.com/dimitreerosan",
     "https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum",

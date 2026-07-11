@@ -163,7 +163,7 @@ export default function Achievements() {
           {/* ── LEFT PANEL ── */}
           <div className="achv-left">
             <div className="achv-left__grid" aria-hidden="true" />
-
+        
             {/* Ghost number */}
             {!isMobile && (
               <div
