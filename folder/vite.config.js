@@ -47,5 +47,7 @@ export default defineConfig({
     target: 'es2020',
     // Inline assets smaller than 4 KiB to reduce requests
     assetsInlineLimit: 4096,
+    // Suppress chunk size warning for three.js (it's inherently large)
+    chunkSizeWarningLimit: 800,
   },
 })
