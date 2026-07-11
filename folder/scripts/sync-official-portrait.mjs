@@ -1,14 +1,21 @@
 #!/usr/bin/env node
 /**
- * Syncs and optimizes portfolio images for Lighthouse performance:
- * - PNG portrait (≤800px) for OG/JSON-LD crawlers
- * - Responsive WebP variants (128w, 256w) for in-page display
- * - Compressed certification badge WebP
+ * Syncs and optimizes portfolio images for Lighthouse performance.
+ * Gracefully skips if sharp cannot load (e.g. cross-platform CI where
+ * pre-built images are already committed to public/images/).
  */
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import sharp from 'sharp'
+
+// Try to load sharp — skip entire script if the native binary isn't available
+let sharp
+try {
+  sharp = (await import('sharp')).default
+} catch {
+  console.warn('⚠ sync-official-portrait: sharp unavailable on this platform — using committed images')
+  process.exit(0)
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.join(__dirname, '..')

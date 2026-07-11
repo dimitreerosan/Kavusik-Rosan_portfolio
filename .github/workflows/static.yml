@@ -36,8 +36,8 @@ jobs:
         run: npm install
         working-directory: folder
 
-      - name: Rebuild sharp for Linux
-        run: npm rebuild sharp
+      - name: Install sharp for linux-x64
+        run: npm install --os=linux --cpu=x64 sharp
         working-directory: folder
 
       - name: Install Chromium for prerender
