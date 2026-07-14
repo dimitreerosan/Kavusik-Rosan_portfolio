@@ -12,16 +12,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Keep service worker at a stable, unhashed path
-        // (it lives in public/ so Vite copies it as-is)
-
         manualChunks(id) {
-          // Split three.js into its own lazy-loaded chunk (Contact section hover only)
+          // drei helpers are large — isolate them so they never block initial parse
+          if (id.includes('@react-three/drei')) {
+            return 'drei';
+          }
+          // Three.js + fiber in its own lazy chunk
           if (id.includes('node_modules/three') ||
               id.includes('@react-three/fiber')) {
             return 'three';
           }
-          // React runtime in its own small chunk (rarely changes)
+          // React runtime — rarely changes, cache-friendly
           if (id.includes('node_modules/react') ||
               id.includes('node_modules/react-dom') ||
               id.includes('node_modules/scheduler')) {
@@ -38,16 +39,22 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,   // strip console.* in production
+        drop_console: true,
         drop_debugger: true,
         passes: 2,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
       },
+      mangle: { safari10: true },
     },
     cssMinify: true,
     target: 'es2020',
-    // Inline assets smaller than 4 KiB to reduce requests
+    // Inline assets smaller than 4 KiB to reduce HTTP requests
     assetsInlineLimit: 4096,
-    // Suppress chunk size warning for three.js (it's inherently large)
-    chunkSizeWarningLimit: 800,
+    // drei chunk is inherently large — suppress warning
+    chunkSizeWarningLimit: 1000,
+    // Emit source maps for error monitoring without exposing source in prod
+    sourcemap: false,
+    // Reduce CSS code duplication across chunks
+    cssCodeSplit: true,
   },
 })

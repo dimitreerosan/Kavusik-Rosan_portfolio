@@ -15,7 +15,7 @@ const FutureScope = lazy(() => import('./components/FutureScope'))
 const ContactForm = lazy(() => import('./components/ContactForm'))
 const Footer = lazy(() => import('./components/Footer'))
 
-function LazyMount({ children, fallback, rootMargin = '200px 0px' }) {
+function LazyMount({ children, fallback, rootMargin = '400px 0px' }) {
   const ref = useRef(null)
   const [show, setShow] = useState(false)
 
