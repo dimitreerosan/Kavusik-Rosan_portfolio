@@ -22,22 +22,22 @@ export default function Footer() {
 
             {/* Navigation */}
             <div>
-              <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em'}}>Navigation</h4>
+              <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em', fontFamily: "'Inter', sans-serif"}}>Navigation</h4>
               <ul className="space-y-2">
-                <li><button type="button" onClick={() => { const el = document.querySelector('#'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Home</button></li>
-                <li><button type="button" onClick={() => { const el = document.querySelector('#about'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">About</button></li>
-                <li><button type="button" onClick={() => { const el = document.querySelector('#projects'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Projects</button></li>
-                <li><button type="button" onClick={() => { const el = document.querySelector('#contact'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Contact</button></li>
+                <li><button type="button" onClick={() => { const el = document.querySelector('#'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>Home</button></li>
+                <li><button type="button" onClick={() => { const el = document.querySelector('#about'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>About</button></li>
+                <li><button type="button" onClick={() => { const el = document.querySelector('#projects'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>Projects</button></li>
+                <li><button type="button" onClick={() => { const el = document.querySelector('#contact'); if (el) el.scrollIntoView({behavior: 'smooth'}) }} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>Contact</button></li>
               </ul>
             </div>
 
             {/* Contact & Networks */}
             <div>
-              <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em'}}>Contact & Networks</h4>
+              <h4 className="text-sm font-bold uppercase mb-4 text-gray-400" style={{letterSpacing: '0.08em', fontFamily: "'Inter', sans-serif"}}>Contact & Networks</h4>
               <ul className="space-y-2">
-                <li><button type="button" onClick={() => window.location.href = 'mailto:kavusikbalu2006@gmail.com'} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">Mail</button></li>
-                <li><button type="button" onClick={() => window.open('https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">LinkedIn</button></li>
-                <li><button type="button" onClick={() => window.open('https://github.com/dimitreerosan', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0">GitHub</button></li>
+                <li><button type="button" onClick={() => window.location.href = 'mailto:kavusikbalu2006@gmail.com'} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>Mail</button></li>
+                <li><button type="button" onClick={() => window.open('https://www.linkedin.com/in/kavusik-rosan-dimitree-creator-of-obscura-arcanum', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>LinkedIn</button></li>
+                <li><button type="button" onClick={() => window.open('https://github.com/dimitreerosan', '_blank', 'noopener,noreferrer')} className="text-sm text-gray-500 hover:text-white transition-colors bg-transparent border-none p-0" style={{fontFamily: "'Poppins', sans-serif"}}>GitHub</button></li>
               </ul>
             </div>
           </div>

@@ -62,4 +62,13 @@
 <priority>0.8</priority>
 </url>
 
+<!-- Publications section — added 2026-07-25 -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#publications</loc>
+<lastmod>2026-07-25</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+<mobile:mobile/>
+</url>
+
 </urlset>

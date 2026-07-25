@@ -65,4 +65,20 @@
 <priority>0.9</priority>
 </url>
 
+<!-- HBRP Article — Link Shift research paper by Kavusik Rosan (added 2026-07-25) -->
+<url>
+<loc>https://hbrppublication.com/OJS/index.php/JRRFIH/article/view/8999</loc>
+<lastmod>2026-07-25</lastmod>
+<changefreq>yearly</changefreq>
+<priority>1.0</priority>
+</url>
+
+<!-- GUVI Blog — Windsurf AI technical article by Kavusik Rosan (added 2026-07-25) -->
+<url>
+<loc>https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/</loc>
+<lastmod>2026-07-25</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
 </urlset>

@@ -96,7 +96,6 @@ export default function LegalNotice({ onClose }) {
         <div className="ln-divider" />
         <div className="ln-footer">
           <span className="ln-footer__copy">© 2026 Kavusik Rosan</span>
-          <button className="ln-footer__btn" onClick={onClose}>Close</button>
         </div>
 
       </div>

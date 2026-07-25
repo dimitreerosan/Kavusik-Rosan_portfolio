@@ -11,7 +11,7 @@ const Gallery = lazy(() => import('./components/Gallery'))
 const TechnicalSkills = lazy(() => import('./components/TechnicalSkills'))
 const KeyStrengths = lazy(() => import('./components/KeyStrengths'))
 const SoftSkills = lazy(() => import('./components/SoftSkills'))
-const FutureScope = lazy(() => import('./components/FutureScope'))
+const Publications = lazy(() => import('./components/Publications'))
 const ContactForm = lazy(() => import('./components/ContactForm'))
 const Footer = lazy(() => import('./components/Footer'))
 
@@ -82,6 +82,11 @@ function App() {
         </LazyMount>
         <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
           <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+            <Publications />
+          </Suspense>
+        </LazyMount>
+        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
+          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
             <TechnicalSkills />
           </Suspense>
         </LazyMount>
@@ -93,11 +98,6 @@ function App() {
         <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
           <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
             <SoftSkills />
-          </Suspense>
-        </LazyMount>
-        <LazyMount fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-          <Suspense fallback={<div className="h-64 md:h-80 animate-pulse bg-gray-900 rounded-lg" />}>
-            <FutureScope />
           </Suspense>
         </LazyMount>
         <LazyMount fallback={<div className="h-96 animate-pulse bg-gray-900 rounded-lg" />}>

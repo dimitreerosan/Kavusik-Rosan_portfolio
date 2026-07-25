@@ -127,7 +127,6 @@ export default function PrivacyPolicy({ onClose }) {
         <div className="ln-divider" />
         <div className="ln-footer">
           <span className="ln-footer__copy">Effective July 2, 2026</span>
-          <button className="ln-footer__btn" onClick={onClose}>Close</button>
         </div>
 
       </div>
