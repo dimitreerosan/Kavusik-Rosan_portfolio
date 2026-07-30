@@ -3,98 +3,95 @@ Allow: /
 Disallow: /admin/
 Disallow: /test/
 Disallow: /temp/
+Disallow: /private/
+Crawl-delay: 1
 
-# Metadata Sitemaps for enhanced indexing
-Allow: /pdfs-sitemap.xml
-Allow: /sitemap-pages.xml
-Allow: /achievements-sitemap.xml
-Allow: /achievements-metadata.json
-Allow: /image-sitemap.xml
-Allow: /image-metadata.json
-Allow: /identity-schema.json
-Allow: /images/kavusik-rosan-official-portrait.png
-
-# =======================================
-# GOOGLE SEARCH OPTIMIZATION
-# =======================================
+# Google discovery and rendering
 User-agent: Googlebot
 Allow: /
+Allow: /about-kavusik-rosan.html
+Allow: /images/
+Allow: /llms.txt
 Allow: /pdfs-sitemap.xml
+Allow: /external-links-sitemap.xml
 Allow: /sitemap-pages.xml
 Allow: /achievements-sitemap.xml
+Allow: /image-sitemap.xml
 Allow: /achievements-metadata.json
+Allow: /external-links-index.json
+Allow: /resources-index.json
+Allow: /portfolio-metadata.json
+Allow: /image-metadata.json
+Allow: /identity-schema.json
 Allow: /*.json
 
-# =======================================
-# BING SEARCH OPTIMIZATION
-# =======================================
+# Bing discovery
 User-agent: Bingbot
 Allow: /
+Allow: /about-kavusik-rosan.html
+Allow: /images/
+Allow: /llms.txt
 Allow: /pdfs-sitemap.xml
+Allow: /external-links-sitemap.xml
 Allow: /sitemap-pages.xml
 Allow: /achievements-sitemap.xml
-Allow: /achievements-metadata.json
+Allow: /image-sitemap.xml
 Allow: /*.json
 Crawl-delay: 1
 
-# =======================================
-# DUCKDUCKGO SEARCH OPTIMIZATION
-# =======================================
+# DuckDuckGo and privacy-friendly search
 User-agent: DuckDuckBot
 Allow: /
+Allow: /about-kavusik-rosan.html
+Allow: /images/
 Allow: /achievements-sitemap.xml
 Allow: /achievements-metadata.json
+Allow: /external-links-index.json
+Allow: /resources-index.json
 
-# =======================================
-# YANDEX SEARCH OPTIMIZATION
-# =======================================
+# Yandex
 User-agent: Yandex
 Allow: /
+Allow: /about-kavusik-rosan.html
+Allow: /images/
 
-# =======================================
-# AI & MACHINE LEARNING CRAWLERS
-# =======================================
-# Training data for AI models
+# AI and model crawlers
 User-agent: CCBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
 User-agent: GPTBot
 Allow: /
-
 User-agent: Claude-Web
 Allow: /
-
+User-agent: ClaudeBot
+Allow: /
 User-agent: PerplexityBot
 Allow: /
-
 User-agent: GeminiBot
 Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: ByteSpider
+Allow: /
+User-agent: Cohere-ai
+Allow: /
+User-agent: Diffbot
+Allow: /
 
-# =======================================
-# SITEMAPS - MULTI-SEARCH ENGINE
-# =======================================
+# Sitemaps for broad discovery
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/sitemap-pages.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/pdfs-sitemap.xml
+Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-sitemap.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/achievements-sitemap.xml
 Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/image-sitemap.xml
+Host: dimitreerosan.github.io
 
-Crawl-delay: 1
-
-# =======================================
-# METADATA FOR ALL SEARCH ENGINES
-# =======================================
-# Resource Index: SIET CSE Publications
-# Achievement Index: HCL GUVI Campus Ambassador
-# Optimization: Google, Bing, DuckDuckGo, Yandex
-# AI Models: ChatGPT, Claude, Gemini, Perplexity
-# 
-# Kavusik Rosan Portfolio
-# AI Security Researcher | Privacy Engineer
-# GitHub: @dimitreerosan
-# LinkedIn: @kavusik-rosan
-# Focus: Adversarial ML, AI Security, Privacy Engineering, Ethical Tech
-# Role: HCL GUVI Campus Ambassador
+# Profile summary for crawlers
+# Kavusik Rosan — AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador
+# Official portfolio: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/

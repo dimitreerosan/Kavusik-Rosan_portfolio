@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <!-- SIET CSE Newsletter & Magazine Resources -->
-<!-- These are indexed for search engines but not exposed in frontend UI -->
+<!-- Indexed for Google/Bing worldwide search — Kavusik Rosan (Newsletter & Magazine Head) -->
+
+<url>
+<loc>https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%20%202023%20-%202024.pdf</loc>
+<lastmod>2024-06-01</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.85</priority>
+</url>
 
 <url>
 <loc>https://www.siet.ac.in/newsletter_magazine/CSE%20MAGAZINE%202024%20-%202025.pdf</loc>

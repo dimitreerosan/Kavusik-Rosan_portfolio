@@ -46,7 +46,10 @@
       "subsidiaryPartner": "GUVI (IIT Madras)",
       "university": "Sri Shakthi Institute of Engineering and Technology",
       "verificationUrl": "https://www.siet.ac.in",
-      "linkedinProfile": "https://linkedin.com/in/kavusik-rosan"
+      "linkedinProfile": "https://linkedin.com/in/kavusik-rosan",
+      "theOrgProfile": "https://theorg.com/org/guvi-in/teams/campus-engagement",
+      "guviBlogArticle": "https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/",
+      "hbrpAuthorProfile": "https://hbrppublication.com/OJS/index.php/JRRFIH/search/authors/view?firstName=Kavusik&middleName=&lastName=Rosan%20B&affiliation=Student%2C%20Department%20of%20computer%20science%20%26%20Engineering%2C%20Sri%20Shakthi%20Institute%20of%20Engineering%20and%20Technology%2C%20Coimbatore%2C%20Tamilnadu%2C%20India.&country=IN"
     },
     "keywords": [
       "HCL Technologies",
@@ -64,6 +67,10 @@
       "Student Mentoring",
       "Tech Community",
       "Kavusik Rosan",
+      "The Org GUVI",
+      "GUVI Campus Engagement",
+      "Windsurf AI",
+      "HBRP Publication",
       "IIT Madras",
       "Cybersecurity",
       "AI Security"
@@ -194,8 +201,8 @@
       "visibility": "public"
     }
   },
-  "lastUpdated": "2026-06-24",
-  "lastVerified": "2026-06-24T09:43:42.858Z",
+  "lastUpdated": "2026-07-30",
+  "lastVerified": "2026-07-30T13:22:54.871Z",
   "achievements": [
     {
       "id": "ai-security-expert-2026",
