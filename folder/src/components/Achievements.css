@@ -183,19 +183,12 @@
   align-items: flex-start;
   text-align: left;
   padding: 0 1rem;
-  will-change: opacity, transform, filter;
   z-index: 11;
 }
 
 .achv-item--locked {
   border-left: 2px solid rgba(255, 255, 255, 0.12);
   padding-left: calc(1rem - 2px);
-}
-
-.achv-meta,
-.achv-title,
-.achv-item__body {
-  will-change: opacity, transform;
 }
 
 .achv-title {
@@ -233,7 +226,6 @@
   gap: 0.4rem;
   margin-bottom: 0.7rem;
   justify-content: flex-start;
-  will-change: opacity, transform;
 }
 
 .achv-meta__tag {
@@ -382,4 +374,21 @@
   .achv-lock-bar { display: none; }
 
   .achv-corner { display: none; }
+
+  /* Mobile readability improvements */
+  .achv-detail {
+    text-align: justify;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .achv-meta__tag {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+
+  .achv-title {
+    font-size: 1.3rem;
+  }
 }
+

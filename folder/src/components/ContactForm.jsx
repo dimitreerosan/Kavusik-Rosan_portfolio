@@ -3,7 +3,7 @@ import resumePdf from '../Kavusik Rosan_Resume.pdf'
 import signatureMark from '../Copy of O.png'
 import './ContactForm.css'
 
-const ModelViewer = lazy(() => import('./ModelViewer'))
+import ModelViewer from './ModelViewer'
 
 export default function ContactForm() {
   const [showModel, setShowModel] = useState(false)
@@ -24,22 +24,11 @@ export default function ContactForm() {
   }, [])
 
   useEffect(() => {
-    const host = modelHostRef.current
-    if (!host) return
-
     const prefersReduced =
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const isMobile = window.matchMedia('(max-width: 768px)').matches
-    if (prefersReduced || isMobile) return
-
-    // Load Three.js only on hover/focus — avoids ~250 KiB download during
-    // Lighthouse scroll audits (intersection-based loading still fetched it).
-    const armModel = () => setShowModel(true)
-
-    host.addEventListener('pointerenter', armModel, { once: true })
-
-    return () => {
-      host.removeEventListener('pointerenter', armModel)
+    if (!prefersReduced && !isMobile) {
+      setShowModel(true)
     }
   }, [])
 

@@ -82,18 +82,23 @@ export default function ImageProtection() {
     }
     makeImgsUndraggable()
 
+    let pendingMutationRaf = null
     const observer = new MutationObserver((mutations) => {
-      for (const m of mutations) {
-        m.addedNodes && m.addedNodes.forEach((n) => {
-          if (n.nodeType === 1) {
-            if (n.tagName === 'IMG') attachImgGuards(n)
-            else makeImgsUndraggable(n)
-          }
-        })
-        m.removedNodes && m.removedNodes.forEach((n) => {
-          if (n.nodeType === 1 && n.tagName === 'IMG') detachImgGuards(n)
-        })
-      }
+      if (pendingMutationRaf) return
+      pendingMutationRaf = requestAnimationFrame(() => {
+        pendingMutationRaf = null
+        for (const m of mutations) {
+          m.addedNodes && m.addedNodes.forEach((n) => {
+            if (n.nodeType === 1) {
+              if (n.tagName === 'IMG') attachImgGuards(n)
+              else makeImgsUndraggable(n)
+            }
+          })
+          m.removedNodes && m.removedNodes.forEach((n) => {
+            if (n.nodeType === 1 && n.tagName === 'IMG') detachImgGuards(n)
+          })
+        }
+      })
     })
     observer.observe(document.documentElement, { childList: true, subtree: true })
 

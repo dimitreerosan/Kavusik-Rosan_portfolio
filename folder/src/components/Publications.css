@@ -457,12 +457,106 @@
    ================================================================ */
 @media (max-width: 860px) {
   .pub-wrapper { padding: 0 1.5rem 4rem; }
-  .pub-label { flex-wrap: wrap; gap: 1rem; }
-  .pub-label__sub { text-align: left; }
 
-  .pub-band__inner { grid-template-columns: 40px 1fr; min-height: auto; }
-  .pub-band__meta { display: none; }
-  .pub-band__content { padding: 1.75rem 1.5rem 1.75rem 1.25rem; }
+  .pub-label {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+  }
+  .pub-label__sub {
+    text-align: left;
+    max-width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .pub-band__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto;
+  }
+
+  .pub-band__strip { display: none !important; }
+
+  .pub-band__content {
+    padding: 1.5rem 1rem;
+  }
+
+  .pub-band__title {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .pub-band__venue {
+    font-size: 0.55rem;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .pub-band__desc {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .pub-tag {
+    font-size: 0.48rem;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .pub-band__meta {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    padding: 1rem 1rem 1.2rem;
+    border-left: none !important;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .pub-band__meta-top {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pub-band__meta-year {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.15);
+  }
+
+  .pub-band__meta-label {
+    font-size: 0.42rem;
+  }
+
+  .pub-cta-wrap {
+    margin-top: 0;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pub-cta-wrap__platform { display: none; }
+
+  .pub-cta {
+    padding: 0.6rem 1rem;
+    width: auto;
+  }
+
   .pub-band__num { font-size: 35vw; }
   .pub-ticker { display: none; }
+
+  .pub-band:hover .pub-band__inner {
+    transform: none;
+  }
 }
+

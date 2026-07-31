@@ -1,4 +1,4 @@
-// Critical weights loaded eagerly (above-fold text)
+import '@fontsource/poppins/latin-300.css'
 import '@fontsource/poppins/latin-400.css'
 import '@fontsource/poppins/latin-700.css'
 import React from 'react'

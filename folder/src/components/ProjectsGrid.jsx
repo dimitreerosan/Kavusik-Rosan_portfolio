@@ -30,7 +30,7 @@ const Chip = ({ children, color = 'slate' }) => {
 
   return (
 
-    <span className={`px-2 py-0.5 rounded text-[10px] tracking-widest uppercase border ${map[color] || map.slate}`}>
+    <span className={`px-2 py-0.5 rounded text-[10px] tracking-widest uppercase border whitespace-nowrap ${map[color] || map.slate}`}>
 
       {children}
 
@@ -268,14 +268,6 @@ export default function ProjectsGrid() {
 
               key={p.id}
 
-              as="button"
-
-              type="button"
-
-              onClick={() => handleOpen(p)}
-
-              ariaLabel={`Open project: ${p.title}`}
-
             >
 
               <div className="overflow-hidden">
@@ -310,13 +302,18 @@ export default function ProjectsGrid() {
                     draggable={false}
                     onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
                     onDragStart={(e) => { e.preventDefault(); e.stopPropagation(); }}
-                    onLoad={(e) => e.target.style.opacity = 1}
+                    onLoad={(e) => {
+                      e.target.style.opacity = 1
+                      if (e.target.previousElementSibling) {
+                        e.target.previousElementSibling.style.display = 'none'
+                      }
+                    }}
                     style={{ opacity: 0 }}
                   />
                 </div>
               </div>
               <div className="p-4 text-left">
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
                   <Chip color="teal">{p.year}</Chip>
                   {p.tags?.map((t) => (
                     <Chip key={t} color="slate">{t}</Chip>

@@ -196,10 +196,10 @@ export default function Gallery() {
     }
 
     return (
-        <section ref={sectionRef} className="py-24 px-6 md:px-10 bg-black border-t border-gray-900 overflow-hidden">
+        <section ref={sectionRef} className="py-16 md:py-20 px-6 md:px-10 bg-black border-t border-gray-900 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="mb-16 text-center">
+                <div className="mb-6 text-center">
                     <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
                         Moments & Milestones
                     </h2>
@@ -231,8 +231,7 @@ export default function Gallery() {
                       scale(${isCenter ? 1 : 0.8})
                       translateZ(${isCenter ? 0 : -200}px)
                     `,
-                                        transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                                        willChange: 'transform, opacity',
+                                        transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                                         zIndex: isCenter ? 20 : 10 - Math.abs(position),
                                         opacity: Math.abs(position) > 1 ? 0.4 : 1,
                                         pointerEvents: isCenter ? 'auto' : 'none'
