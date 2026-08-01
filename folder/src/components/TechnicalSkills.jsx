@@ -70,7 +70,7 @@ export default function TechnicalSkills() {
       ),
     },
     {
-      label: 'Security & Privacy',
+      label: 'Security & Cryptography',
       value: 'Cryptography, Encryption Protocols, Adversarial ML',
       level: 'Intermediate',
       icon: (
@@ -111,6 +111,18 @@ export default function TechnicalSkills() {
           <rect x="4" y="4" width="16" height="6" rx="2" strokeWidth="2" />
           <rect x="4" y="14" width="16" height="6" rx="2" strokeWidth="2" />
           <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M8 7h0M8 17h0" />
+        </svg>
+      ),
+    },
+    {
+      label: 'Digital Marketing & SEO',
+      value: 'Keyword Research, On-Page SEO, Technical SEO, Content Optimization, Search Analytics, Website Optimization, Organic Growth Strategies, Digital Branding, Google Search Console',
+      level: 'Advanced',
+      icon: (
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="11" cy="11" r="8" strokeWidth="2" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
+          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M8 11h6M11 8v6" />
         </svg>
       ),
     },

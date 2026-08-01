@@ -16,7 +16,7 @@ export default function Footer() {
             <div>
               <h3 className="text-xl font-black uppercase text-gray-600 mb-4" style={{letterSpacing: '-0.04em'}}>Kavusik Rosan</h3>
               <p className="text-xs text-gray-500 leading-relaxed font-poppins">
-                Computer Science student, HCL GUVI Campus Ambassador & privacy engineer focusing on adversarial ML, encrypted P2P systems and biometric security. Building privacy-first, accessible technology.
+                Computer Science student, HCL GUVI Campus Ambassador skilled in Digital Marketing, SEO, Content Optimization and Organic Growth Strategies. Building privacy-first, accessible technology.
               </p>
             </div>
 

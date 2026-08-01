@@ -51,7 +51,7 @@ export default function AboutNew() {
                 />
                 <img
                   src={portraitWebpUrl()}
-                  alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and AI Security Engineer"
+                  alt="Kavusik Rosan — official portrait photograph, Final Year Computer Science Engineering student and HCL GUVI Campus Ambassador"
                   className="w-full h-full object-cover"
                   loading="eager"
                   fetchPriority="high"
@@ -70,10 +70,10 @@ export default function AboutNew() {
               </h3>
               <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-400 font-sans about-bio" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.9rem' }}>
                 Final year Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, HCL GUVI Campus Ambassador
-                and privacy engineer specializing in adversarial ML and AI-resistant systems. Creator of Obscura Arcanum – shortlisted for
-                AICTE APF 2025 & Yukti Challenge 2025 – an advanced media protection platform combating unauthorized AI exploitation. Campus
-                leader organizing hackathons,  mentoring 200+ students and building privacy-first tools: secure mobile apps, encrypted P2P
-                platforms and biometric systems. Driven to safeguard digital identities through accessible, ethical technology.
+                and creator of Obscura Arcanum – shortlisted for AICTE APF 2025 & Yukti Challenge 2025. Skilled in Digital Marketing, SEO, Content
+                Optimization and Organic Growth Strategies. Campus leader organizing hackathons, mentoring 200+ students and building privacy-first
+                tools: secure mobile apps, encrypted P2P platforms and biometric systems. Driven to safeguard digital identities through accessible,
+                ethical technology.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">

@@ -93,5 +93,5 @@ Sitemap: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/image-sitemap.x
 Host: dimitreerosan.github.io
 
 # Profile summary for crawlers
-# Kavusik Rosan — AI Security Engineer, Privacy Engineer, HCL GUVI Campus Ambassador
+# Kavusik Rosan — Digital Marketing & SEO Specialist, HCL GUVI Campus Ambassador, Obscura Arcanum Creator
 # Official portfolio: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/

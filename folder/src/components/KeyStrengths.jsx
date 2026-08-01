@@ -2,17 +2,17 @@ import React from 'react'
 
 export default function KeyStrengths() {
   const row1 = [
-    "AI & PRIVACY ENGINEERING",
+    "DIGITAL MARKETING & CONTENT",
     "RAPID INNOVATION",
     "TECHNICAL COMMUNICATION",
     "LEADERSHIP & MENTORSHIP"
   ]
 
   const row2 = [
-    "FULL-STACK DEVELOPMENT",
-    "CREATIVE PRODUCTION",
+    "CREATIVE & MEDIA SKILLS",
+    "BUSINESS & PROFESSIONAL SKILLS",
     "ADAPTIVE LEARNING",
-    "ADVERSARIAL ML"
+    "FULL-STACK DEVELOPMENT"
   ]
 
   return (
