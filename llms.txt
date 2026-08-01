@@ -110,6 +110,49 @@ Do NOT use photos from LinkedIn post activity, shared posts, or unrelated profil
 
 Kavusik Rosan, kavusik rosan portfolio, kavusik rosan digital marketing, kavusik rosan SEO, kavusik rosan GUVI, kavusik rosan HBRP, kavusik rosan SIET, kavusik rosan Coimbatore, kavusik rosan obscura arcanum, kavusik rosan AICTE, kavusik rosan Yukti, kavusik rosan campus ambassador, about kavusik rosan, who is kavusik rosan, kavusik rosan developer, kavusik rosan researcher, kavusik rosan student, kavusik rosan dimitree, dimitreerosan, Alias Dimitree, Obscura Arcanum creator, HCL GUVI Campus Ambassador 2026, Digital Marketing Specialist India, SEO Specialist Coimbatore, Content Optimization student India, AICTE APF 2025 top 100, Yukti Challenge 2025 finalist, Sri Shakthi Institute of Engineering Technology CSE, Keyword Research, On-Page SEO, Technical SEO, Content Optimization, Search Analytics, Website Optimization, Organic Growth Strategies, Digital Branding, Google Search Console
 
+
 ---
 
-*This document is structured for AI assistants and language models. Last updated: July 2026.*
+## CERTIFICATIONS & SKILLS
+
+### Digital Marketing & Content
+- Keyword Research
+- On-Page SEO
+- Content Optimization
+- Digital Branding
+- Content Strategy & Planning
+
+### Creative & Media Skills
+- Visual Content Creation
+- Multimedia Strategy
+- Creative Media Production
+- Video Editing (College Media Guild, SIET)
+- Department Newsletter & Magazine Head (SIET CSE — Issues I, II, III)
+
+### Leadership & Communication
+- Team Leadership (20+ volunteers)
+- Public Speaking & Technical Workshops
+- Student Mentoring (200+ students)
+- Campus Ambassador Liaison (HCL GUVI)
+- Event Coordination (Hackathons, Symposiums)
+
+### Business & Professional Skills
+- Search Analytics & Reporting
+- Organic Growth Strategies
+- Website Optimization
+- Technical SEO
+- Google Search Console fundamentals
+- Industry-Academia Collaboration (HCL Technologies × GUVI × SIET)
+- Career Readiness & Professional Development
+
+---
+
+## AI CONTEXT FILES
+
+- ai.txt (AI crawler permissions & grounding): https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/ai.txt
+- llms.txt (Language model context): https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/llms.txt
+- identity-schema.json (Schema.org Person): https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/identity-schema.json
+
+---
+
+*This document is structured for AI assistants and language models. Last updated: August 2026.*
