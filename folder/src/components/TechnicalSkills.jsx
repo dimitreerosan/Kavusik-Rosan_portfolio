@@ -70,17 +70,6 @@ export default function TechnicalSkills() {
       ),
     },
     {
-      label: 'Security & Cryptography',
-      value: 'Cryptography, Encryption Protocols, Adversarial ML',
-      level: 'Intermediate',
-      icon: (
-        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 7l3 1.5v2.5c0 2-1.5 4-3 5-1.5-1-3-3-3-5V8.5l3-1.5z" />
-        </svg>
-      ),
-    },
-    {
       label: 'Tools & Platforms',
       value: 'Git, Supabase, Firebase, VS Code, Android Studio',
       level: 'Advanced',
@@ -116,7 +105,7 @@ export default function TechnicalSkills() {
     },
     {
       label: 'Digital Marketing & SEO',
-      value: 'Keyword Research, On-Page SEO, Technical SEO, Content Optimization, Search Analytics, Website Optimization, Organic Growth Strategies, Digital Branding, Google Search Console',
+      value: 'On-Page & Technical SEO, Keyword Research, Search Analytics',
       level: 'Advanced',
       icon: (
         <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">

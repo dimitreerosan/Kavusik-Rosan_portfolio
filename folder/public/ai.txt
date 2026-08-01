@@ -70,7 +70,6 @@ Yukti Innovation Challenge 2025.
 Languages: Python (Advanced), JavaScript, Dart
 Frameworks: React, Flutter, Bootstrap, Firebase
 AI / ML: TensorFlow, PyTorch, Scikit-learn, OpenCV
-Security & Cryptography: Cryptography, Encryption Protocols
 Tools: Git, Supabase, Firebase, VS Code, Android Studio
 AI Tools: Claude, GitHub Copilot, Cursor, Windsurf, Gemini
 
