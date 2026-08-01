@@ -55,6 +55,50 @@
     "name": "Sri Shakthi Institute of Engineering and Technology",
     "url": "https://www.siet.ac.in/"
   },
+  "knowsAbout": [
+    "Digital Marketing",
+    "SEO (Search Engine Optimization)",
+    "Keyword Research",
+    "On-Page SEO",
+    "Technical SEO",
+    "Content Optimization",
+    "Search Analytics",
+    "Website Optimization",
+    "Organic Growth Strategies",
+    "Digital Branding",
+    "Google Search Console",
+    "Python",
+    "Machine Learning",
+    "Computer Vision",
+    "Full-Stack Development",
+    "Mobile Development"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certificate",
+      "name": "Digital Marketing & Content",
+      "description": "Certified in digital marketing strategy, content creation, SEO, and digital branding"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certificate",
+      "name": "Creative & Media Skills",
+      "description": "Certified in creative media production, visual content, and multimedia strategy"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certificate",
+      "name": "Leadership & Communication",
+      "description": "Certified in leadership, team communication, and stakeholder engagement"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certificate",
+      "name": "Business & Professional Skills",
+      "description": "Certified in business communication, professional development, and career readiness"
+    }
+  ],
   "knows": {
     "@type": "Thing",
     "name": "Obscura Arcanum",
