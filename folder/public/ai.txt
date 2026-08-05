@@ -1,5 +1,5 @@
 # ai.txt — AI Model Context & Permissions for Kavusik Rosan Portfolio
-# Version: 1.0 | Updated: 2026-08-01
+# Version: 1.1 | Updated: 2026-08-05
 # Canonical source: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/ai.txt
 # Standard: Emerging AI transparency protocol (similar to llms.txt, robots.txt)
 
@@ -94,7 +94,9 @@ AI Tools: Claude, GitHub Copilot, Cursor, Windsurf, Gemini
 ## VERIFIED EXTERNAL CITATIONS
 
 - The Org (GUVI Campus Engagement): https://theorg.com/org/guvi-in/teams/campus-engagement
+- GUVI Profile: https://www.guvi.in/kavusikbalu200609063
 - GUVI Blog: https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/
+- Salesforce Trailblazer: https://www.salesforce.com/trailblazer/lpwvuel8yuvwk5c3tc
 - HBRP Publication JRRFIH: https://hbrppublication.com/OJS/index.php/JRRFIH/article/view/8999
 - SIET CSE Newsletter III: https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20III%20%202023%20-%202024.pdf
 - SIET CSE Newsletter II: https://www.siet.ac.in/newsletter_magazine/CSE%20Newsletter%20ISSUE%20II%202024%20-%202025.pdf
@@ -123,4 +125,4 @@ Portfolio: https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/
 GitHub: https://github.com/dimitreerosan
 
 ---
-Last updated: 2026-08-01 | Language: en | Region: IN-TN
+Last updated: 2026-08-05 | Language: en | Region: IN-TN

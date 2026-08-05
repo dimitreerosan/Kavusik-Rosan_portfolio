@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.1",
-    "lastUpdated": "2026-06-26",
+    "version": "1.2",
+    "lastUpdated": "2026-08-05",
     "author": "Kavusik Rosan",
     "primaryKeyword": "Kavusik Rosan",
     "indexPurpose": "Verified external profiles, publications, organizational listings, and academic citations indexed for Google, Bing, DuckDuckGo, and AI search worldwide",
@@ -166,13 +166,61 @@
       "indexForSearch": true,
       "seoPriority": 0.85,
       "lastVerified": "2026-06-25"
+    },
+    {
+      "id": "guvi-profile-kavusik-rosan",
+      "title": "Kavusik Rosan — GUVI Profile",
+      "url": "https://www.guvi.in/kavusikbalu200609063",
+      "category": "professional",
+      "type": "learner-profile",
+      "platform": "GUVI",
+      "organization": "GUVI (IIT Madras Incubated)",
+      "relationship": "Official GUVI learner and HCL GUVI Campus Ambassador profile",
+      "description": "Official GUVI profile page for Kavusik Rosan. Confirms HCL GUVI Campus Ambassador status under Mission Upskill India and verifies learner activity on the GUVI platform.",
+      "keywords": [
+        "Kavusik Rosan",
+        "GUVI profile",
+        "HCL GUVI",
+        "Campus Ambassador",
+        "Mission Upskill India",
+        "GUVI learner",
+        "IIT Madras"
+      ],
+      "verified": true,
+      "indexForSearch": true,
+      "seoPriority": 0.95,
+      "lastVerified": "2026-08-05"
+    },
+    {
+      "id": "salesforce-trailblazer-kavusik-rosan",
+      "title": "Kavusik Rosan — Salesforce Trailblazer Profile",
+      "url": "https://www.salesforce.com/trailblazer/lpwvuel8yuvwk5c3tc",
+      "category": "professional",
+      "type": "certification-profile",
+      "platform": "Salesforce Trailhead",
+      "organization": "Salesforce",
+      "relationship": "Verified Salesforce Trailblazer — credentials and badges",
+      "description": "Official Salesforce Trailblazer profile for Kavusik Rosan. Documents Salesforce credentials, Trailhead badges, and learning achievements.",
+      "keywords": [
+        "Kavusik Rosan",
+        "Salesforce Trailblazer",
+        "Salesforce Trailhead",
+        "Salesforce credentials",
+        "Trailblazer profile",
+        "CRM certification",
+        "Kavusik Rosan Salesforce"
+      ],
+      "verified": true,
+      "indexForSearch": true,
+      "seoPriority": 0.90,
+      "lastVerified": "2026-08-05"
     }
   ],
   "searchIndex": {
     "indexed": true,
-    "totalLinks": 6,
+    "totalLinks": 8,
     "categories": ["professional", "publication", "academic"],
-    "platforms": ["The Org", "GUVI Blog", "HBRP Publication", "SIET"],
+    "platforms": ["The Org", "GUVI Blog", "GUVI Profile", "Salesforce Trailhead", "HBRP Publication", "SIET"],
     "primarySearchQueries": [
       "Kavusik Rosan",
       "Kavusik Rosan GUVI",
@@ -180,7 +228,9 @@
       "Kavusik Rosan SIET newsletter",
       "Kavusik Rosan HBRP",
       "Kavusik Rosan author",
-      "Kavusik Rosan Windsurf AI"
+      "Kavusik Rosan Windsurf AI",
+      "Kavusik Rosan Salesforce Trailblazer",
+      "Kavusik Rosan GUVI profile"
     ]
   }
 }

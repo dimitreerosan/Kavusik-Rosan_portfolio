@@ -73,12 +73,28 @@
 <priority>1.0</priority>
 </url>
 
-<!-- GUVI Blog — Windsurf AI technical article by Kavusik Rosan (added 2026-07-25) -->
+<!-- GUVI Published Blog — Windsurf AI technical article by Kavusik Rosan (added 2026-07-25) -->
 <url>
 <loc>https://www.guvi.in/blog/windsurf-ai-guide-for-beginners/</loc>
-<lastmod>2026-07-25</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.95</priority>
+</url>
+
+<!-- GUVI Profile — Kavusik Rosan (added 2026-08-05) -->
+<url>
+<loc>https://www.guvi.in/kavusikbalu200609063</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
+<!-- Salesforce Trailblazer Profile — Kavusik Rosan (added 2026-08-05) -->
+<url>
+<loc>https://www.salesforce.com/trailblazer/lpwvuel8yuvwk5c3tc</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.90</priority>
 </url>
 
 </urlset>

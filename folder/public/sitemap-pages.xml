@@ -5,28 +5,76 @@
 <!-- Primary Portfolio Page -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
 <image:image>
   <image:loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/images/kavusik-rosan-official-portrait.png</image:loc>
   <image:title>Kavusik Rosan — Official Portrait</image:title>
-  <image:caption>Kavusik Rosan, HCL GUVI Campus Ambassador, Digital Marketing & SEO Specialist and creator of Obscura Arcanum, from Coimbatore, Tamil Nadu, India.</image:caption>
+  <image:caption>Kavusik Rosan, HCL GUVI Campus Ambassador, Digital Marketing &amp; SEO Specialist and creator of Obscura Arcanum, from Coimbatore, Tamil Nadu, India.</image:caption>
 </image:image>
 </url>
 
 <!-- About / Identity Page -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/about-kavusik-rosan.html</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.98</priority>
+</url>
+
+<!-- About Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#about</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
+<!-- Projects Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#projects</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
+<!-- Achievements Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#achievements</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
+<!-- Publications Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#publications</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.95</priority>
+</url>
+
+<!-- Skills Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#skills</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.90</priority>
+</url>
+
+<!-- Contact Section Anchor -->
+<url>
+<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#contact</loc>
+<lastmod>2026-08-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.90</priority>
 </url>
 
 <!-- External Links Index JSON -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/external-links-index.json</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
@@ -34,7 +82,7 @@
 <!-- Resources Index JSON -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/resources-index.json</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
@@ -42,7 +90,7 @@
 <!-- Portfolio Metadata JSON -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/portfolio-metadata.json</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
@@ -50,7 +98,7 @@
 <!-- Identity Schema JSON -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/identity-schema.json</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.85</priority>
 </url>
@@ -58,17 +106,9 @@
 <!-- LLMs AI Context File -->
 <url>
 <loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/llms.txt</loc>
-<lastmod>2026-08-01</lastmod>
+<lastmod>2026-08-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
-</url>
-
-<!-- Publications Section Anchor -->
-<url>
-<loc>https://dimitreerosan.github.io/Kavusik-Rosan_portfolio/#publications</loc>
-<lastmod>2026-08-01</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.95</priority>
 </url>
 
 </urlset>
